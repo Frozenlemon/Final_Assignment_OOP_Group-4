@@ -2,42 +2,52 @@ package view;
 
 import javafx.beans.NamedArg;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import util.FileIO;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class Menu {
 
     @FXML
     private StackPane menuArea;
+    private Button rollDice, quit, music;
 
-    private StackPane diceArea;
-    private StackPane menu;
-    private Button rollDice, quit;
+    public Menu(@NamedArg("Menu.fxml") String fileName) throws MalformedURLException {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(FileIO.getFXML_URL(fileName));
+            menuArea = loader.load();
+        } catch (IOException e){
+            System.out.println("Menu import error: " + e.getMessage());
+        }
 
-    public Menu(@NamedArg("FXML fileName") String fileName){
-        /*
-         * Constructor to load the correct fxml file base on provided fileName. The loader will load the outer component of the fxml
-         * into the menuArea
-         */
+        initButton();
     }
 
-    //Add getter and setter here
-
-    private void initDiceArea(){
-        /*
-         * Function to assign get the diceArea(FXML) component in menuArea into diceArea
-         */
+    public Button getRollDice() {
+        return rollDice;
     }
 
-    private void initMenu(){
-        /*
-         * Function to assign get the diceArea(FXML) component in menuArea into diceArea
-         */
+    public Button getQuit() {
+        return quit;
+    }
+
+    public Button getMusic() {
+        return music;
+    }
+
+    public StackPane getMenuArea() {
+        return menuArea;
     }
 
     private void initButton(){
-        /*
-         * Function to assign get the 2 buttons rollDice and quit(FXML) component in menu into diceArea
-         */
+        music =  (Button) menuArea.getChildren().get(1);
+        rollDice = (Button) menuArea.getChildren().get(2);
+        quit = (Button) menuArea.getChildren().get(3);
     }
 }
