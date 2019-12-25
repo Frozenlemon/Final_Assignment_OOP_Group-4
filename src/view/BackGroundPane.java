@@ -2,7 +2,6 @@ package view;
 
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
 import util.FileIO;
 
