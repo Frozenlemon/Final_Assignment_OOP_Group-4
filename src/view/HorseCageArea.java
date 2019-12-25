@@ -1,7 +1,9 @@
 package view;
 
 import javafx.beans.NamedArg;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.layout.StackPane;
 
 public class HorseCageArea {
@@ -24,6 +26,7 @@ public class HorseCageArea {
         /*
          * return an object from paths base on index
          */
+
         return null;
     }
 
@@ -31,5 +34,10 @@ public class HorseCageArea {
         /*
          * Function to get all the cages(FXML) component in baseArea and add them into the cages array
          */
+        StackPane temp = (StackPane) horseCageArea.getChildren().get(0);
+        ObservableList<Node> labelList = temp.getChildren();
+        for (int i = 0; i < labelList.size(); i++){
+            cages[i] = (StackPane) labelList.get(i);
+        }
     }
 }

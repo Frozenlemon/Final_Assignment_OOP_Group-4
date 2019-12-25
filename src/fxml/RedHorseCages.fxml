@@ -1,13 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<StackPane fx:id="RedHorseCages" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane prefHeight="150.0" prefWidth="200.0" translateX="140.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="130.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+            <Label rotate="270.0" text="1">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+         </children>
+      </StackPane>
+      <StackPane prefHeight="150.0" prefWidth="200.0" translateX="85.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="130.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+            <Label rotate="270.0" text="2">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </StackPane>
+      <StackPane prefHeight="150.0" prefWidth="200.0" translateX="30.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="130.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+            <Label rotate="270.0" text="3">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </StackPane>
+      <StackPane prefHeight="150.0" prefWidth="200.0" translateX="-25.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="130.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+            <Label rotate="270.0" text="4">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+         </children>
+      </StackPane>
+      <StackPane prefHeight="150.0" prefWidth="200.0" translateX="-80.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="130.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+            <Label rotate="270.0" text="5">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+         </children>
+      </StackPane>
+      <StackPane prefHeight="150.0" prefWidth="200.0" translateX="-135.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="130.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+            <Label rotate="270.0" text="6">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+         </children>
+      </StackPane>
+   </children>
+</StackPane>
