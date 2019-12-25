@@ -9,17 +9,17 @@
 <StackPane fx:id="menuArea" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="400.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <Button fx:id="rollDice" mnemonicParsing="false" text="Roll Dices" textAlignment="CENTER" StackPane.alignment="BOTTOM_CENTER">
+      <Button id="rollDice" fx:id="rollDice" mnemonicParsing="false" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" text="Roll Dices" textAlignment="CENTER" StackPane.alignment="BOTTOM_CENTER">
          <StackPane.margin>
             <Insets bottom="350.0" />
          </StackPane.margin>
       </Button>
-      <Button fx:id="stopButton" mnemonicParsing="false" text="Stop" StackPane.alignment="BOTTOM_CENTER">
+      <Button id="stop" fx:id="stopButton" mnemonicParsing="false" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" text="Stop" StackPane.alignment="BOTTOM_CENTER">
          <StackPane.margin>
             <Insets bottom="250.0" />
          </StackPane.margin>
       </Button>
-      <ToggleButton fx:id="musicButton" mnemonicParsing="false" text="Music on/off" StackPane.alignment="BOTTOM_CENTER">
+      <ToggleButton id="music" fx:id="musicButton" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" text="Music on/off" StackPane.alignment="BOTTOM_CENTER">
          <StackPane.margin>
             <Insets bottom="450.0" />
          </StackPane.margin>
