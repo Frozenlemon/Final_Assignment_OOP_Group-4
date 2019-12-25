@@ -10,6 +10,8 @@ public class Dice {
         */
     }
 
+    //getter here
+
     public void roll(){
         /*
         * Random a number and assign it to value
