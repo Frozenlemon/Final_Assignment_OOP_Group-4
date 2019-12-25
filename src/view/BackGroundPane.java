@@ -1,6 +1,7 @@
 package view;
 
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
 import util.FileIO;
@@ -14,10 +15,20 @@ public class BackGroundPane extends StackPane {
     public BackGroundPane(){
         super();
         super.setPrefSize(1000,800);
+        super.setAlignment(Pos.TOP_LEFT);
+        initBackGroundPane();
+        super.getChildren().add(menu.getMenuArea());
+    }
+
+    public Menu getMenu(){
+        return this.menu;
+    }
+
+    private void initBackGroundPane(){
         gamePane = new GamePane();
         menu = new Menu();
         initMenu();
-        super.getChildren().add(menu.getMenuArea());
+        menu.translate(800,0);
     }
 
     private void initMenu(){
