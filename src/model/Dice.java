@@ -1,20 +1,23 @@
 package model;
 
+import java.util.Random;
+
 public class Dice {
     private int id;
     private int value;
 
-    public Dice(){
-        /*
-        *Constructor, assign a random number to value
-        */
+    public int Dice(){
+        roll();
+        return value;
     }
 
-    //getter here
+    public int getId(){ return id; }
+    public int getValue(){
+        return value;
+    }
 
     public void roll(){
-        /*
-        * Random a number and assign it to value
-        */
+        Random rand = new Random();
+        value = rand.nextInt(6) + 1;
     }
 }
