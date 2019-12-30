@@ -5,63 +5,55 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane fx:id="YellowHorseCages" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="300.0" rotate="180.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="YellowHorseCages" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="270.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <StackPane prefHeight="150.0" prefWidth="200.0" translateX="140.0">
+        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="-112.0">
             <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="130.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
-                <Label rotate="270.0" text="1">
-                    <font>
-                        <Font name="System Bold" size="24.0" />
-                    </font></Label>
-            </children>
-        </StackPane>
-        <StackPane prefHeight="150.0" prefWidth="200.0" translateX="85.0">
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
+                <Label rotate="90.0" text="1">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+            </children></StackPane>
+        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="-67.0">
             <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="130.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
-                <Label rotate="270.0" text="2">
-                    <font>
-                        <Font name="System Bold" size="24.0" />
-                    </font>
-                </Label>
-            </children>
-        </StackPane>
-        <StackPane prefHeight="150.0" prefWidth="200.0" translateX="30.0">
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
+                <Label rotate="90.0" text="2">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+            </children></StackPane>
+        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="-22.0">
             <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="130.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
-                <Label rotate="270.0" text="3">
-                    <font>
-                        <Font name="System Bold" size="24.0" />
-                    </font>
-                </Label>
-            </children>
-        </StackPane>
-        <StackPane prefHeight="150.0" prefWidth="200.0" translateX="-25.0">
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
+                <Label rotate="90.0" text="3">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+            </children></StackPane>
+        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="23.0">
             <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="130.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
-                <Label rotate="270.0" text="4">
-                    <font>
-                        <Font name="System Bold" size="24.0" />
-                    </font></Label>
-            </children>
-        </StackPane>
-        <StackPane prefHeight="150.0" prefWidth="200.0" translateX="-80.0">
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
+                <Label rotate="90.0" text="4">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+            </children></StackPane>
+        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="68.0">
             <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="130.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
-                <Label rotate="270.0" text="5">
-                    <font>
-                        <Font name="System Bold" size="24.0" />
-                    </font></Label>
-            </children>
-        </StackPane>
-        <StackPane prefHeight="150.0" prefWidth="200.0" translateX="-135.0">
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
+                <Label rotate="90.0" text="5">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+            </children></StackPane>
+        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="113.0">
             <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="130.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
-                <Label rotate="270.0" text="6">
-                    <font>
-                        <Font name="System Bold" size="24.0" />
-                    </font></Label>
-            </children>
-        </StackPane>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
+                <Label rotate="90.0" text="6">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+            </children></StackPane>
     </children>
 </StackPane>
