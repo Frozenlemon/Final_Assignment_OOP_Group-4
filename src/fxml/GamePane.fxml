@@ -8,7 +8,7 @@
 
 <StackPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" translateX="-150.0" translateY="-250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+        <StackPane fx:id="blueBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" translateX="-150.0" translateY="-250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
             <children>
                 <Circle fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="-75.0" StackPane.alignment="TOP_RIGHT" />
                 <Circle fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="5.0" translateX="250.0" StackPane.alignment="TOP_LEFT">
@@ -62,15 +62,15 @@
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="240.0" StackPane.alignment="TOP_LEFT" />
-                <Circle fill="WHITE" radius="80.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="40.0" translateY="40.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
+            <StackPane alignment="TOP_LEFT">
+               <children>
+                      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="240.0" />
+                      <Circle fill="WHITE" radius="80.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="40.0" translateY="40.0" />
+               </children>
+            </StackPane>
             </children>
         </StackPane>
-        <StackPane fx:id="BlueHorseCages" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="125.0" rotate="180.0" translateY="-220.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+        <StackPane fx:id="blueHorseCages" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="125.0" rotate="180.0" translateY="-220.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
             <children>
                 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0">
                     <children>
@@ -136,7 +136,7 @@
                 </StackPane>
             </children>
         </StackPane>
-        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" translateX="250.0" translateY="-150.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+        <StackPane fx:id="redBase" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" translateX="250.0" translateY="-150.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
             <children>
                 <Circle fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateY="-75.0" StackPane.alignment="BOTTOM_RIGHT" />
                 <Circle fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="5.0" translateY="250.0" StackPane.alignment="TOP_RIGHT" />
@@ -194,7 +194,7 @@
                 </Circle>
             </children>
         </StackPane>
-        <StackPane fx:id="RedHorseCages" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="270.0" rotate="180.0" translateX="216.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+        <StackPane fx:id="redHorseCages" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="270.0" rotate="180.0" translateX="216.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
             <children>
                 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="-112.0">
                     <children>
@@ -246,7 +246,7 @@
                     </children></StackPane>
             </children>
         </StackPane>
-        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" translateX="150.0" translateY="250.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+        <StackPane fx:id="greenBase" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" translateX="150.0" translateY="250.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
             <children>
                 <Circle fill="#f8f8f8" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="75.0" StackPane.alignment="BOTTOM_LEFT" />
                 <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="5.0" translateX="200.0" StackPane.alignment="BOTTOM_LEFT" />
@@ -300,7 +300,7 @@
                 </Circle>
             </children>
         </StackPane>
-        <StackPane fx:id="GreenHorseCages" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="125.0" rotate="360.0" translateY="215.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+        <StackPane fx:id="greenHorseCages" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="125.0" rotate="360.0" translateY="215.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
             <children>
                 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="225.0" StackPane.alignment="TOP_LEFT">
                     <children>
@@ -366,7 +366,7 @@
                 </StackPane>
             </children>
         </StackPane>
-        <StackPane alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" translateX="-250.0" translateY="150.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+        <StackPane fx:id="yellowBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" translateX="-250.0" translateY="150.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
             <children>
                 <Circle fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateY="75.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
@@ -428,7 +428,7 @@
                 </Circle>
             </children>
         </StackPane>
-        <StackPane fx:id="YellowHorseCages" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="270.0" translateX="-215.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+        <StackPane fx:id="yellowHorseCages" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="270.0" translateX="-215.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
             <children>
                 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="-112.0">
                     <children>
