@@ -1,5 +1,6 @@
 package view;
 
+import javafx.beans.NamedArg;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.layout.StackPane;
@@ -26,18 +27,38 @@ public class BackGroundPane extends StackPane {
     private void initBackGroundPane(){
         gamePane = new GamePane();
         menu = new Menu();
+        initWindow();
+    }
+
+    private void initWindow(){
         initMenu();
-        menu.translate(800,0);
+        initGameArea();
     }
 
     private void initMenu(){
         FXMLLoader menuLoader = new FXMLLoader();
         menuLoader.setLocation(FileIO.getFXML_URL("Menu"));
         menuLoader.setController(menu);
+        loadFXML(menuLoader);
+        menu.translate(800,0);
+    }
+
+    private void initGameArea(){
+        FXMLLoader gameAreaLoader = new FXMLLoader();
+        gameAreaLoader.setLocation(FileIO.getFXML_URL("GamePane"));
+        gameAreaLoader.setController(gamePane);
+        loadFXML(gameAreaLoader);
+    }
+
+    private void loadFXML(FXMLLoader loader){
         try {
-            menuLoader.load();
+            loader.load();
         }catch (IOException e){
             System.out.println(e);
+            e.printStackTrace();
+        }catch (Exception e){
+            System.out.println(e);
+            e.printStackTrace();
         }
     }
 }
