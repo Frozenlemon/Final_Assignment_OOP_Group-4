@@ -3,12 +3,14 @@ package model;
 import java.util.Random;
 
 public class Dice {
+    private static int diceCounter = 0;
     private int id;
     private int value;
 
-    public int Dice(){
+    public Dice(){
+        this.id = diceCounter;
         roll();
-        return value;
+        diceCounter++;
     }
 
     public int getId(){ return id; }
