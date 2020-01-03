@@ -6,124 +6,75 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="GamePane" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <StackPane fx:id="blueBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" translateX="-150.0" translateY="-250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
             <children>
-                <Circle fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="-75.0" StackPane.alignment="TOP_RIGHT" />
-                <Circle fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="5.0" translateX="250.0" StackPane.alignment="TOP_LEFT">
+                <Circle fx:id="b0" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="375.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="b1" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="5.0" translateX="250.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" StackPane.alignment="TOP_LEFT">
+                <Circle fx:id="b2" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
                         <Insets top="50.0" />
                     </StackPane.margin>
                 </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="100.0" StackPane.alignment="TOP_LEFT">
+                <Circle fx:id="b3" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="100.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="150.0" StackPane.alignment="TOP_LEFT">
+                <Circle fx:id="b4" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="150.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
+                <Circle fx:id="b5" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
+                <Circle fx:id="b6" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
+                <Circle fx:id="b7" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="150.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
+                <Circle fx:id="b8" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="150.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="100.0" translateY="250.0" StackPane.alignment="TOP_LEFT" />
-                <Circle fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="50.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
+                <Circle fx:id="b9" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="100.0" translateY="250.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="b10" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="50.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
+                <Circle fx:id="b11" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-            <StackPane alignment="TOP_LEFT">
+            <StackPane alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="240.0" StackPane.alignment="TOP_LEFT">
                <children>
-                      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="240.0" />
-                      <Circle fill="WHITE" radius="80.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="40.0" translateY="40.0" />
+                      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="240.0" StackPane.alignment="TOP_LEFT" />
+                      <Circle fx:id="initial" fill="WHITE" radius="80.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="40.0" translateY="40.0" StackPane.alignment="TOP_LEFT" />
                </children>
             </StackPane>
             </children>
         </StackPane>
-        <StackPane fx:id="blueHorseCages" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="125.0" rotate="180.0" translateY="-220.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+        <StackPane fx:id="blueHorseCages" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="125.0" rotate="180.0" translateY="-215.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
             <children>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0">
+                <StackPane fx:id="c1" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="225.0" StackPane.alignment="TOP_LEFT">
                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#005df2" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
-                        <Label text="6" StackPane.alignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="24.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="45.0">
-                    <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#005df2" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
-                        <Label text="5">
-                            <font>
-                                <Font name="System Bold" size="24.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="90.0">
-                    <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#005df2" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
-                        <Label text="4">
-                            <font>
-                                <Font name="System Bold" size="24.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="135.0">
-                    <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#005df2" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
-                        <Label text="3">
-                            <font>
-                                <Font name="System Bold" size="24.0" />
-                            </font>
-                        </Label>
-                    </children></StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="125.0" translateY="180.0">
-                    <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#005df2" height="40.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
-                        <Label text="2">
-                            <font>
-                                <Font name="System Bold" size="24.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="220.0" StackPane.alignment="TOP_LEFT">
-                    <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#005df2" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#005df2" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" StackPane.alignment="CENTER" />
                         <Label text="1" translateY="-5.0" StackPane.alignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="24.0" />
@@ -134,237 +85,48 @@
                         <Point3D />
                     </rotationAxis>
                 </StackPane>
-            </children>
-        </StackPane>
-        <StackPane fx:id="redBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" translateX="250.0" translateY="-150.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-            <children>
-                <Circle fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateY="-75.0" StackPane.alignment="BOTTOM_RIGHT" />
-                <Circle fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="5.0" translateY="250.0" StackPane.alignment="TOP_RIGHT" />
-                <Circle fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="-50.0" translateY="250.0" StackPane.alignment="TOP_RIGHT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fill="#f8f8f8" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="-100.0" translateY="250.0" StackPane.alignment="TOP_RIGHT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="-150.0" translateY="250.0" StackPane.alignment="TOP_RIGHT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="-200.0" translateY="250.0" StackPane.alignment="TOP_RIGHT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="-250.0" translateY="250.0" StackPane.alignment="TOP_RIGHT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateY="200.0" StackPane.alignment="TOP_LEFT" />
-                <Circle fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateY="150.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateY="100.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateY="50.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-            <StackPane alignment="TOP_LEFT" prefHeight="150.0" prefWidth="200.0">
-               <children>
-                      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" stroke="BLACK" strokeType="INSIDE" width="240.0" StackPane.alignment="TOP_RIGHT" />
-                      <Circle fill="WHITE" radius="80.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="TOP_RIGHT">
-                          <StackPane.margin>
-                              <Insets />
-                          </StackPane.margin>
-                      </Circle>
-               </children>
-            </StackPane>
-            </children>
-        </StackPane>
-        <StackPane fx:id="redHorseCages" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="270.0" rotate="180.0" translateX="216.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
-            <children>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="-112.0">
+                <StackPane fx:id="c2" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="180.0">
                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
-                        <Label rotate="90.0" text="1">
-                            <font>
-                                <Font name="System Bold" size="24.0" />
-                            </font></Label>
-                    </children></StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="-67.0">
-                    <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
-                        <Label rotate="90.0" text="2">
-                            <font>
-                                <Font name="System Bold" size="24.0" />
-                            </font></Label>
-                    </children></StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="-22.0">
-                    <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
-                        <Label rotate="90.0" text="3">
-                            <font>
-                                <Font name="System Bold" size="24.0" />
-                            </font></Label>
-                    </children></StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="23.0">
-                    <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
-                        <Label rotate="90.0" text="4">
-                            <font>
-                                <Font name="System Bold" size="24.0" />
-                            </font></Label>
-                    </children></StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="68.0">
-                    <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
-                        <Label rotate="90.0" text="5">
-                            <font>
-                                <Font name="System Bold" size="24.0" />
-                            </font></Label>
-                    </children></StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="113.0">
-                    <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
-                        <Label rotate="90.0" text="6">
-                            <font>
-                                <Font name="System Bold" size="24.0" />
-                            </font></Label>
-                    </children></StackPane>
-            </children>
-        </StackPane>
-        <StackPane fx:id="greenBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" translateX="150.0" translateY="250.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
-            <children>
-                <Circle fill="#f8f8f8" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="75.0" StackPane.alignment="BOTTOM_LEFT" />
-                <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="5.0" translateX="200.0" StackPane.alignment="BOTTOM_LEFT" />
-                <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="-50.0" StackPane.alignment="BOTTOM_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="-100.0" StackPane.alignment="BOTTOM_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="-150.0" StackPane.alignment="BOTTOM_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="-200.0" StackPane.alignment="BOTTOM_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="-250.0" StackPane.alignment="BOTTOM_LEFT" />
-                <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="-200.0" StackPane.alignment="TOP_RIGHT" />
-                <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="-150.0" StackPane.alignment="TOP_RIGHT">
-                    <StackPane.margin>
-                        <Insets left="50.0" />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="-100.0" StackPane.alignment="TOP_RIGHT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="-50.0" StackPane.alignment="TOP_RIGHT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="TOP_RIGHT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-            <StackPane alignment="TOP_LEFT" prefHeight="150.0" prefWidth="200.0">
-               <children>
-                      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="240.0" StackPane.alignment="BOTTOM_RIGHT" />
-                      <Circle fill="WHITE" radius="80.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="BOTTOM_RIGHT">
-                          <StackPane.margin>
-                              <Insets />
-                          </StackPane.margin>
-                      </Circle>
-               </children>
-            </StackPane>
-            </children>
-        </StackPane>
-        <StackPane fx:id="greenHorseCages" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="125.0" rotate="360.0" translateY="215.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
-            <children>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="225.0" StackPane.alignment="TOP_LEFT">
-                    <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#008400" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
-                        <Label text="1" translateY="-5.0" StackPane.alignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="24.0" />
-                            </font>
-                        </Label>
-                    </children>
-                    <rotationAxis>
-                        <Point3D />
-                    </rotationAxis>
-                </StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="180.0">
-                    <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#008400" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
-                        <Label text="2">
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#005df2" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" StackPane.alignment="CENTER" />
+                        <Label text="2" StackPane.alignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="24.0" />
                             </font>
                         </Label>
                     </children>
                 </StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="135.0">
+                <StackPane fx:id="c3" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="135.0">
                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#008400" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
-                        <Label text="3">
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#005df2" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" StackPane.alignment="CENTER" />
+                        <Label text="3" StackPane.alignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="24.0" />
                             </font>
                         </Label>
                     </children></StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="90.0">
+                <StackPane fx:id="c4" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="90.0">
                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#008400" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
-                        <Label text="4">
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#005df2" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" StackPane.alignment="CENTER" />
+                        <Label text="4" StackPane.alignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="24.0" />
                             </font>
                         </Label>
                     </children>
                 </StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="45.0">
+                <StackPane fx:id="c5" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="45.0">
                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#008400" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
-                        <Label text="5">
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#005df2" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" StackPane.alignment="CENTER" />
+                        <Label alignment="CENTER" text="5" textAlignment="CENTER" StackPane.alignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="24.0" />
                             </font>
                         </Label>
                     </children>
                 </StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0">
+                <StackPane fx:id="c6" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0">
                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#008400" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#005df2" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" StackPane.alignment="CENTER" />
                         <Label text="6" StackPane.alignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="24.0" />
@@ -374,64 +136,64 @@
                 </StackPane>
             </children>
         </StackPane>
-        <StackPane fx:id="yellowBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" translateX="-250.0" translateY="150.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+        <StackPane fx:id="yellowBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" translateX="-250.0" translateY="150.0">
             <children>
-                <Circle fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateY="75.0" StackPane.alignment="TOP_LEFT">
+                <Circle fx:id="y0" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateY="75.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="5.0" translateY="200.0" StackPane.alignment="TOP_LEFT" />
-                <Circle fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="50.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
+                <Circle fx:id="y1" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="5.0" translateY="200.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="y2" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="50.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="100.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
+                <Circle fx:id="y3" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="100.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="150.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
+                <Circle fx:id="y4" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="150.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
+                <Circle fx:id="y5" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
+                <Circle fx:id="y6" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateY="-200.0" StackPane.alignment="BOTTOM_RIGHT" />
-                <Circle fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateY="-150.0" StackPane.alignment="BOTTOM_RIGHT">
+                <Circle fx:id="y7" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateY="-200.0" StackPane.alignment="BOTTOM_RIGHT" />
+                <Circle fx:id="y8" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateY="-150.0" StackPane.alignment="BOTTOM_RIGHT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateY="-100.0" StackPane.alignment="BOTTOM_RIGHT">
+                <Circle fx:id="y9" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateY="-100.0" StackPane.alignment="BOTTOM_RIGHT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateY="-50.0" StackPane.alignment="BOTTOM_RIGHT">
+                <Circle fx:id="y10" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateY="-50.0" StackPane.alignment="BOTTOM_RIGHT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-                <Circle fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="BOTTOM_RIGHT">
+                <Circle fx:id="y11" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="BOTTOM_RIGHT">
                     <StackPane.margin>
                         <Insets top="200.0" />
                     </StackPane.margin>
                 </Circle>
-            <StackPane alignment="TOP_LEFT" prefHeight="150.0" prefWidth="200.0">
+            <StackPane alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="240.0" translateY="260.0" StackPane.alignment="TOP_LEFT">
                <children>
-                      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="240.0" StackPane.alignment="BOTTOM_LEFT" />
-                      <Circle fill="WHITE" radius="80.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="BOTTOM_LEFT">
+                      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="240.0" StackPane.alignment="CENTER" />
+                      <Circle fx:id="initial" fill="WHITE" radius="80.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="CENTER">
                           <StackPane.margin>
                               <Insets />
                           </StackPane.margin>
@@ -440,9 +202,9 @@
             </StackPane>
             </children>
         </StackPane>
-        <StackPane fx:id="yellowHorseCages" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="270.0" translateX="-215.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+        <StackPane fx:id="yellowHorseCages" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="270.0" translateX="-215.0">
             <children>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="-112.0">
+                <StackPane fx:id="c1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="-112.0">
                     <children>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
                         <Label rotate="90.0" text="1">
@@ -450,7 +212,7 @@
                                 <Font name="System Bold" size="24.0" />
                             </font></Label>
                     </children></StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="-67.0">
+                <StackPane fx:id="c2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="-67.0">
                     <children>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
                         <Label rotate="90.0" text="2">
@@ -458,7 +220,7 @@
                                 <Font name="System Bold" size="24.0" />
                             </font></Label>
                     </children></StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="-22.0">
+                <StackPane fx:id="c3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="-22.0">
                     <children>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
                         <Label rotate="90.0" text="3">
@@ -466,7 +228,7 @@
                                 <Font name="System Bold" size="24.0" />
                             </font></Label>
                     </children></StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="23.0">
+                <StackPane fx:id="c4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="23.0">
                     <children>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
                         <Label rotate="90.0" text="4">
@@ -474,7 +236,7 @@
                                 <Font name="System Bold" size="24.0" />
                             </font></Label>
                     </children></StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="68.0">
+                <StackPane fx:id="c5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="68.0">
                     <children>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
                         <Label rotate="90.0" text="5">
@@ -482,10 +244,248 @@
                                 <Font name="System Bold" size="24.0" />
                             </font></Label>
                     </children></StackPane>
-                <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="113.0">
+                <StackPane fx:id="c6" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="113.0">
                     <children>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" />
                         <Label rotate="90.0" text="6">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font></Label>
+                    </children></StackPane>
+            </children>
+        </StackPane>
+        <StackPane fx:id="greenBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" translateX="150.0" translateY="250.0">
+            <children>
+                <Circle fx:id="g0" fill="#f8f8f8" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="75.0" translateY="250.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="g1" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="5.0" translateX="200.0" translateY="250.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="g2" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="g3" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="150.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="g4" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="100.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="g5" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="50.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="g6" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="g7" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="g8" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="300.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="g9" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="350.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="g10" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="400.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="g11" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="450.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+            <StackPane alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="240.0" translateX="260.0" translateY="60.0" StackPane.alignment="TOP_LEFT">
+               <children>
+                      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="240.0" StackPane.alignment="CENTER" />
+                      <Circle fx:id="initial" fill="WHITE" radius="80.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="CENTER">
+                          <StackPane.margin>
+                              <Insets />
+                          </StackPane.margin>
+                      </Circle>
+               </children>
+            </StackPane>
+            </children>
+        </StackPane>
+        <StackPane fx:id="greenHorseCages" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="125.0" rotate="360.0" translateY="215.0">
+            <children>
+                <StackPane fx:id="c1" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="225.0" StackPane.alignment="TOP_LEFT">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#008400" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" StackPane.alignment="CENTER" />
+                        <Label text="1" translateY="-5.0" StackPane.alignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <rotationAxis>
+                        <Point3D />
+                    </rotationAxis>
+                </StackPane>
+                <StackPane fx:id="c2" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="180.0" StackPane.alignment="TOP_LEFT">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#008400" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" StackPane.alignment="CENTER" />
+                        <Label text="2" StackPane.alignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </StackPane>
+                <StackPane fx:id="c3" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="135.0">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#008400" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" StackPane.alignment="CENTER" />
+                        <Label text="3" StackPane.alignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                    </children></StackPane>
+                <StackPane fx:id="c4" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="90.0">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#008400" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" StackPane.alignment="CENTER" />
+                        <Label text="4" StackPane.alignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </StackPane>
+                <StackPane fx:id="c5" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0" translateY="45.0">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#008400" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" StackPane.alignment="CENTER" />
+                        <Label text="5" StackPane.alignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </StackPane>
+                <StackPane fx:id="c6" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="125.0">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#008400" height="45.0" stroke="BLACK" strokeType="INSIDE" width="125.0" StackPane.alignment="CENTER" />
+                        <Label text="6" StackPane.alignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </StackPane>
+            </children>
+        </StackPane>
+        <StackPane fx:id="redBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" translateX="250.0" translateY="-150.0">
+            <children>
+                <Circle fx:id="r0" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="375.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="r1" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="5.0" translateX="250.0" translateY="250.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="r2" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="r3" fill="#f8f8f8" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="150.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="r4" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="100.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="r5" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="50.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="r6" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="r7" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateY="200.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="r8" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateY="150.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="r9" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateY="100.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="r10" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateY="50.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="r11" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+            <StackPane alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="240.0" translateX="60.0" StackPane.alignment="TOP_LEFT">
+               <children>
+                      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" stroke="BLACK" strokeType="INSIDE" width="240.0" StackPane.alignment="CENTER" />
+                      <Circle fx:id="initial" fill="WHITE" radius="80.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="CENTER">
+                          <StackPane.margin>
+                              <Insets />
+                          </StackPane.margin>
+                      </Circle>
+               </children>
+            </StackPane>
+            </children>
+        </StackPane>
+        <StackPane fx:id="redHorseCages" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="270.0" rotate="180.0" translateX="216.0">
+            <children>
+                <StackPane fx:id="c1" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="-112.0">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" StackPane.alignment="TOP_LEFT" />
+                        <Label rotate="90.0" text="1" StackPane.alignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font></Label>
+                    </children></StackPane>
+                <StackPane fx:id="c2" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="-67.0">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" StackPane.alignment="CENTER" />
+                        <Label rotate="90.0" text="2" StackPane.alignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font></Label>
+                    </children></StackPane>
+                <StackPane fx:id="c3" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="-22.0">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" StackPane.alignment="CENTER" />
+                        <Label rotate="90.0" text="3" StackPane.alignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font></Label>
+                    </children></StackPane>
+                <StackPane fx:id="c4" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="23.0">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" StackPane.alignment="CENTER" />
+                        <Label rotate="90.0" text="4" StackPane.alignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font></Label>
+                    </children></StackPane>
+                <StackPane fx:id="c5" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="68.0">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" StackPane.alignment="CENTER" />
+                        <Label rotate="90.0" text="5" StackPane.alignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="24.0" />
+                            </font></Label>
+                    </children></StackPane>
+                <StackPane fx:id="c6" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="45.0" translateX="113.0">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="125.0" stroke="BLACK" strokeType="INSIDE" width="45.0" StackPane.alignment="CENTER" />
+                        <Label rotate="90.0" text="6" StackPane.alignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="24.0" />
                             </font></Label>
