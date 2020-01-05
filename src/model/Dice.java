@@ -1,25 +1,18 @@
 package model;
 
-import java.util.Random;
-
 public class Dice {
-    private static int diceCounter = 0;
     private int id;
     private int value;
 
     public Dice(){
-        this.id = diceCounter;
-        roll();
-        diceCounter++;
-    }
-
-    public int getId(){ return id; }
-    public int getValue(){
-        return value;
+        /*
+        *Constructor, assign a random number to value
+        */
     }
 
     public void roll(){
-        Random rand = new Random();
-        value = rand.nextInt(6) + 1;
+        /*
+        * Random a number and assign it to value
+        */
     }
 }

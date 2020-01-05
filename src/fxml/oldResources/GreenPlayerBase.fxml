@@ -1,60 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Circle fill="#f8f8f8" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="75.0" StackPane.alignment="BOTTOM_LEFT" />
-      <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="5.0" translateX="200.0" StackPane.alignment="BOTTOM_LEFT" />
-      <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="-50.0" StackPane.alignment="BOTTOM_LEFT">
-         <StackPane.margin>
-            <Insets />
-         </StackPane.margin>
-      </Circle>
-      <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="-100.0" StackPane.alignment="BOTTOM_LEFT">
-         <StackPane.margin>
-            <Insets />
-         </StackPane.margin>
-      </Circle>
-      <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="-150.0" StackPane.alignment="BOTTOM_LEFT">
-         <StackPane.margin>
-            <Insets />
-         </StackPane.margin>
-      </Circle>
-      <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="-200.0" StackPane.alignment="BOTTOM_LEFT">
-         <StackPane.margin>
-            <Insets />
-         </StackPane.margin>
-      </Circle>
-      <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="-250.0" StackPane.alignment="BOTTOM_LEFT" />
-      <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="-200.0" StackPane.alignment="TOP_RIGHT" />
-      <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="-150.0" StackPane.alignment="TOP_RIGHT">
-         <StackPane.margin>
-            <Insets left="50.0" />
-         </StackPane.margin>
-      </Circle>
-      <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="-100.0" StackPane.alignment="TOP_RIGHT">
-         <StackPane.margin>
-            <Insets />
-         </StackPane.margin>
-      </Circle>
-      <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="-50.0" StackPane.alignment="TOP_RIGHT">
-         <StackPane.margin>
-            <Insets />
-         </StackPane.margin>
-      </Circle>
-      <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="TOP_RIGHT">
-         <StackPane.margin>
-            <Insets />
-         </StackPane.margin>
-      </Circle>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="240.0" StackPane.alignment="BOTTOM_RIGHT" />
-      <Circle fill="WHITE" radius="80.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="-40.0" translateY="-40.0" StackPane.alignment="BOTTOM_RIGHT">
-         <StackPane.margin>
-            <Insets />
-         </StackPane.margin>
-      </Circle>
+      <StackPane layoutX="250.0" layoutY="50.0" prefHeight="250.0" prefWidth="250.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="240.0" StackPane.alignment="BOTTOM_RIGHT" />
+            <Circle fill="WHITE" radius="80.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="BOTTOM_RIGHT">
+               <StackPane.margin>
+                  <Insets bottom="40.0" right="40.0" />
+               </StackPane.margin>
+            </Circle>
+         </children>
+      </StackPane>
+      <StackPane layoutX="200.0" prefHeight="300.0" prefWidth="50.0">
+         <children>
+            <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="5.0" StackPane.alignment="BOTTOM_CENTER" />
+            <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="BOTTOM_CENTER">
+               <StackPane.margin>
+                  <Insets bottom="50.0" />
+               </StackPane.margin>
+            </Circle>
+            <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="BOTTOM_CENTER">
+               <StackPane.margin>
+                  <Insets bottom="100.0" />
+               </StackPane.margin>
+            </Circle>
+            <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="BOTTOM_CENTER">
+               <StackPane.margin>
+                  <Insets bottom="150.0" />
+               </StackPane.margin>
+            </Circle>
+            <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="BOTTOM_CENTER">
+               <StackPane.margin>
+                  <Insets bottom="200.0" />
+               </StackPane.margin>
+            </Circle>
+            <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="BOTTOM_CENTER">
+               <StackPane.margin>
+                  <Insets bottom="200.0" />
+               </StackPane.margin>
+            </Circle>
+            <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="TOP_CENTER" />
+         </children>
+      </StackPane>
+      <StackPane layoutX="250.0" prefHeight="50.0" prefWidth="250.0">
+         <children>
+            <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="TOP_LEFT" />
+            <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="50.0" />
+               </StackPane.margin>
+            </Circle>
+            <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="100.0" />
+               </StackPane.margin>
+            </Circle>
+            <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="150.0" />
+               </StackPane.margin>
+            </Circle>
+            <Circle fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="TOP_LEFT">
+               <StackPane.margin>
+                  <Insets left="200.0" />
+               </StackPane.margin>
+            </Circle>
+         </children>
+      </StackPane>
+      <StackPane layoutY="249.0" prefHeight="50.0" prefWidth="200.0">
+         <children>
+            <Circle fill="#f8f8f8" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" />
+         </children>
+      </StackPane>
    </children>
-</StackPane>
+</AnchorPane>

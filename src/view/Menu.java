@@ -1,84 +1,65 @@
 package view;
 
-import controller.MainController;
 import javafx.beans.NamedArg;
+import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import util.FileIO;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class Menu {
 
     @FXML
     private StackPane menuArea;
-    @FXML
-    private Button rollDice, stopButton;
-    @FXML
-    private ToggleButton musicButton;
-    @FXML
-    private ImageView dice1, dice2;
+    private Button rollDice, quit, music;
 
-    public Menu() {}
+    public Menu(@NamedArg("Menu.fxml") String fileName) throws MalformedURLException {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(FileIO.getFXML_URL(fileName));
+            menuArea = loader.load();
+        } catch (IOException e){
+            System.out.println("Menu import error: " + e.getMessage());
+        }
+
+        initButton();
+    }
 
     public Button getRollDice() {
         return rollDice;
     }
 
-    public Button getStopButton() {
-        return stopButton;
+    public Button getQuit() {
+        return quit;
     }
 
-    public ToggleButton getMusicButton() {
-        return musicButton;
+    public Button getMusic() {
+        return music;
     }
 
     public StackPane getMenuArea() {
         return menuArea;
     }
 
-    public ImageView getDice(int id){
-        if (id == 0){
-            return dice1;
-        }
-        return dice2;
-    }
+    public void effect(String buttonName){
 
-    //function to move the menuArea by x and y amount
-    public void translate(@NamedArg("x pixels") double x, @NamedArg("y pixels") double y){
-        menuArea.setTranslateX(x);
-        menuArea.setTranslateY(y);
-    }
-
-    public void highlightButton_On(@NamedArg("Button type: 0: rollDice, 1: musicButton, 2: stopButton") int type){
-        /*
-        * function to turn on highlight for a button. Button selected by the type provided in argument
-        */
-        System.out.println("highlight on");
-    }
-
-    public void highlightButton_Off(@NamedArg("Button type: 0: rollDice, 1: musicButton, 2: stopButton") int type){
-        /*
-         * function to turn off highlight for a button. Button selected by the type provided in argument
-         */
-        System.out.println("highlight off");
     }
 
     @FXML
-    private void mouseHover_On(MouseEvent event){
-        if (event.getSource() instanceof Button){
-            Button source = (Button) event.getSource();
-            MainController.getInstance().highlight_On(source.getId());
-        }
+    private void test(Event e){
+        //call Controller
     }
 
-    @FXML
-    private void mouseHover_Off(MouseEvent event){
-        if (event.getSource() instanceof Button){
-            Button source = (Button) event.getSource();
-            MainController.getInstance().highlight_Off(source.getId());
-        }
-    }
 
+
+    private void initButton(){
+        music =  (Button) menuArea.getChildren().get(1);
+        rollDice = (Button) menuArea.getChildren().get(2);
+        quit = (Button) menuArea.getChildren().get(3);
+    }
 }
