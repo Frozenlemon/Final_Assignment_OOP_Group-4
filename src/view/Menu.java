@@ -1,7 +1,9 @@
 package view;
 
+import com.sun.scenario.effect.DropShadow;
 import controller.MainController;
 import javafx.beans.NamedArg;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
@@ -20,7 +22,8 @@ public class Menu {
     @FXML
     private ImageView dice1, dice2;
 
-    public Menu() {}
+    public Menu() {
+    }
 
     public Button getRollDice() {
         return rollDice;
@@ -38,33 +41,41 @@ public class Menu {
         return menuArea;
     }
 
-    public ImageView getDice(int id){
-        if (id == 0){
+    public ImageView getDice(int id) {
+        if (id == 0) {
             return dice1;
         }
+
         return dice2;
     }
 
     //function to move the menuArea by x and y amount
-    public void translate(@NamedArg("x pixels") double x, @NamedArg("y pixels") double y){
+    public void translate(@NamedArg("x pixels") double x, @NamedArg("y pixels") double y) {
         menuArea.setTranslateX(x);
         menuArea.setTranslateY(y);
     }
 
-    public void highlightButton_On(@NamedArg("Button type: 0: rollDice, 1: musicButton, 2: stopButton") int type){
+    public void highlightButton_On(@NamedArg("Button type: 0: rollDice, 1: musicButton, 2: stopButton") int type) {
         /*
-        * function to turn on highlight for a button. Button selected by the type provided in argument
-        */
-        System.out.println("highlight on");
-    }
+         * function to turn on highlight for a button. Button selected by the type provided in argument
+         */
+        if (type ==0 || type==1 || type ==2){
+        DropShadow shadow = new DropShadow();
+        stopButton.setEffect(new javafx.scene.effect.DropShadow());
 
-    public void highlightButton_Off(@NamedArg("Button type: 0: rollDice, 1: musicButton, 2: stopButton") int type){
+        System.out.println("highlight on");
+    }}
+
+    public void highlightButton_Off(@NamedArg("Button type: 0: rollDice, 1: musicButton, 2: stopButton") int type) {
         /*
          * function to turn off highlight for a button. Button selected by the type provided in argument
          */
-        System.out.println("highlight off");
-    }
+        if (type ==0 || type==1 || type ==2){
+        getStopButton().setEffect(null);
 
+
+        System.out.println("highlight off");
+}}
     @FXML
     private void mouseHover_On(MouseEvent event){
         if (event.getSource() instanceof Button){
