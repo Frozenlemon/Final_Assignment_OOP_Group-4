@@ -15,7 +15,11 @@
          <font>
             <Font name="System Bold" size="30.0" />
          </font></Button>
-      <ImageView fx:id="startMenuBackground" fitHeight="800.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT" />
+      <ImageView fx:id="startMenuBackground" fitHeight="800.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT" >
+   <image>
+       <Image url="@Images/Background.jpg" />
+      </image>
+      </ImageView>
       <ToggleButton fx:id="musicButton" mnemonicParsing="false" text="Music on/off" textAlignment="CENTER" StackPane.alignment="TOP_RIGHT">
          <font>
             <Font name="System Bold" size="18.0" />
