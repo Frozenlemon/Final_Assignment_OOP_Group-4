@@ -10,20 +10,20 @@
 <StackPane alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="400.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <ToggleButton id="soundOn" mnemonicParsing="false" text="Music on/off" StackPane.alignment="BOTTOM_CENTER">
-         <StackPane.margin>
-            <Insets bottom="450.0" />
-         </StackPane.margin>
-      </ToggleButton>
-      <Button id="quit" mnemonicParsing="false" text="Roll Dices" textAlignment="CENTER" StackPane.alignment="BOTTOM_CENTER">
+      <Button mnemonicParsing="false" text="Roll Dices" textAlignment="CENTER" StackPane.alignment="BOTTOM_CENTER">
          <StackPane.margin>
             <Insets bottom="350.0" />
          </StackPane.margin>
       </Button>
-      <Button mnemonicParsing="false" text="Quit" StackPane.alignment="BOTTOM_CENTER">
+      <Button mnemonicParsing="false" text="Stop" StackPane.alignment="BOTTOM_CENTER">
          <StackPane.margin>
             <Insets bottom="250.0" />
          </StackPane.margin>
       </Button>
+      <ToggleButton mnemonicParsing="false" text="Music on/off" StackPane.alignment="BOTTOM_CENTER">
+         <StackPane.margin>
+            <Insets bottom="450.0" />
+         </StackPane.margin>
+      </ToggleButton>
    </children>
 </StackPane>
