@@ -6,25 +6,35 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<StackPane fx:id="menuArea" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="200.0" style="-fx-background-image: url('Document/ Background.jpg');" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="menuArea" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="200.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
 
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="400.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <Button id="rollDice" fx:id="rollDice" mnemonicParsing="false" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" text="Roll Dices" textAlignment="CENTER" StackPane.alignment="BOTTOM_CENTER">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#196bb200" height="400.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="200.0" />
+      <Button id="rollDice" fx:id="rollDice" minWidth="150.0" mnemonicParsing="false" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" text="Roll Dices" textAlignment="CENTER" textFill="#000000d3" StackPane.alignment="BOTTOM_CENTER">
          <StackPane.margin>
-            <Insets bottom="350.0" />
+            <Insets bottom="330.0" />
          </StackPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
       </Button>
-      <Button id="stop" fx:id="stopButton" mnemonicParsing="false" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" text="Stop" StackPane.alignment="BOTTOM_CENTER">
+      <Button id="stop" fx:id="stopButton" minWidth="150.0" mnemonicParsing="false" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" text="Stop" wrapText="true" StackPane.alignment="BOTTOM_CENTER">
          <StackPane.margin>
-            <Insets bottom="250.0" />
+            <Insets bottom="230.0" />
          </StackPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
       </Button>
-      <ToggleButton id="music" fx:id="musicButton" contentDisplay="CENTER" mnemonicParsing="false" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" text="Music on/off" StackPane.alignment="BOTTOM_CENTER">
+      <ToggleButton id="music" fx:id="musicButton" contentDisplay="CENTER" minWidth="150.0" mnemonicParsing="false" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" text="Music on/off" StackPane.alignment="BOTTOM_CENTER">
          <StackPane.margin>
-            <Insets bottom="450.0" />
+            <Insets bottom="430.0" />
          </StackPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
       </ToggleButton>
       <ImageView fx:id="dice1" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" translateX="25.0" translateY="25.0" StackPane.alignment="TOP_LEFT" />
       <ImageView fx:id="dice2" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" translateX="25.0" translateY="225.0" />
