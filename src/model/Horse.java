@@ -20,10 +20,9 @@ public class Horse {
         * After 3 the currentAreaCode loop back to 0. Every areaCode has 12 locationOnPath indexing from 0 to 11.
         * The moveCount will reduce as the horse move along the locationOnPath until moveCount is 0.
         */
-        return location
     }
 
     public String checkMove(){
-        return "kick" "move" "stand";
+        return "";
     }
 }

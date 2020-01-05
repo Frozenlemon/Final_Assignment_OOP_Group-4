@@ -15,7 +15,7 @@ public class MainController {
         primaryStage = new Stage();
         primaryStage.setTitle("PLACE HOLDER NAME");
         backGroundPane = new BackGroundPane();
-        primaryStage.setScene(new Scene(backGroundPane));
+        primaryStage.setScene(new Scene(backGroundPane, 1010, 800));
     }
 
     public static MainController getInstance(){
@@ -24,26 +24,17 @@ public class MainController {
         return instance;
     }
 
-    public void highlight_On(String id){
-        int type = filterButtonType(id);
-        backGroundPane.getMenu().highlightButton_On(type);
-    }
-
-    public void highlight_Off(String id){
-        int type = filterButtonType(id);
-        backGroundPane.getMenu().highlightButton_Off(type);
+    public void highlight(String id, int type){
+        switch (type){
+            case 0:
+                ViewController.getInstance().highlight_On(id, backGroundPane);
+                break;
+            case 1:
+                ViewController.getInstance().highlight_Off(id, backGroundPane);
+        }
     }
 
     public void update(){
         primaryStage.show();
-    }
-
-    private int filterButtonType(String id){
-        if (id.equals("rollDice"))
-            return 0;
-        else if (id.equals("music"))
-            return 1;
-        else
-            return 2;
     }
 }

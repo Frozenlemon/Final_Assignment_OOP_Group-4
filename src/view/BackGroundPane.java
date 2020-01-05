@@ -17,7 +17,7 @@ public class BackGroundPane extends StackPane {
         super.setPrefSize(1000,800);
         super.setAlignment(Pos.TOP_LEFT);
         initBackGroundPane();
-        super.getChildren().add(menu.getMenuArea());
+        super.getChildren().addAll(gamePane.getGamePane(), menu.getMenuArea());
     }
 
     public Menu getMenu(){
@@ -40,7 +40,7 @@ public class BackGroundPane extends StackPane {
         menuLoader.setLocation(FileIO.getFXML_URL("Menu"));
         menuLoader.setController(menu);
         loadFXML(menuLoader);
-        menu.translate(800,0);
+        menu.translate(810,0);
     }
 
     private void initGameArea(){
@@ -48,6 +48,7 @@ public class BackGroundPane extends StackPane {
         gameAreaLoader.setLocation(FileIO.getFXML_URL("GamePane"));
         gameAreaLoader.setController(gamePane);
         loadFXML(gameAreaLoader);
+        gamePane.translate(-100,0);
     }
 
     private void loadFXML(FXMLLoader loader){

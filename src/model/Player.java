@@ -5,20 +5,16 @@ import javafx.scene.paint.Color;
 public class Player {
 
     private Horse[] horses;
-    private Color colorCode;
+    private int colorCode;
 
-    public Player(){
-        /*
-        * Constructor, create the horses array
-        */
+    public Player(int colorCode){
+        this.colorCode = colorCode;
+        horses = new Horse[4];
     }
 
     //getter and setter here
 
     public Horse getHorse(int id){
-        /*
-         * find and return the horse with same id
-         */
-        return null;
+        return horses[id];
     }
 }

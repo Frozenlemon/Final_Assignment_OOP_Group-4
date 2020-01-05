@@ -21,5 +21,4 @@ public class StartMenu {
 
     public Button getMenu() {return startGameButton; }
 
-    public
 }
