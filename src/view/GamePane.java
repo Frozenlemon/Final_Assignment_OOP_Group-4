@@ -54,10 +54,9 @@ public class GamePane {
 
     public void moveHorse(int horseIndex, int pathIndex, int moveCount, TranslateTransition queueTransition){
         moveCount--;
-        Circle destination = paths[pathIndex];
         TranslateTransition transition = new TranslateTransition(Duration.seconds(1), horses[horseIndex]);
-        transition.setToX(destination.getCenterX());
-        transition.setToY(destination.getCenterY());
+        transition.setToX(paths[pathIndex].getCenterX());
+        transition.setToY(paths[pathIndex].getCenterY());
         ViewController.getInstance().startAnimation();
 
         if (moveCount > 0){
