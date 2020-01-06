@@ -14,7 +14,7 @@ public class BackGroundPane extends StackPane {
 
     public BackGroundPane(){
         super();
-        super.setPrefSize(1000,800);
+        super.setPrefSize(1010,800);
         super.setAlignment(Pos.TOP_LEFT);
         initBackGroundPane();
         super.getChildren().addAll(gamePane.getGamePane(), menu.getMenuArea());
@@ -22,6 +22,9 @@ public class BackGroundPane extends StackPane {
 
     public Menu getMenu(){
         return this.menu;
+    }
+    public GamePane getGamePane(){
+        return this.gamePane;
     }
 
     private void initBackGroundPane(){
