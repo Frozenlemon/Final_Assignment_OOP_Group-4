@@ -12,9 +12,20 @@ public class Player {
         horses = new Horse[4];
     }
 
+    public boolean isHuman(){
+        return false;
+    }
+
     //getter and setter here
+    public int getColorCode(){
+        return colorCode;
+    }
 
     public Horse getHorse(int id){
         return horses[id];
+    }
+
+    public void autoMove(){
+
     }
 }

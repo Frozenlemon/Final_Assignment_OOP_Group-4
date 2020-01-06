@@ -44,7 +44,6 @@ public class Menu {
         if (id == 0) {
             return dice1;
         }
-
         return dice2;
     }
 

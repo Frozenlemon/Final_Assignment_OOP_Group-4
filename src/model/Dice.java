@@ -6,6 +6,7 @@ public class Dice {
     private static int diceCounter = 0;
     private int id;
     private int value;
+    private boolean isUsed;
 
     public Dice(){
         this.id = diceCounter;
@@ -21,5 +22,10 @@ public class Dice {
     public void roll(){
         Random rand = new Random();
         value = rand.nextInt(6) + 1;
+        isUsed = false;
+    }
+
+    public void setUsed(boolean status){
+        this.isUsed = status;
     }
 }
