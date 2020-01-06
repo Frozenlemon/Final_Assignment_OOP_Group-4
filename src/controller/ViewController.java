@@ -2,8 +2,10 @@ package controller;
 
 import javafx.beans.NamedArg;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import model.Horse;
+import util.FileIO;
 import view.BackGroundPane;
 
 public class ViewController {
@@ -30,6 +32,8 @@ public class ViewController {
     public void horseMoveAndKick(@NamedArg("Horse to move") Horse moveHorse, @NamedArg("Horse to kick") Horse kickedHorse){
         int kickedHorseIndex = horseIdConverter(kickedHorse.getId());
         horseMove(moveHorse, moveHorse.getPathIndex());
+        while (inAnimation !=0){};
+        backGroundPane.getGamePane().kickHorse(kickedHorseIndex);
     }
 
     public void horseMove(@NamedArg("Horse to move") Horse horse){
@@ -58,6 +62,11 @@ public class ViewController {
 
     public void update(){
         primaryStage.show();
+    }
+
+    public void updateDice(int value_0, int value_1){
+        backGroundPane.getMenu().getDice(0).setImage(new Image(FileIO.getDiceImage(value_0)));
+        backGroundPane.getMenu().getDice(1).setImage(new Image(FileIO.getDiceImage(value_1)));
     }
 
     public void finishAnimation(){
