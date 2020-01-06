@@ -11,12 +11,14 @@ public class ViewController {
     private static ViewController instance;
     private Stage primaryStage;
     private BackGroundPane backGroundPane;
+    private int inAnimation;
 
     private ViewController(){
         primaryStage = new Stage();
         primaryStage.setTitle("PLACE HOLDER NAME");
         backGroundPane = new BackGroundPane();
         primaryStage.setScene(new Scene(backGroundPane, 1010, 800));
+        inAnimation = 0;
     }
 
     public static ViewController getInstance(){
@@ -26,12 +28,13 @@ public class ViewController {
     }
 
     public void horseMoveAndKick(@NamedArg("Horse to move") Horse moveHorse, @NamedArg("Horse to kick") Horse kickedHorse){
-
+        int kickedHorseIndex = horseIdConverter(kickedHorse.getId());
+        horseMove(moveHorse, moveHorse.getPathIndex());
     }
 
     public void horseMove(@NamedArg("Horse to move") Horse horse){
-        int pathIndex = horseIdConverter(horse.getId());
-        backGroundPane.getGamePane()
+        int horseIndex = horseIdConverter(horse.getId());
+        backGroundPane.getGamePane().moveHorse(horseIndex, horse.getPathIndex(), horse.getMoveCount());
     }
 
     public void highlight_On(String id){
@@ -57,9 +60,17 @@ public class ViewController {
         primaryStage.show();
     }
 
+    public void finishAnimation(){
+        this.inAnimation--;
+    }
+
+    public void startAnimation(){
+        this.inAnimation++;
+    }
+
     private int horseIdConverter(int id){
-        int areaCode = id / 100;
-        int locationOnPath = id % 100;
-        return (areaCode * 12) + locationOnPath;
+        int areaCode = id / 10;
+        int index = id % 10;
+        return (areaCode * 4) + index;
     }
 }
