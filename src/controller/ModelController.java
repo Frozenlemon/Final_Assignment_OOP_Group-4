@@ -1,6 +1,7 @@
 package controller;
 
 import model.Horse;
+import model.Human;
 import model.Player;
 
 import java.util.ArrayList;
@@ -11,7 +12,10 @@ public class ModelController {
     private Player[] players = new Player[NO_OF_PLAYER];
     private ArrayList<Horse> releasedHorses;
 
-    private ModelController(){
+    private ModelController(Human... humans){
+        for (Human human : humans){
+            players[human.getColorCode()] = human;
+        }
         for (int i = 0; i < NO_OF_PLAYER; i++){
             if (players[i] == null)
                 players[i] = new Player(i);
@@ -35,9 +39,9 @@ public class ModelController {
         return null;
     }
 
-    public void updateHorses(Horse horse){
+    public void updateHorses(Horse horse, int pathIndex){
         if (horse.getMoveStatus().equal("kick")){
-            ViewController.getInstance().horseMoveAndKick(horse, checkCollision(horse));
+            ViewController.getInstance().horseMoveAndKick(horse, kickedHorse);
         }
         else{
             ViewController.getInstance().horseMove(horse);
