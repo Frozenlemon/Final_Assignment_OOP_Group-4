@@ -1,9 +1,8 @@
 package view;
 
 import com.sun.scenario.effect.DropShadow;
-import controller.MainController;
+import controller.ViewController;
 import javafx.beans.NamedArg;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
@@ -80,7 +79,7 @@ public class Menu {
     private void mouseHover_On(MouseEvent event){
         if (event.getSource() instanceof Button){
             Button source = (Button) event.getSource();
-            MainController.getInstance().highlight_On(source.getId());
+            ViewController.getInstance().highlight_On(source.getId());
         }
     }
 
@@ -88,7 +87,7 @@ public class Menu {
     private void mouseHover_Off(MouseEvent event){
         if (event.getSource() instanceof Button){
             Button source = (Button) event.getSource();
-            MainController.getInstance().highlight_Off(source.getId());
+            ViewController.getInstance().highlight_Off(source.getId());
         }
     }
 
