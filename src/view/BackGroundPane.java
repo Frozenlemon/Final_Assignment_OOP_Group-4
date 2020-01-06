@@ -51,7 +51,7 @@ public class BackGroundPane extends StackPane {
         gameAreaLoader.setLocation(FileIO.getFXML_URL("GamePane"));
         gameAreaLoader.setController(gamePane);
         loadFXML(gameAreaLoader);
-        gamePane.translate(-100,0);
+        gamePane.init();
     }
 
     private void loadFXML(FXMLLoader loader){
