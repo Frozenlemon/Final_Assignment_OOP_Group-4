@@ -65,7 +65,8 @@ public class GamePane {
             transition.setOnFinished(e -> {
                 moveHorse(horseIndex, newPathIndex, newMoveCount, transition);
                 ViewController.getInstance().finishAnimation();
-                queueTransition.play();
+                if (queueTransition != null)
+                    queueTransition.play();
             });
         }
         else {
