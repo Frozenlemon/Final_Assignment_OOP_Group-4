@@ -16,7 +16,7 @@ public class GamePane {
     private static final int NO_OF_PATHS_IN_BASE = 12;
 
     @FXML
-    private StackPane GamePane, redBase, yellowBase, greenBase, blueBase;
+    private StackPane GamePane, redBase, yellowBase, greenBase, blueBase, imagePane;
     @FXML
     private StackPane blueHorseCage, yellowHorseCage, greenHorseCage, redHorseCage;
     @FXML
@@ -31,10 +31,10 @@ public class GamePane {
     public void init(){
         horses = new ImageView[NO_OF_HORSES];
         for (int i = 0; i < NO_OF_HORSES; i++){
-            horses[i] = (ImageView) GamePane.getChildren().get(9 + i);
+            horses[i] = (ImageView) imagePane.getChildren().get(i);
         }
         for (int i = 0; i < NO_OF_BASE; i++){
-            StackPane base = (StackPane) GamePane.getChildren().get(i * 2);
+            StackPane base = (StackPane) GamePane.getChildren().get(i);
             for (int j = 0; j < NO_OF_PATHS_IN_BASE; j++){
                 int index = (i * 12) + j;
                 paths[index] = (Circle) base.getChildren().get(j);
@@ -52,27 +52,23 @@ public class GamePane {
         GamePane.setTranslateY(y);
     }
 
-    public void moveHorse(int horseIndex, int pathIndex, int moveCount, TranslateTransition queueTransition){
+    public void moveHorse(ImageView horse, int pathIndex, int moveCount, TranslateTransition queueTransition){
         moveCount--;
-        TranslateTransition transition = new TranslateTransition(Duration.seconds(1), horses[horseIndex]);
-        transition.setToX(paths[pathIndex].getCenterX());
-        transition.setToY(paths[pathIndex].getCenterY());
-        ViewController.getInstance().startAnimation();
+        TranslateTransition transition = new TranslateTransition(Duration.seconds(1),horse);
 
-        if (moveCount > 0){
-            int newPathIndex = pathIndex--;
-            int newMoveCount = moveCount;
-            transition.setOnFinished(e -> {
-                moveHorse(horseIndex, newPathIndex, newMoveCount, transition);
-                ViewController.getInstance().finishAnimation();
-                if (queueTransition != null)
-                    queueTransition.play();
-            });
-        }
-        else {
-            transition.setOnFinished(e -> ViewController.getInstance().finishAnimation());
+        transition.setToX(paths[pathIndex].getTranslateX() + 10);
+        transition.setToY(paths[pathIndex].getTranslateY());
+
+        pathIndex--;
+        transition.setOnFinished(e -> {
+            if (queueTransition != null)
+                queueTransition.play();
+        });
+
+        if (moveCount > 0)
+            moveHorse(horse, pathIndex, moveCount, transition);
+        else
             transition.play();
-        }
     }
 
     public void kickHorse(int horseIndex){
