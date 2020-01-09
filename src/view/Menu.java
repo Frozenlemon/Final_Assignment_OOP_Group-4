@@ -3,6 +3,7 @@ package view;
 import com.sun.scenario.effect.DropShadow;
 import controller.ViewController;
 import javafx.beans.NamedArg;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
@@ -21,6 +22,7 @@ public class Menu {
     @FXML
     private ImageView dice1, dice2;
 
+    private PlaySound music_play;
     public Menu() {
     }
 
@@ -88,6 +90,12 @@ public class Menu {
             Button source = (Button) event.getSource();
             ViewController.getInstance().highlight_Off(source.getId());
         }
+    }
+
+    @FXML
+    public void playsound(ActionEvent event){
+        String status = music_play.changeStatus();
+        musicButton.setText(status);
     }
 
 }
