@@ -1,0 +1,15 @@
+.button{
+    -fx-background-color: lightseagreen;
+    -fx-background-color: lightseagreen;
+    -fx-border: 2px solid #4CAF50;
+    -fx-font-size: 24px;
+    -fx-border-radius:12px;
+    -fx-webkit-transition-duration: 0.4s;
+    -fx-transition-duration: 0.4s;
+    -fx-opacity: 1;
+}
+.button:hover {
+
+    -fx-opacity: 0.5;
+
+}
