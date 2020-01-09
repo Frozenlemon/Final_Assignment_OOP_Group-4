@@ -29,6 +29,10 @@ public class ViewController {
         return instance;
     }
 
+    public int getAnimationCounter(){
+        return inAnimation;
+    }
+
     public void horseMoveAndKick(@NamedArg("Horse to move") Horse moveHorse, @NamedArg("Horse to kick") Horse kickedHorse){
         int kickedHorseIndex = horseIdConverter(kickedHorse.getId());
         horseMove(moveHorse);
@@ -38,7 +42,7 @@ public class ViewController {
 
     public void horseMove(@NamedArg("Horse to move") Horse horse){
         int horseIndex = horseIdConverter(horse.getId());
-        backGroundPane.getGamePane().moveHorse(horseIndex, horse.getPathIndex(), horse.getMoveCount());
+        backGroundPane.getGamePane().moveHorse(horseIndex, horse.getPathIndex(), horse.getMoveCount(),null);
     }
 
     public void highlight_On(String id){

@@ -57,8 +57,9 @@ public class Horse {
         int checkLocationOnPath = locationOnPath;
         int checkCurrentAreaCode = currentAreaCode;
         int checkMoveCount = moveCount;
-        if (checkMoveCount == 1 || checkMoveCount == 6)
+        if (checkMoveCount == 1 || checkMoveCount == 6) {
             return 0;
+        }
         else {
             while (checkMoveCount > 0)
             {
@@ -69,24 +70,24 @@ public class Horse {
                     checkCurrentAreaCode++;
                     if (checkCurrentAreaCode > 3)
                         checkCurrentAreaCode = 0;
-                    if (canBlockOrKick(checkLocationOnPath, checkCurrentAreaCode) == 1)
+                    if (canBlockOrKick(checkLocationOnPath, checkCurrentAreaCode))
                         return 3;
                 }
                 checkMoveCount--;
             }
         }
-        if (canBlockOrKick(checkLocationOnPath, checkCurrentAreaCode) == 1)
+        if (canBlockOrKick(checkLocationOnPath, checkCurrentAreaCode))
             return 2;
         else
             return 1;
     }
 
-    public int canBlockOrKick(int checkLocationMove,int checkAreaCodeMove){
+    public boolean canBlockOrKick(int checkLocationMove,int checkAreaCodeMove){
         for (Horse checkHorse: releasedHorses) {
             if (checkLocationMove == checkHorse.getLocationOnPath() && checkAreaCodeMove == checkHorse.getCurrentAreaCode())
-                return 1;
+                return true;
         }
-        return 0;
+        return false;
     }
 
     public Horse checkCollision(Horse horse){

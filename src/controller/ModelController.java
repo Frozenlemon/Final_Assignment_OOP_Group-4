@@ -46,15 +46,13 @@ public class ModelController {
         focusedHorse = null;
     }
 
-//    public Horse checkCollision(Horse horse){
-//        for (Horse rHorse: releasedHorses){
-//            if (horse.getId() != rHorse.getId()){
-//                if (rHose.getCurrentAreaCode() == horse.getCurrentAreaCode() && rHose.getLocationOnPath() == horse.getLocationOnPath())
-//                    return rHorse;
-//            }
-//        }
-//        return null;
-//    }
+    public int[] getDicesValue(){
+        return new int[]{dices[0].getValue(), dices[1].getValue()};
+    }
+
+    public int getAnimationCount(){
+        return ViewController.getInstance().getAnimationCounter();
+    }
 
     public void updateHorses(Horse horse, Horse kickedHorse){
         if (kickedHorse != null){
@@ -76,8 +74,7 @@ public class ModelController {
     public void moveHorse(int diceId){
         if (focusedHorse != null){
             int moveCount =  dices[diceId].getValue();
-            ;
-            focusedHorse.move(focusedHorse.checkMove(), moveCount);
+            focusedHorse.move(focusedHorse.checkMove(moveCount), moveCount);
         }
     }
 

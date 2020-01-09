@@ -52,9 +52,9 @@ public class GamePane {
         GamePane.setTranslateY(y);
     }
 
-    public void moveHorse(ImageView horse, int pathIndex, int moveCount, TranslateTransition queueTransition){
+    public void moveHorse(int horseIndex, int pathIndex, int moveCount, TranslateTransition queueTransition){
         moveCount--;
-        TranslateTransition transition = new TranslateTransition(Duration.seconds(1),horse);
+        TranslateTransition transition = new TranslateTransition(Duration.seconds(1), horses[horseIndex]);
 
         transition.setToX(paths[pathIndex].getTranslateX() + 10);
         transition.setToY(paths[pathIndex].getTranslateY());
@@ -66,7 +66,7 @@ public class GamePane {
         });
 
         if (moveCount > 0)
-            moveHorse(horse, pathIndex, moveCount, transition);
+            moveHorse(horseIndex, pathIndex, moveCount, transition);
         else
             transition.play();
     }
