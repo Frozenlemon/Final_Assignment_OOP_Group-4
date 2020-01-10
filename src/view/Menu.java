@@ -2,6 +2,7 @@ package view;
 
 import com.sun.scenario.effect.DropShadow;
 import controller.ViewController;
+import controllerSound.PlaySound;
 import javafx.beans.NamedArg;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
