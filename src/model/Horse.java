@@ -18,6 +18,15 @@ public class Horse {
     }
 
     //getter and setter here{
+    public void setter(){
+        for (int i = 0; i < 4; i++){
+            id = i * 10;
+            for (int j = 0; j < 4; j ++){
+                id += j;
+                getId();
+            }
+        }
+    }
 
     public int getId(){
         return this.id;
@@ -26,7 +35,7 @@ public class Horse {
     public int getPathIndex(){
         //return an int represent the index of the path in the view. The format of the index is a 3 digit integer where
         // the 1st index is the multiple of 12 and the currentAreaCode and the remain 2 digit is the locationOnPath
-        return -1;
+        return currentAreaCode * 100 + locationOnPath;
     }
 
     public int getMoveCount(){
@@ -47,18 +56,19 @@ public class Horse {
                 ModelController.getInstance().updateHorses(this, null);
             }
         }
-        if (moveStatus == 0){
-
-        }
     }
 
-    //If horse can exit the starting area return 0, if horse can move return 1, if horse can kick return 2, if horse cant do anything return 3
+    //If horse can exit and kick return 4, if horse can exit return 3, if horse can move and kick return 2, if horse can move return 1, if horse cant do anything return 0
     public int checkMove(int moveCount){
         int checkLocationOnPath = locationOnPath;
         int checkCurrentAreaCode = currentAreaCode;
         int checkMoveCount = moveCount;
-        if (checkMoveCount == 1 || checkMoveCount == 6)
-            return 0;
+        if (checkMoveCount == 1 || checkMoveCount == 6) {
+            if (canBlockOrKick(checkLocationOnPath, checkCurrentAreaCode))
+                return 4;
+            else
+                return 3;
+        }
         else {
             while (checkMoveCount > 0)
             {
@@ -69,24 +79,24 @@ public class Horse {
                     checkCurrentAreaCode++;
                     if (checkCurrentAreaCode > 3)
                         checkCurrentAreaCode = 0;
-                    if (canBlockOrKick(checkLocationOnPath, checkCurrentAreaCode) == 1)
-                        return 3;
+                    if (canBlockOrKick(checkLocationOnPath, checkCurrentAreaCode))
+                        return 0;
                 }
                 checkMoveCount--;
             }
         }
-        if (canBlockOrKick(checkLocationOnPath, checkCurrentAreaCode) == 1)
+        if (canBlockOrKick(checkLocationOnPath, checkCurrentAreaCode))
             return 2;
         else
             return 1;
     }
 
-    public int canBlockOrKick(int checkLocationMove,int checkAreaCodeMove){
+    public boolean canBlockOrKick(int checkLocationMove,int checkAreaCodeMove){
         for (Horse checkHorse: releasedHorses) {
             if (checkLocationMove == checkHorse.getLocationOnPath() && checkAreaCodeMove == checkHorse.getCurrentAreaCode())
-                return 1;
+                return true;
         }
-        return 0;
+        return false;
     }
 
     public Horse checkCollision(Horse horse){
