@@ -14,10 +14,10 @@ public class SoundController {
     public static final int STATUS_STOP = 2;
     public static final String SOUND_ON = "Sound on";
     public static final String SOUND_OFF = "Sound off";
-    public static SoundController intstance;
+    public static SoundController instance;
 
     private boolean status;
-    private MediaPlayer backgroundPlayer, releaseHorse, horseMove, rollDice;
+    private MediaPlayer backgroundPlayer, releaseHorsePlayer, horseMovePlayer, rollDicePlayer;
 
 
     private SoundController(){
@@ -27,6 +27,12 @@ public class SoundController {
         Media media = new Media(FileIO.getMusicFile("insert file name here"));
 
         backgroundPlayer = new MediaPlayer(media);
+    }
+
+    public static SoundController getInstance(){
+        if (instance == null)
+            instance = new SoundController();
+        return instance;
     }
 
     public String changeStatus(){
