@@ -46,15 +46,6 @@ public class ModelController {
         focusedHorse = null;
     }
 
-//    public Horse checkCollision(Horse horse){
-//        for (Horse rHorse: releasedHorses){
-//            if (horse.getId() != rHorse.getId()){
-//                if (rHose.getCurrentAreaCode() == horse.getCurrentAreaCode() && rHose.getLocationOnPath() == horse.getLocationOnPath())
-//                    return rHorse;
-//            }
-//        }
-//        return null;
-//    }
 
     public void updateHorses(Horse horse, Horse kickedHorse){
         if (kickedHorse != null){
