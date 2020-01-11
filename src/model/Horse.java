@@ -5,26 +5,35 @@ import controller.ModelController;
 import java.util.ArrayList;
 
 public class Horse {
-    private ArrayList<Horse> releasedHorses;
+    private ArrayList<Horse> releasedHorses = new ArrayList<Horse>();
     private int id, currentAreaCode, locationOnPath, moveCount;
 
     //id format ** (color, number of horse)
-    public Horse(int id){
+    public void Horse(int id){
         this.id = id;
         currentAreaCode = -1;
         locationOnPath = -1;
-        releasedHorses = new ArrayList<>();
+        //releasedHorses = new ArrayList<>();
         moveCount = 0;
     }
 
     //getter and setter here{
     public void setter(){
+        ArrayList<Integer> ID = new ArrayList<>();
+        int identification;
         for (int i = 0; i < 4; i++){
-            id = i * 10;
             for (int j = 0; j < 4; j ++){
-                id += j;
-                getId();
+                identification = 0;
+                identification = i * 10 +j;
+                ID.add(identification);
+                Horse(identification);
             }
+        }
+
+        for (int i = 0; i < ID.size(); i++) {
+            Horse hor = new Horse();
+            hor.Horse(ID.get(i));
+            releasedHorses.add(hor);
         }
     }
 
