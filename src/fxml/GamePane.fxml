@@ -9,10 +9,10 @@
 
 <StackPane fx:id="gamePane" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <StackPane fx:id="blueBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" translateX="-150.0" translateY="-250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-            <children>
-                <Circle fx:id="b0" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="375.0" StackPane.alignment="TOP_LEFT" />
-                <Circle fx:id="b1" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="5.0" translateX="250.0" StackPane.alignment="TOP_LEFT">
+		<StackPane fx:id="circleBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" translateX="-150.0" translateY="-250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+			<children>
+				<Circle fx:id="b0" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="375.0"  StackPane.alignment="TOP_LEFT"/>
+                <Circle fx:id="b1" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="5.0" translateX="250.0">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
@@ -63,6 +63,156 @@
                         <Insets />
                     </StackPane.margin>
                 </Circle>
+				<Circle fx:id="y0" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateY="375.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="y1" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="5.0" translateY="500.0" StackPane.alignment="TOP_LEFT"/>
+                <Circle fx:id="y2" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="50.0" translateY="500.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="y3" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="100.0" translateY="500.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="y4" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="150.0" translateY="500.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="y5" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="500.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="y6" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="500.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="y7" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="550.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="y8" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="600.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="y9" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="650.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="y10" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="700.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="y11" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="750.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+				
+				<Circle fx:id="g0" fill="#f8f8f8" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="500.0" translateY="750.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="g1" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="5.0" translateX="375.0" translateY="750.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="g2" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="500.0" translateY="700.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="g3" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="500.0" translateY="650.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="g4" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="500.0" translateY="600.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="g5" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="500.0" translateY="550.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="g6" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="500.0"  translateY="500.0"  StackPane.alignment="TOP_LEFT"/>
+                <Circle fx:id="g7" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="550.0"  translateY="500.0" StackPane.alignment="TOP_LEFT"/>
+                <Circle fx:id="g8" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="600.0"  translateY="500.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="g9" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="650.0" translateY="500.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="g10" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="700.0" translateY="500.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="g11" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="750.0" translateY="500.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+				
+				<Circle fx:id="r0" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="750.0" translateY="375.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="r1" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="5.0" translateX="750.0" translateY="250.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="r2" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="700.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="r3" fill="#f8f8f8" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="650.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="r4" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="600.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="r5" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="550.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="r6" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="500.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="r7" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="500.0" translateY="200.0" StackPane.alignment="TOP_LEFT"/>
+                <Circle fx:id="r8" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="500.0" translateY="150.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="r9" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="500.0" translateY="100.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="r10" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="500.0" translateY="50.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+                <Circle fx:id="r11" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="500.0" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </Circle>
+			</children>
+		</StackPane>
+        <StackPane fx:id="blueBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" translateX="-150.0" translateY="-250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+            <children>
                 <StackPane fx:id="blueInitial" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="240.0" StackPane.alignment="TOP_LEFT">
                     <children>
                   <Circle fx:id="blueInitial0" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="60.0" translateY="70.0" StackPane.alignment="TOP_LEFT" />
@@ -72,7 +222,7 @@
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="240.0" StackPane.alignment="TOP_LEFT" />
                         <Circle fill="WHITE" radius="80.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="40.0" translateY="40.0" StackPane.alignment="TOP_LEFT" />
                     </children>
-                </StackPane>
+                </StackPane>				
             </children>
         </StackPane>
         <StackPane fx:id="blueHorseCages" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="125.0" rotate="180.0" translateY="-212.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
@@ -143,58 +293,6 @@
         </StackPane>
         <StackPane fx:id="yellowBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" translateX="-250.0" translateY="150.0">
             <children>
-                <Circle fx:id="y0" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateY="75.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="y1" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="5.0" translateY="200.0" StackPane.alignment="TOP_LEFT" />
-                <Circle fx:id="y2" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="50.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="y3" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="100.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="y4" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="150.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="y5" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="y6" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="y7" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="250.0" StackPane.alignment="TOP_LEFT" />
-                <Circle fx:id="y8" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="300.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="y9" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="350.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="y10" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="400.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="y11" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="450.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
                 <StackPane fx:id="yellowInitial" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="240.0" translateY="260.0" StackPane.alignment="TOP_LEFT">
                     <children>
                   <Circle fx:id="yellowInitial0" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="60.0" translateY="70.0" StackPane.alignment="TOP_LEFT" />
@@ -265,50 +363,7 @@
         </StackPane>
         <StackPane fx:id="greenBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" translateX="150.0" translateY="250.0">
             <children>
-                <Circle fx:id="g0" fill="#f8f8f8" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="75.0" translateY="250.0" StackPane.alignment="TOP_LEFT" />
-                <Circle fx:id="g1" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="5.0" translateX="200.0" translateY="250.0" StackPane.alignment="TOP_LEFT" />
-                <Circle fx:id="g2" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="200.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="g3" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="150.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="g4" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="100.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="g5" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="50.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="g6" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" StackPane.alignment="TOP_LEFT" />
-                <Circle fx:id="g7" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" StackPane.alignment="TOP_LEFT" />
-                <Circle fx:id="g8" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="300.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="g9" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="350.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="g10" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="400.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="g11" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="450.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
+                
                 <StackPane fx:id="greenInitial" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="240.0" translateX="260.0" translateY="60.0" StackPane.alignment="TOP_LEFT">
                     <children>
                   <Circle fx:id="greenInitial0" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="60.0" translateY="70.0" StackPane.alignment="TOP_LEFT" />
@@ -393,54 +448,7 @@
         </StackPane>
         <StackPane fx:id="redBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" translateX="250.0" translateY="-150.0">
             <children>
-                <Circle fx:id="r0" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="250.0" translateY="375.0" StackPane.alignment="TOP_LEFT" />
-                <Circle fx:id="r1" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="5.0" translateX="250.0" translateY="250.0" StackPane.alignment="TOP_LEFT" />
-                <Circle fx:id="r2" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="200.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="r3" fill="#f8f8f8" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="150.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="r4" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="100.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="r5" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="50.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="r6" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="r7" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateY="200.0" StackPane.alignment="TOP_LEFT" />
-                <Circle fx:id="r8" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateY="150.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="r9" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateY="100.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="r10" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateY="50.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
-                <Circle fx:id="r11" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="TOP_LEFT">
-                    <StackPane.margin>
-                        <Insets />
-                    </StackPane.margin>
-                </Circle>
+                
                 <StackPane fx:id="redInitial" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="240.0" translateX="60.0" StackPane.alignment="TOP_LEFT">
                     <children>
                   <Circle fx:id="redInitial0" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="60.0" translateY="70.0" />
