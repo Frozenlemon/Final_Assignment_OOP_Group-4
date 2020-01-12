@@ -32,6 +32,12 @@ public class ModelController {
         return instance;
     }
 
+    public static ModelController getInstance(Human... humans){
+        if (instance == null)
+            instance = new ModelController(humans);
+        return instance;
+    }
+
     private void initVariable(Human... humans){
         players = new Player[NO_OF_PLAYER];
         for (Human human : humans){

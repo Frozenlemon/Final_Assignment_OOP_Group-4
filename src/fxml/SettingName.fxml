@@ -1,43 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.TextField?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.SettingName">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SettingNameController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.94" pickOnBounds="true">
+      <ImageView fitHeight="587.0" fitWidth="753.0" layoutX="-76.0" layoutY="-95.0" opacity="0.94" pickOnBounds="true">
          <image>
-            <Image url="@Images/9961574%20(1)%202.JPG" />
+            <Image url="@Images/background2.JPG" />
          </image>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="186.0" layoutX="33.0" layoutY="244.0" pickOnBounds="true">
+      <ImageView fx:id="imgBlue" fitHeight="30.0" fitWidth="186.0" layoutX="33.0" layoutY="244.0" pickOnBounds="true">
          <image>
             <Image url="@Images/Blue.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="186.0" layoutX="33.0" layoutY="72.0" pickOnBounds="true">
-         <image>
-            <Image url="@Images/red.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="186.0" layoutX="33.0" layoutY="126.0" pickOnBounds="true">
+      <ImageView fx:id="imgGreen" fitHeight="30.0" fitWidth="186.0" layoutX="33.0" layoutY="126.0" pickOnBounds="true">
          <image>
             <Image url="@Images/Green.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="186.0" layoutX="33.0" layoutY="185.0" pickOnBounds="true">
+      <ImageView fx:id="imgYellow" fitHeight="30.0" fitWidth="186.0" layoutX="33.0" layoutY="185.0" pickOnBounds="true">
          <image>
             <Image url="@Images/yellow.jpg" />
          </image>
       </ImageView>
-      <TextField layoutX="325.0" layoutY="74.0" />
-      <TextField layoutX="325.0" layoutY="187.0" />
-      <TextField layoutX="325.0" layoutY="128.0" />
-      <TextField layoutX="325.0" layoutY="246.0" />
-      <Button layoutX="424.0" layoutY="293.0" mnemonicParsing="false" text="Continue" />
+      <TextField  fx:id="txtRedName" layoutX="325.0" layoutY="74.0" />
+      <TextField  fx:id="txtGreenName" layoutX="325.0" layoutY="187.0" />
+      <TextField  fx:id="txtYellowName" layoutX="325.0" layoutY="128.0" />
+      <TextField  fx:id="txtBlueName" layoutX="325.0" layoutY="246.0" />
+      <Button onAction="#continueGame" layoutX="424.0" layoutY="293.0" mnemonicParsing="false" text="Continue" />
       <Button layoutX="80.0" layoutY="293.0" mnemonicParsing="false" text="Back" />
+      <Label layoutX="197.0" layoutY="25.0" prefHeight="17.0" prefWidth="301.0" text="Choose Color &amp; Enter Your Name" textFill="#0a0a0a" textOverrun="CLIP">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imgRed" fitHeight="30.0" fitWidth="186.0" layoutX="33.0" layoutY="73.0" pickOnBounds="true">
+         <image>
+            <Image url="@Images/red.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
