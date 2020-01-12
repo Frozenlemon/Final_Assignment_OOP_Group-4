@@ -77,7 +77,7 @@ public class ModelController {
         if (focusedHorse != null){
             int moveCount =  dices[diceId].getValue();
             ;
-            focusedHorse.move(focusedHorse.checkMove(), moveCount);
+            //focusedHorse.move(focusedHorse.checkMove(), moveCount);
         }
     }
 
