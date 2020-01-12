@@ -9,9 +9,11 @@ public class Dice {
     private boolean isUsed;
 
     public Dice(){
-        this.id = diceCounter;
-        roll();
-        diceCounter++;
+        if(diceCounter < 2) {
+            this.id = diceCounter;
+            roll();
+            diceCounter++;
+        }
     }
 
     public int getId(){ return id; }
@@ -27,5 +29,9 @@ public class Dice {
 
     public void setUsed(boolean status){
         this.isUsed = status;
+    }
+
+    public boolean isUsed(){
+        return isUsed;
     }
 }
