@@ -5,7 +5,9 @@ import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
 import javafx.beans.NamedArg;
 import javafx.fxml.FXML;
+import javafx.scene.effect.Effect;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
@@ -83,6 +85,14 @@ public class GamePane {
         rotateTransition.play();
     }
 
+    public void change_Horse_Highlight(@NamedArg("Horse Index") int horseIndex){
+        if (horses[horseIndex].getEffect() == null)
+            horses[horseIndex].setEffect(new javafx.scene.effect.Bloom());
+        else
+            horses[horseIndex].setEffect(null);
+    }
+
+
     private double[] getInitialCoordinate(int index){
         double[] coordinate = new double[2];
         switch (index){
@@ -154,4 +164,18 @@ public class GamePane {
         return coordinate;
     }
 
+    private int getHorseIndex(ImageView horse){
+        for (int i = 0; i < NO_OF_HORSES; i++){
+            if(horse.getId().equals(horses[i].getId()))
+                return i;
+        }
+        return -1;
+    }
+
+    @FXML
+    private void clickOnHorse(MouseEvent evt){
+        ImageView horse = (ImageView) evt.getSource();
+        int horseIndex = getHorseIndex(horse);
+        ViewController.getInstance().clickOnHorse(horseIndex);
+    }
 }

@@ -4,27 +4,19 @@ import model.Dice;
 import model.Horse;
 import model.Human;
 import model.Player;
-
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.util.ArrayList;
-import java.util.List;
+import util.Converter;
 
 public class ModelController {
     private static final int NO_OF_PLAYER = 4;
-    private final List<PropertyChangeListener> LISTENERS = new ArrayList<>();
     private static ModelController instance;
 
     private Player[] players;
     private int playerTurn;
     private Dice[] dices;
     private Horse focusedHorse;
+    private boolean hasRolled;
 
-    private ModelController(Human... humans){
-        initVariable(humans);
-        initListener();
-        nextPlayer();
-    }
+    private ModelController(){}
 
     public static ModelController getInstance(){
         if (instance == null)
@@ -50,6 +42,7 @@ public class ModelController {
         playerTurn = -1;
         dices = new Dice[2];
         focusedHorse = null;
+        hasRolled = false;
     }
 
 //    public Horse checkCollision(Horse horse){
@@ -71,12 +64,20 @@ public class ModelController {
         }
     }
 
-    public void selectHorse(int horseIndex){
-        int[] idCode = horseIndexToIdConverter(horseIndex);
+    public boolean selectHorse(int horseIndex){
+        int[] idCode = Converter.getColorCodeFromId(horseIndex);
         Player player = players[playerTurn];
         if (idCode[0] == player.getColorCode()){
             focusedHorse = player.getHorse(idCode[1]);
+            return true;
         }
+        return false;
+    }
+
+    public void deselectHorse(){
+        if (focusedHorse != null)
+            ViewController.getInstance().setHorse_Highlight(focusedHorse.getId());
+        focusedHorse = null;
     }
 
     public void moveHorse(int diceId){
@@ -88,43 +89,43 @@ public class ModelController {
     }
 
     public void rollDice(){
-        for (int i = 0; i < dices.length; i++){
-            dices[i].roll();
+        if (!hasRolled) {
+            for (int i = 0; i < dices.length; i++) {
+                dices[i].roll();
+            }
+            ViewController.getInstance().updateDice(dices[0].getValue(), dices[1].getValue());
+            hasRolled = true;
+            if (!canMove())
+                nextPlayer();
         }
-        ViewController.getInstance().updateDice(dices[0].getValue(), dices[1].getValue());
     }
 
-    private int[] horseIndexToIdConverter(int horseIndex){
-        int[] idCode = new int[2];
-        idCode[0] = horseIndex / 4;
-        idCode[1] = horseIndex % 4;
-        return idCode;
+    private boolean canMove(){
+        for (int i = 0; i < 2; i++){
+            Dice dice = dices[i];
+            if (!dice.isUsed()){
+                for (int j = 0; j < 4; j++){
+                    if (players[playerTurn].getHorse(j).checkMove(dice.getValue()) != 0)
+                        return true;
+                }
+            }
+        }
+        return false;
     }
 
     private void nextPlayer(){
-        int oldValue = playerTurn;
+        resetDices();
         playerTurn++;
+        deselectHorse();
         if (playerTurn > 3)
             playerTurn = 0;
-        setPropertiesChange("playerTurn", oldValue, playerTurn);
+        if (!players[playerTurn].isHuman())
+            players[playerTurn].autoMove();
     }
 
-    private void addPropertiesChangeListener(PropertyChangeListener listener){
-        LISTENERS.add(listener);
-    }
-
-    private void setPropertiesChange(String property, Object oldValue, Object newValue){
-        for (PropertyChangeListener listener : LISTENERS){
-            listener.propertyChange(new PropertyChangeEvent(this, property, oldValue, newValue));
-        }
-    }
-
-    private void initListener(){
-        this.addPropertiesChangeListener(evt -> {
-            int playerIndex = (int) evt.getNewValue();
-            Player player = players[playerIndex];
-            if (!player.isHuman())
-                player.autoMove();
-        });
+    private void resetDices(){
+        for (Dice dice : dices)
+            dice.setUsed(false);
+        hasRolled = false;
     }
 }
