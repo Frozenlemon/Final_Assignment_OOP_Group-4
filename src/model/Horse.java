@@ -1,40 +1,33 @@
 package model;
 
 import controller.ModelController;
+import util.Converter;
 
 import java.util.ArrayList;
 
 public class Horse {
-    private ArrayList<Horse> releasedHorses = new ArrayList<Horse>();
-    private int id, currentAreaCode, locationOnPath, moveCount;
+    private static ArrayList<Horse> releasedHorses = new ArrayList<>();
+    private int id, currentAreaCode, locationOnPath, moveCount, homeOnPath;
 
-    //id format ** (color, number of horse)
-    public void Horse(int id){
+    public Horse(int id){
         this.id = id;
         currentAreaCode = -1;
         locationOnPath = -1;
-        //releasedHorses = new ArrayList<>();
+        homeOnPath = -1;
         moveCount = 0;
     }
 
-    //getter and setter here{
-    public void setter(){
-        ArrayList<Integer> ID = new ArrayList<>();
-        int identification;
-        for (int i = 0; i < 4; i++){
-            for (int j = 0; j < 4; j ++){
-                identification = 0;
-                identification = i * 10 +j;
-                ID.add(identification);
-                Horse(identification);
-            }
-        }
+    public void setExitHorseLocation(){
+        this.currentAreaCode = Converter.getColorCodeFromId(id)[0];
+        this.locationOnPath = 1;
+        releasedHorses.add(this);
+    }
 
-        for (int i = 0; i < ID.size(); i++) {
-            Horse hor = new Horse();
-            hor.Horse(ID.get(i));
-            releasedHorses.add(hor);
-        }
+    private void setKickedHorse(Horse kickedHorse){
+        releasedHorses.remove(kickedHorse);
+        kickedHorse.currentAreaCode = -1;
+        kickedHorse.locationOnPath = -1;
+        kickedHorse.homeOnPath = -1;
     }
 
     public int getId(){
@@ -42,8 +35,6 @@ public class Horse {
     }
 
     public int getPathIndex(){
-        //return an int represent the index of the path in the view. The format of the index is a 3 digit integer where
-        // the 1st index is the multiple of 12 and the currentAreaCode and the remain 2 digit is the locationOnPath
         return currentAreaCode * 100 + locationOnPath;
     }
 
@@ -53,25 +44,37 @@ public class Horse {
 
     public void move(int moveStatus, int moveCount){
         this.moveCount = moveCount;
-        if (moveStatus == 1 || moveStatus == 2)
+        //Move or move and kick horse
+        if (moveStatus == 1 || moveStatus == 2 || moveStatus == 3 || moveCount == 4)
         {
-            setNewHorseLocation();
+            //set location of move and move kick
+            if (moveStatus == 1 || moveStatus == 2)
+                setNewHorseLocation();
+            else
+                //set location of exit exit kick
+                if (moveStatus == 3 || moveStatus == 4)
+                    setExitHorseLocation();
             //call the function updateHorses in ModelController
-            if (moveStatus == 2){
+            if (moveStatus == 2 || moveStatus == 4){
                 Horse colliedHorse = checkCollision(this);
                 ModelController.getInstance().updateHorses(this, colliedHorse);
+                setKickedHorse(colliedHorse);
             }
-            else{
+            else
+                if (moveStatus == 1 || moveStatus == 3){
                 ModelController.getInstance().updateHorses(this, null);
             }
         }
     }
 
-    //If horse can exit and kick return 4, if horse can exit return 3, if horse can move and kick return 2, if horse can move return 1, if horse cant do anything return 0
+    //If horse can reach to home return 5, if horse can exit and kick return 4, if horse can exit return 3, if horse can move and kick return 2, if horse can move return 1, if horse cant do anything return 0
     public int checkMove(int moveCount){
         int checkLocationOnPath = locationOnPath;
         int checkCurrentAreaCode = currentAreaCode;
+        int checkHomeOnPath = homeOnPath;
         int checkMoveCount = moveCount;
+        //if (checkHomeOnPath == 0)
+
         if (checkMoveCount == 1 || checkMoveCount == 6) {
             if (canBlockOrKick(checkLocationOnPath, checkCurrentAreaCode))
                 return 4;
