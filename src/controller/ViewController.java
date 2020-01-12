@@ -38,7 +38,7 @@ public class ViewController {
 
     public void horseMove(@NamedArg("Horse to move") Horse horse){
         int horseIndex = horseIdConverter(horse.getId());
-        backGroundPane.getGamePane().moveHorse(horseIndex, horse.getPathIndex(), horse.getMoveCount());
+//        backGroundPane.getGamePane().moveHorse(horseIndex, horse.getPathIndex(), horse.getMoveCount());
     }
 
     public void highlight_On(String id){

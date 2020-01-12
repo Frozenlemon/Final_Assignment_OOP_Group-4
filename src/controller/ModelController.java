@@ -39,6 +39,15 @@ public class ModelController {
         hasRolled = false;
     }
 
+//    public Horse checkCollision(Horse horse){
+//        for (Horse rHorse: releasedHorses){
+//            if (horse.getId() != rHorse.getId()){
+//                if (rHose.getCurrentAreaCode() == horse.getCurrentAreaCode() && rHose.getLocationOnPath() == horse.getLocationOnPath())
+//                    return rHorse;
+//            }
+//        }
+//        return null;
+//    }
 
     public void updateHorses(Horse horse, Horse kickedHorse){
         if (kickedHorse != null){
@@ -68,8 +77,8 @@ public class ModelController {
     public void moveHorse(int diceId){
         if (focusedHorse != null){
             int moveCount =  dices[diceId].getValue();
-            int moveStatus = focusedHorse.checkMove(moveCount);
-            focusedHorse.move(focusedHorse.checkMove(moveStatus), moveCount);
+            ;
+            //focusedHorse.move(focusedHorse.checkMove(), moveCount);
         }
     }
 
