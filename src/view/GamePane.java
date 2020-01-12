@@ -13,10 +13,10 @@ import javafx.util.Duration;
 public class GamePane {
     private static final int NO_OF_HORSES = 16;
     private static final int NO_OF_BASE = 4;
-    private static final int NO_OF_PATHS_IN_BASE = 12;
+    private static final int NO_OF_PATHS = 48;
 
     @FXML
-    private StackPane GamePane, redBase, yellowBase, greenBase, blueBase, imagePane;
+    private StackPane GamePane, imagePane, circleBase;
     @FXML
     private StackPane blueHorseCage, yellowHorseCage, greenHorseCage, redHorseCage;
     @FXML
@@ -33,12 +33,8 @@ public class GamePane {
         for (int i = 0; i < NO_OF_HORSES; i++){
             horses[i] = (ImageView) imagePane.getChildren().get(i);
         }
-        for (int i = 0; i < NO_OF_BASE; i++){
-            StackPane base = (StackPane) GamePane.getChildren().get(i);
-            for (int j = 0; j < NO_OF_PATHS_IN_BASE; j++){
-                int index = (i * 12) + j;
-                paths[index] = (Circle) base.getChildren().get(j);
-            }
+        for (int i = 0; i < NO_OF_PATHS; i++){
+            paths[i] = (Circle) circleBase.getChildren().get(i);
         }
         translate(-100,0);
     }
