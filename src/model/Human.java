@@ -11,6 +11,11 @@ public class Human extends Player {
         this.score = 0;
     }
 
+    @Override
+    public boolean isHuman(){
+        return true;
+    }
+
     public void changeScore(int value){
         this.score += value;
     }
