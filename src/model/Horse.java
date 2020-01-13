@@ -35,7 +35,7 @@ public class Horse {
     }
 
     public int getPathIndex(){
-        return currentAreaCode * 100 + locationOnPath;
+        return currentAreaCode * 12 + locationOnPath;
     }
 
     public int getMoveCount(){
