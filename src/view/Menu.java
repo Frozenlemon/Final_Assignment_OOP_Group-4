@@ -100,11 +100,7 @@ public class Menu {
         }
     }
 
-
-    @FXML
-    public void playSound(ActionEvent event){
-        String status = music_play.changeStatus();
-        musicButton.setText(status);
+    
     private void clickOnDice(MouseEvent evt){
         Button button = (Button) evt.getSource();
         int diceId;
