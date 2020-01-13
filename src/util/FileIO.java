@@ -34,6 +34,6 @@ public class FileIO {
     }
 
     public static String getDiceImage(int value){
-        return new File(PATH_TO_IMAGE + "diceImage" + File.separator + value + ".png").toString();
+        return PATH_TO_IMAGE + "diceImages" + File.separator + value + ".png";
     }
 }
