@@ -75,9 +75,8 @@ public class ModelController {
         }
     }
 
-    public int[] getAllDiceValue(){
-        int[] values = new int[]{dices[0].getValue(), dices[1].getValue()};
-        return values;
+    public Dice[] getAllDice(){
+        return dices;
     }
 
     public void rollDice(){
