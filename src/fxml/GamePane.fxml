@@ -209,22 +209,22 @@
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-            <Circle fx:id="i0" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="70.0" translateY="60.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i1" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="70.0" translateY="150.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i2" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="140.0" translateY="60.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i3" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="140.0" translateY="150.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i4" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="70.0" translateY="620.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i5" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="70.0" translateY="710.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i6" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="140.0" translateY="620.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i7" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="140.0" translateY="710.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i8" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="630.0" translateY="620.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i9" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="630.0" translateY="710.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i10" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="700.0" translateY="620.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i11" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="700.0" translateY="710.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i12" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="630.0" translateY="60.0" />
-            <Circle fx:id="i13" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="630.0" translateY="150.0" />
-            <Circle fx:id="i14" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="700.0" translateY="60.0" />
-            <Circle fx:id="i15" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="700.0" translateY="150.0" />
+            <Circle fx:id="i0" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="70.0" translateY="40.0" StackPane.alignment="TOP_LEFT" />
+            <Circle fx:id="i1" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="70.0" translateY="130.0" StackPane.alignment="TOP_LEFT" />
+            <Circle fx:id="i2" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="140.0" translateY="40.0" StackPane.alignment="TOP_LEFT" />
+            <Circle fx:id="i3" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="140.0" translateY="130.0" StackPane.alignment="TOP_LEFT" />
+            <Circle fx:id="i4" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="70.0" translateY="600.0" StackPane.alignment="TOP_LEFT" />
+            <Circle fx:id="i5" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="70.0" translateY="690.0" StackPane.alignment="TOP_LEFT" />
+            <Circle fx:id="i6" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="140.0" translateY="600.0" StackPane.alignment="TOP_LEFT" />
+            <Circle fx:id="i7" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="140.0" translateY="690.0" StackPane.alignment="TOP_LEFT" />
+            <Circle fx:id="i8" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="630.0" translateY="600.0" StackPane.alignment="TOP_LEFT" />
+            <Circle fx:id="i9" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="630.0" translateY="690.0" StackPane.alignment="TOP_LEFT" />
+            <Circle fx:id="i10" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="700.0" translateY="600.0" StackPane.alignment="TOP_LEFT" />
+            <Circle fx:id="i11" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="700.0" translateY="690.0" StackPane.alignment="TOP_LEFT" />
+            <Circle fx:id="i12" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="630.0" translateY="40.0" />
+            <Circle fx:id="i13" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="630.0" translateY="130.0" />
+            <Circle fx:id="i14" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="700.0" translateY="40.0" />
+            <Circle fx:id="i15" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="700.0" translateY="130.0" />
 			</children>
 		</StackPane>
         <StackPane fx:id="blueBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" translateX="-150.0" translateY="-250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
@@ -519,67 +519,67 @@
         </StackPane>
       <StackPane fx:id="imagePane" alignment="TOP_LEFT" prefHeight="800.0" prefWidth="800.0">
          <children>
-            <ImageView fx:id="h0" fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="h0" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/0.png" />
                </image></ImageView>
-            <ImageView fx:id="h1" fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="h1" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/0.png" />
                </image></ImageView>
-            <ImageView fx:id="h2" fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="h2" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/0.png" />
                </image></ImageView>
-            <ImageView fx:id="h3" fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="h3" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/0.png" />
                </image></ImageView>
-            <ImageView fx:id="h4" fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="h4" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/1.png" />
                </image></ImageView>
-            <ImageView fx:id="h5" fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="h5" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/1.png" />
                </image></ImageView>
-            <ImageView fx:id="h6" fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="h6" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/1.png" />
                </image></ImageView>
-            <ImageView fx:id="h7" fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="h7" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/1.png" />
                </image></ImageView>
-            <ImageView fx:id="h8" fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="h8" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/2.png" />
                </image></ImageView>
-            <ImageView fx:id="h9" fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="h9" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/2.png" />
                </image></ImageView>
-            <ImageView fx:id="h10" fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="h10" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/2.png" />
                </image></ImageView>
-            <ImageView fx:id="h11" fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="h11" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/2.png" />
                </image></ImageView>
-            <ImageView fx:id="h12" fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="h12" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/3.png" />
                </image></ImageView>
-            <ImageView fx:id="h13" fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="h13" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/3.png" />
                </image></ImageView>
-            <ImageView fx:id="h14" fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="h14" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/3.png" />
                </image></ImageView>
-            <ImageView fx:id="h15" fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="h15" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/3.png" />
                </image></ImageView>

@@ -13,7 +13,11 @@ public class Player {
 
     public Player(int colorCode) {
         this.colorCode = colorCode;
-        horses = new Horse[4];
+        horses = new Horse[]{
+                new Horse(colorCode*4),
+                new Horse((colorCode*4) + 1),
+                new Horse((colorCode*4) + 2),
+                new Horse((colorCode*4) + 3)};
     }
 
     public boolean isHuman() {

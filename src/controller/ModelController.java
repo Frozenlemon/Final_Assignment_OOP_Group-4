@@ -17,11 +17,12 @@ public class ModelController {
     private boolean hasRolled;
 
     private ModelController(){
-        players = new Player[]{null, null, null, null};
+        players = new Player[NO_OF_PLAYER];
         playerTurn = -1;
         dices = new Dice[]{new Dice(), new Dice()};
         focusedHorse = null;
         hasRolled = false;
+        initVariable(new Human(0, "test"), new Human(3, "test2"));
     }
 
     public static ModelController getInstance(){
@@ -38,6 +39,7 @@ public class ModelController {
             if (players[i] == null)
                 players[i] = new Player(i);
         }
+        nextPlayer();
     }
 
     public int getAnimationCount(){

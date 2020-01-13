@@ -11,6 +11,10 @@ public class Human extends Player {
         this.score = 0;
     }
 
+    public boolean isHuman(){
+        return true;
+    }
+
     public void changeScore(int value){
         this.score += value;
     }

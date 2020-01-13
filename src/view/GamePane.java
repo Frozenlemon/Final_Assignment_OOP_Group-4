@@ -5,6 +5,7 @@ import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
 import javafx.beans.NamedArg;
 import javafx.fxml.FXML;
+import javafx.scene.effect.Bloom;
 import javafx.scene.effect.Effect;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -15,7 +16,6 @@ import model.Horse;
 
 public class GamePane {
     private static final int NO_OF_HORSES = 16;
-    private static final int NO_OF_BASE = 4;
     private static final int NO_OF_PATHS = 48;
 
     @FXML
@@ -57,8 +57,8 @@ public class GamePane {
         moveCount--;
         TranslateTransition transition = new TranslateTransition(Duration.seconds(1), horses[horseIndex]);
 
-        transition.setToX(paths[pathIndex].getTranslateX() + 10);
-        transition.setToY(paths[pathIndex].getTranslateY());
+        transition.setToX(paths[pathIndex].getTranslateX() + 110);
+        transition.setToY(paths[pathIndex].getTranslateY() - 20);
 
         pathIndex--;
         transition.setOnFinished(e -> {
@@ -90,8 +90,12 @@ public class GamePane {
     }
 
     public void change_Horse_Highlight(@NamedArg("Horse Index") int horseIndex){
-        if (horses[horseIndex].getEffect() == null)
-            horses[horseIndex].setEffect(new javafx.scene.effect.Bloom());
+        if (horses[horseIndex].getEffect() == null) {
+            Bloom effect = new javafx.scene.effect.Bloom();
+            effect.setThreshold(0.1);
+            horses[horseIndex].setEffect(effect);
+
+        }
         else
             horses[horseIndex].setEffect(null);
     }
@@ -109,8 +113,8 @@ public class GamePane {
         double[] coordinate = new double[2];
         switch (index){
             case 0:
-                coordinate[0] = i0.getCenterX();
-                coordinate[1] = i0.getCenterY();
+                coordinate[0] = i0.getTranslateX();
+                coordinate[1] = i0.getTranslateY();
                 break;
             case 1:
                 coordinate[0] = i1.getTranslateX();
@@ -173,6 +177,7 @@ public class GamePane {
                 coordinate[1] = i15.getTranslateY();
                 break;
         }
+        coordinate[0] += 100;
         return coordinate;
     }
 
