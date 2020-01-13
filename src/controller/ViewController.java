@@ -35,6 +35,10 @@ public class ViewController {
         //backGroundPane.startGame();
     }
 
+    public int getInAnimation(){
+        return this.inAnimation;
+    }
+
     public void horseMoveAndKick(@NamedArg("Horse to move") Horse moveHorse, @NamedArg("Horse to kick") Horse kickedHorse){
         int kickedHorseIndex = horseIdConverter(kickedHorse.getId());
         horseMove(moveHorse);

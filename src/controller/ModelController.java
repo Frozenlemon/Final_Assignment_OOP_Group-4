@@ -17,8 +17,8 @@ public class ModelController {
     private boolean hasRolled;
 
     private ModelController(){
-        players = new Player[]{null, null, null, null};
-        playerTurn = -1;
+        players = new Player[]{new Human(0, "test"), null, null, null};
+        playerTurn = 0;
         dices = new Dice[]{new Dice(), new Dice()};
         focusedHorse = null;
         hasRolled = false;
@@ -48,6 +48,10 @@ public class ModelController {
         else{
             ViewController.getInstance().horseMove(horse);
         }
+    }
+
+    public int getAnimationCount(){
+        return ViewController.getInstance().getInAnimation();
     }
 
     public boolean selectHorse(int horseIndex){
@@ -110,8 +114,8 @@ public class ModelController {
         deselectHorse();
         if (playerTurn > 3)
             playerTurn = 0;
-        if (!players[playerTurn].isHuman())
-            players[playerTurn].autoMove();
+        if (!players[playerTurn].isHuman()){}
+            //players[playerTurn].autoMove();
     }
 
     private void resetDices(){
