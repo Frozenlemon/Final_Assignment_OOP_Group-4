@@ -1,6 +1,5 @@
 package view;
 
-import com.sun.scenario.effect.DropShadow;
 import controller.ViewController;
 import controllerSound.controllerSound;
 import javafx.beans.NamedArg;
@@ -8,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.effect.Effect;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
@@ -57,26 +57,34 @@ public class Menu {
     }
 
     public void highlightButton_On(@NamedArg("Button type: 0: rollDice, 1: musicButton, 2: stopButton") int type) {
-        /*
-         * function to turn on highlight for a button. Button selected by the type provided in argument
-         */
-        if (type ==0 || type==1 || type ==2){
-        DropShadow shadow = new DropShadow();
-        stopButton.setEffect(new javafx.scene.effect.DropShadow());
+        Effect shadow = new javafx.scene.effect.DropShadow();
+        if (type ==0  || type ==2)
+            rollDice.setEffect(shadow);
+        else if (type==1)
+            musicButton.setEffect(shadow);
+        else
+            stopButton.setEffect(shadow);
 
         System.out.println("highlight on");
-    }}
+    }
 
     public void highlightButton_Off(@NamedArg("Button type: 0: rollDice, 1: musicButton, 2: stopButton") int type) {
-        /*
-         * function to turn off highlight for a button. Button selected by the type provided in argument
-         */
-        if (type ==0 || type==1 || type ==2){
-        getStopButton().setEffect(null);
+        if (type ==0  || type ==2)
+            rollDice.setEffect(null);
+        else if (type==1)
+            musicButton.setEffect(null);
+        else
+            stopButton.setEffect(null);
 
 
         System.out.println("highlight off");
-}}
+    }
+
+    @FXML
+    public void clickRollDice(MouseEvent event){
+        ViewController.getInstance().clickRollDice();
+    }
+
     @FXML
     private void mouseHover_On(MouseEvent event){
         if (event.getSource() instanceof Button){
@@ -94,7 +102,7 @@ public class Menu {
     }
 
     @FXML
-    public void playsound(ActionEvent event){
+    public void playSound(ActionEvent event){
         String status = music_play.changeStatus();
         musicButton.setText(status);
     }
