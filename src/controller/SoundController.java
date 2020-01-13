@@ -24,7 +24,7 @@ public class SoundController {
         status = false;
 
         String path = new File("src\\fxml\\Sound\\doorOpen.mp3").getAbsolutePath();
-        Media media = new Media(FileIO.getMusicFile("insert file name here"));
+        Media media = new Media(FileIO.getMusicFile("backgroundMusic.mp3"));
 
         backgroundPlayer = new MediaPlayer(media);
     }

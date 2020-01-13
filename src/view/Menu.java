@@ -1,9 +1,7 @@
 package view;
 
 import controller.ViewController;
-import controllerSound.controllerSound;
 import javafx.beans.NamedArg;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
@@ -23,7 +21,6 @@ public class Menu {
     @FXML
     private ImageView dice1, dice2;
 
-    private controllerSound.PlaySound music_play;
     public Menu() {
     }
 
@@ -101,10 +98,19 @@ public class Menu {
         }
     }
 
+
     @FXML
     public void playSound(ActionEvent event){
         String status = music_play.changeStatus();
         musicButton.setText(status);
+    private void clickOnDice(MouseEvent evt){
+        Button button = (Button) evt.getSource();
+        int diceId;
+        if (button.getId().equals("b0"))
+            diceId = 0;
+        else
+            diceId = 1;
+        ViewController.getInstance().clickOnDice(diceId);
     }
 
 }
