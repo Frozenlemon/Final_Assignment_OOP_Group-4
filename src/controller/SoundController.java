@@ -24,9 +24,15 @@ public class SoundController {
         status = false;
 
         String path = new File("src\\fxml\\Sound\\doorOpen.mp3").getAbsolutePath();
-        Media media = new Media(FileIO.getMusicFile("insert file name here"));
+        Media backgroundMedia = new Media(FileIO.getMusicFile("insert file name here"));
+        Media releaseHorseMedia = new Media(FileIO.getMusicFile("insert file name here"));
+        Media horseMoveMedia = new Media(FileIO.getMusicFile("insert file name here"));
+        Media rollDiceMedia = new Media(FileIO.getMusicFile("insert file name here"));
 
-        backgroundPlayer = new MediaPlayer(media);
+        backgroundPlayer = new MediaPlayer(backgroundMedia);
+        releaseHorsePlayer = new MediaPlayer(releaseHorseMedia);
+        horseMovePlayer = new MediaPlayer(horseMoveMedia);
+        rollDicePlayer = new MediaPlayer(rollDiceMedia);
     }
 
     public static SoundController getInstance(){
@@ -63,5 +69,21 @@ public class SoundController {
     public void restartSound(){
         backgroundPlayer.seek(new Duration(0));
         backgroundPlayer.play();
+    }
+    
+    public void setBackgroundPlayerVolume(double value) {
+        this.backgroundPlayer.setVolume(value);
+    }
+    
+    public void setHorseMovePlayerVolume(double value) {
+        this.horseMovePlayer.setVolume(value);
+    }
+    
+    public void setReleaseHorsePlayerVolume(double value) {
+        this.releaseHorsePlayer.setVolume(value);
+    }
+    
+    public void setRollDicePlayerVolume(double value) {
+        this.rollDicePlayer.setVolume(value);
     }
 }

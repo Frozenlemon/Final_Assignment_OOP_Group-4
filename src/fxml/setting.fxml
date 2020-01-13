@@ -35,16 +35,18 @@
                             </toggleGroup>
                         </RadioButton>
                         <RadioButton fx:id="rdoVietnam" layoutX="495.0" layoutY="22.0" mnemonicParsing="false" text="Tiếng Việt" toggleGroup="$group" />
-                        <Button fx:id="btnCancel" layoutX="66.0" layoutY="380.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="66.0" text="Cancel" />
-                        <Button fx:id="btnSave" layoutX="159.0" layoutY="380.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="79.0" text="Save" />
-                        <Slider layoutX="118.0" layoutY="171.0" prefHeight="49.0" prefWidth="352.0" showTickLabels="true" showTickMarks="true" value="50.0" />
+                        <Button fx:id="btnCancel" onAction="#cancelSetting" layoutX="66.0" layoutY="380.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="66.0" text="Cancel" />
+                        <Button fx:id="btnSave" onAction="#saveSetting" layoutX="159.0" layoutY="380.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="79.0" text="Save" />
+                        <Slider fx:id="sliderBackground" layoutX="118.0" layoutY="171.0" prefHeight="49.0" prefWidth="352.0" showTickLabels="true" showTickMarks="true" value="50.0" />
                         <Label fx:id="lbVolumn" layoutX="43.0" layoutY="179.0" text="Volumn" />
                         <Label id="lbChooseLanguage" fx:id="lbChooseLanguage" layoutX="247.0" layoutY="22.0" text="Choose Language" />
                   <Label fx:id="lbVolumn2" layoutX="43.0" layoutY="219.0" text="SFX" />
-                  <Slider layoutX="118.0" layoutY="212.0" prefHeight="49.0" prefWidth="352.0" showTickLabels="true" showTickMarks="true" value="50.0" />
-                  <Slider layoutX="118.0" layoutY="254.0" prefHeight="49.0" prefWidth="352.0" showTickLabels="true" showTickMarks="true" value="50.0" />
+                  <Slider fx:id="sliderReleaseHorse" layoutX="118.0" layoutY="212.0" prefHeight="49.0" prefWidth="352.0" showTickLabels="true" showTickMarks="true" value="50.0" />
+                  <Slider fx:id="sliderHorseMove" layoutX="118.0" layoutY="254.0" prefHeight="49.0" prefWidth="352.0" showTickLabels="true" showTickMarks="true" value="50.0" />
                   <Label fx:id="lbVolumn21" layoutX="40.0" layoutY="261.0" text="BGM" />
                   <Label fx:id="lbVolumn211" layoutX="43.0" layoutY="303.0" />
+                  <Slider fx:id="sliderRollDice" layoutX="118.0" layoutY="303.0" prefHeight="49.0" prefWidth="352.0" showTickLabels="true" showTickMarks="true" value="50.0" />
+                  <Label fx:id="lbVolumn212" layoutX="40.0" layoutY="303.0" text="BGM" />
                     </children>
                 </Pane>
             <Label fx:id="lbVolumn1" text="Volumn" />
