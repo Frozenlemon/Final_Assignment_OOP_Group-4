@@ -75,6 +75,11 @@ public class ModelController {
         }
     }
 
+    public int[] getAllDiceValue(){
+        int[] values = new int[]{dices[0].getValue(), dices[1].getValue()};
+        return values;
+    }
+
     public void rollDice(){
         if (!hasRolled) {
             for (int i = 0; i < dices.length; i++) {
