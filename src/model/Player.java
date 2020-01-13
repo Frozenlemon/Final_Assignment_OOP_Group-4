@@ -1,8 +1,8 @@
 package model;
 
+import
+
 import controller.ModelController;
-import model.Horse;
-import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 
@@ -10,18 +10,14 @@ public class Player {
 
     private Horse[] horses;
     private int colorCode;
-    private Dice[] dices;
     ArrayList<Integer> choices = new ArrayList<>();
 
     public Player(int colorCode){
         this.colorCode = colorCode;
-        horses = new Horse[]{new Horse(colorCode*4+0), new Horse(colorCode*4+1), new Horse(colorCode*4+2), new Horse(colorCode*4+3)};
-        dices = new Dice[]{new Dice()};
+        horses = new Horse[4];
     }
 
     public boolean isHuman(){
-        if (this instanceof Player)
-            return true;
         return false;
     }
 
@@ -78,5 +74,4 @@ public class Player {
             while (!dice.isUsed())
                 return true;
         return false;
-    }
 }
