@@ -5,7 +5,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import util.FileIO;
 
-import java.io.File;
+
 
 
 public class SoundController {
@@ -21,20 +21,20 @@ public class SoundController {
         backgroundPlayer = getMediaPlayer("backgroundMusic");
 
         releaseHorsePlayer =  getMediaPlayer("doorOpen");
-        releaseHorsePlayer.setStartTime(Duration.seconds(0));
-        releaseHorsePlayer.setStopTime(Duration.seconds(1));
+        releaseHorsePlayer.setStartTime(Duration.millis(0));
+        releaseHorsePlayer.setStopTime(Duration.millis(1));
 
         horseMovePlayer = getMediaPlayer("horseMove");
-        horseMovePlayer.setStartTime(Duration.seconds(0));
-        horseMovePlayer.setStopTime(Duration.seconds(1));
+        horseMovePlayer.setStartTime(Duration.millis(0));
+        horseMovePlayer.setStopTime(Duration.millis(1));
 
         rollDicePlayer = getMediaPlayer("rollingDice");
-        rollDicePlayer.setStartTime(Duration.seconds(0));
-        rollDicePlayer.setStopTime(Duration.seconds(1));
+        rollDicePlayer.setStartTime(Duration.millis(0));
+        rollDicePlayer.setStopTime(Duration.millis(1));
 
         horseKickPlayer = getMediaPlayer("horseKick");
-        horseKickPlayer.setStartTime(Duration.seconds(0));
-        horseKickPlayer.setStopTime(Duration.seconds(1));
+        horseKickPlayer.setStartTime(Duration.millis(0));
+        horseKickPlayer.setStopTime(Duration.millis(1));
     }
 
     private MediaPlayer getMediaPlayer(String fileName){
