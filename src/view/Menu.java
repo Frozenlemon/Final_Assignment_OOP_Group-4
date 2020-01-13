@@ -2,7 +2,7 @@ package view;
 
 import com.sun.scenario.effect.DropShadow;
 import controller.ViewController;
-import controllerSound.PlaySound;
+import controllerSound.controllerSound;
 import javafx.beans.NamedArg;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,7 +23,7 @@ public class Menu {
     @FXML
     private ImageView dice1, dice2;
 
-    private PlaySound music_play;
+    private controllerSound.PlaySound music_play;
     public Menu() {
     }
 
