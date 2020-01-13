@@ -30,6 +30,10 @@ public class ViewController {
         return instance;
     }
 
+    public int getInAnimation(){
+        return this.inAnimation;
+    }
+
     public void startGame(Human... humans){
         ModelController.getInstance().initVariable(humans);
         //backGroundPane.startGame();

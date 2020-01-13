@@ -40,6 +40,9 @@ public class ModelController {
         }
     }
 
+    public int getAnimationCount(){
+        return ViewController.getInstance().getInAnimation();
+    }
 
     public void updateHorses(Horse horse, Horse kickedHorse){
         if (kickedHorse != null){
