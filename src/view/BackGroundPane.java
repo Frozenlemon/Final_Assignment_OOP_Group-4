@@ -3,14 +3,18 @@ package view;
 import javafx.beans.NamedArg;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import util.FileIO;
 
 import java.io.IOException;
 
 public class BackGroundPane extends StackPane {
-    Menu menu;
-    GamePane gamePane;
+    private Menu menu;
+    private GamePane gamePane;
+    private Setting setting;
+    private StartMenu startMenu;
+    private SettingName settingName;
 
     public BackGroundPane(){
         super();
@@ -27,31 +31,58 @@ public class BackGroundPane extends StackPane {
         return this.gamePane;
     }
 
+//    public void startGame(){
+//        setting.setVisible(false);
+//        startMenu.setVisible(false);
+//        settingName.reset();
+//        gamePane.start();
+//    }
+
     private void initBackGroundPane(){
         gamePane = new GamePane();
         menu = new Menu();
+        setting = new Setting();
+        startMenu = new StartMenu();
+        settingName = new SettingName();
         initWindow();
     }
 
     private void initWindow(){
         initMenu();
         initGameArea();
+//        initSetting();
+//        initStartMenu();
+//        initSettingName();
     }
 
     private void initMenu(){
-        FXMLLoader menuLoader = new FXMLLoader();
-        menuLoader.setLocation(FileIO.getFXML_URL("Menu"));
-        menuLoader.setController(menu);
-        loadFXML(menuLoader);
+        initFXMLLoader(menu, "Menu");
         menu.translate(810,0);
     }
 
     private void initGameArea(){
-        FXMLLoader gameAreaLoader = new FXMLLoader();
-        gameAreaLoader.setLocation(FileIO.getFXML_URL("GamePane"));
-        gameAreaLoader.setController(gamePane);
-        loadFXML(gameAreaLoader);
+        initFXMLLoader(gamePane, "GamePane");
         gamePane.init();
+    }
+
+    private void initSetting(){
+        initFXMLLoader(setting, "setting");
+        setting.init();
+    }
+
+    private void initStartMenu(){
+        initFXMLLoader(startMenu, "StartMenu");
+    }
+
+    private void initSettingName(){
+        initFXMLLoader(settingName, "SettingName");
+    }
+
+    private void initFXMLLoader(Object controller, String fileName){
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(FileIO.getFXML_URL(fileName));
+        loader.setController(controller);
+        loadFXML(loader);
     }
 
     private void loadFXML(FXMLLoader loader){

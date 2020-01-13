@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
+import model.Horse;
 
 public class GamePane {
     private static final int NO_OF_HORSES = 16;
@@ -18,7 +19,7 @@ public class GamePane {
     private static final int NO_OF_PATHS = 48;
 
     @FXML
-    private StackPane GamePane, imagePane, circleBase;
+    private StackPane gamePane, imagePane, circleBase;
     @FXML
     private StackPane blueHorseCage, yellowHorseCage, greenHorseCage, redHorseCage;
     @FXML
@@ -28,26 +29,28 @@ public class GamePane {
     private Circle[] paths;
 
     public GamePane(){
+        horses = new ImageView[NO_OF_HORSES];
+        paths = new Circle[NO_OF_PATHS];
     }
 
     public void init(){
-        horses = new ImageView[NO_OF_HORSES];
         for (int i = 0; i < NO_OF_HORSES; i++){
             horses[i] = (ImageView) imagePane.getChildren().get(i);
         }
         for (int i = 0; i < NO_OF_PATHS; i++){
             paths[i] = (Circle) circleBase.getChildren().get(i);
         }
+        setStartingHorse();
         translate(-100,0);
     }
 
     public StackPane getGamePane(){
-        return GamePane;
+        return gamePane;
     }
 
     public void translate(@NamedArg("Translate the gamePane by x-horizontal and y vertical") double x, double y){
-        GamePane.setTranslateX(x);
-        GamePane.setTranslateY(y);
+        gamePane.setTranslateX(x);
+        gamePane.setTranslateY(y);
     }
 
     public void moveHorse(int horseIndex, int pathIndex, int moveCount, TranslateTransition queueTransition){
@@ -93,6 +96,14 @@ public class GamePane {
             horses[horseIndex].setEffect(null);
     }
 
+    private void setStartingHorse(){
+        for (int i = 0; i < NO_OF_HORSES; i++){
+            double[] coordinate = getInitialCoordinate(i);
+            horses[i].setTranslateX(coordinate[0]);
+            horses[i].setTranslateY(coordinate[1]);
+        }
+    }
+
 
     private double[] getInitialCoordinate(int index){
         double[] coordinate = new double[2];
@@ -102,64 +113,64 @@ public class GamePane {
                 coordinate[1] = i0.getCenterY();
                 break;
             case 1:
-                coordinate[0] = i1.getCenterX();
-                coordinate[1] = i1.getCenterY();
+                coordinate[0] = i1.getTranslateX();
+                coordinate[1] = i1.getTranslateY();
                 break;
             case 2:
-                coordinate[0] = i2.getCenterX();
-                coordinate[1] = i2.getCenterY();
+                coordinate[0] = i2.getTranslateX();
+                coordinate[1] = i2.getTranslateY();
                 break;
             case 3:
-                coordinate[0] = i3.getCenterX();
-                coordinate[1] = i3.getCenterY();
+                coordinate[0] = i3.getTranslateX();
+                coordinate[1] = i3.getTranslateY();
                 break;
             case 4:
-                coordinate[0] = i4.getCenterX();
-                coordinate[1] = i4.getCenterY();
+                coordinate[0] = i4.getTranslateX();
+                coordinate[1] = i4.getTranslateY();
                 break;
             case 5:
-                coordinate[0] = i5.getCenterX();
-                coordinate[1] = i5.getCenterY();
+                coordinate[0] = i5.getTranslateX();
+                coordinate[1] = i5.getTranslateY();
                 break;
             case 6:
-                coordinate[0] = i6.getCenterX();
-                coordinate[1] = i6.getCenterY();
+                coordinate[0] = i6.getTranslateX();
+                coordinate[1] = i6.getTranslateY();
                 break;
             case 7:
-                coordinate[0] = i7.getCenterX();
-                coordinate[1] = i7.getCenterY();
+                coordinate[0] = i7.getTranslateX();
+                coordinate[1] = i7.getTranslateY();
                 break;
             case 8:
-                coordinate[0] = i8.getCenterX();
-                coordinate[1] = i8.getCenterY();
+                coordinate[0] = i8.getTranslateX();
+                coordinate[1] = i8.getTranslateY();
                 break;
             case 9:
-                coordinate[0] = i9.getCenterX();
-                coordinate[1] = i9.getCenterY();
+                coordinate[0] = i9.getTranslateX();
+                coordinate[1] = i9.getTranslateY();
                 break;
             case 10:
-                coordinate[0] = i10.getCenterX();
-                coordinate[1] = i10.getCenterY();
+                coordinate[0] = i10.getTranslateX();
+                coordinate[1] = i10.getTranslateY();
                 break;
             case 11:
-                coordinate[0] = i11.getCenterX();
-                coordinate[1] = i11.getCenterY();
+                coordinate[0] = i11.getTranslateX();
+                coordinate[1] = i11.getTranslateY();
                 break;
             case 12:
-                coordinate[0] = i12.getCenterX();
-                coordinate[1] = i12.getCenterY();
+                coordinate[0] = i12.getTranslateX();
+                coordinate[1] = i12.getTranslateY();
                 break;
             case 13:
-                coordinate[0] = i13.getCenterX();
-                coordinate[1] = i13.getCenterY();
+                coordinate[0] = i13.getTranslateX();
+                coordinate[1] = i13.getTranslateY();
                 break;
             case 14:
-                coordinate[0] = i14.getCenterX();
-                coordinate[1] = i14.getCenterY();
+                coordinate[0] = i14.getTranslateX();
+                coordinate[1] = i14.getTranslateY();
                 break;
             case 15:
-                coordinate[0] = i15.getCenterX();
-                coordinate[1] = i15.getCenterY();
+                coordinate[0] = i15.getTranslateX();
+                coordinate[1] = i15.getTranslateY();
                 break;
         }
         return coordinate;
