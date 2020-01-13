@@ -521,67 +521,67 @@
          <children>
             <ImageView fx:id="h0" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@oldResource/0.png" />
+                  <Image url="@Images/0.png" />
                </image></ImageView>
             <ImageView fx:id="h1" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@oldResource/0.png" />
+                  <Image url="@Images/0.png" />
                </image></ImageView>
             <ImageView fx:id="h2" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@oldResource/0.png" />
+                  <Image url="@Images/0.png" />
                </image></ImageView>
             <ImageView fx:id="h3" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@oldResource/0.png" />
+                  <Image url="@Images/0.png" />
                </image></ImageView>
             <ImageView fx:id="h4" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@oldResource/1.png" />
+                  <Image url="@Images/1.png" />
                </image></ImageView>
             <ImageView fx:id="h5" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@oldResource/1.png" />
+                  <Image url="@Images/1.png" />
                </image></ImageView>
             <ImageView fx:id="h6" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@oldResource/1.png" />
+                  <Image url="@Images/1.png" />
                </image></ImageView>
             <ImageView fx:id="h7" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@oldResource/1.png" />
+                  <Image url="@Images/1.png" />
                </image></ImageView>
             <ImageView fx:id="h8" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@oldResource/2.png" />
+                  <Image url="@Images/2.png" />
                </image></ImageView>
             <ImageView fx:id="h9" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@oldResource/2.png" />
+                  <Image url="@Images/2.png" />
                </image></ImageView>
             <ImageView fx:id="h10" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@oldResource/2.png" />
+                  <Image url="@Images/2.png" />
                </image></ImageView>
             <ImageView fx:id="h11" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@oldResource/2.png" />
+                  <Image url="@Images/2.png" />
                </image></ImageView>
             <ImageView fx:id="h12" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@oldResource/3.png" />
+                  <Image url="@Images/3.png" />
                </image></ImageView>
             <ImageView fx:id="h13" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@oldResource/3.png" />
+                  <Image url="@Images/3.png" />
                </image></ImageView>
             <ImageView fx:id="h14" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@oldResource/3.png" />
+                  <Image url="@Images/3.png" />
                </image></ImageView>
             <ImageView fx:id="h15" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@oldResource/3.png" />
+                  <Image url="@Images/3.png" />
                </image></ImageView>
          </children>
       </StackPane>
