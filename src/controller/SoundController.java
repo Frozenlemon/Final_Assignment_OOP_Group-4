@@ -5,15 +5,11 @@ import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import util.FileIO;
 
-import java.io.File;
+
 
 
 public class SoundController {
 
-    public static final int STATUS_PLAY = 1;
-    public static final int STATUS_STOP = 2;
-    public static final String SOUND_ON = "Sound on";
-    public static final String SOUND_OFF = "Sound off";
     public static SoundController instance;
 
     private boolean status;
@@ -23,10 +19,22 @@ public class SoundController {
     private SoundController(){
         status = false;
         backgroundPlayer = getMediaPlayer("backgroundMusic");
+
         releaseHorsePlayer =  getMediaPlayer("doorOpen");
+        releaseHorsePlayer.setStartTime(Duration.millis(0));
+        releaseHorsePlayer.setStopTime(Duration.millis(1));
+
         horseMovePlayer = getMediaPlayer("horseMove");
+        horseMovePlayer.setStartTime(Duration.millis(0));
+        horseMovePlayer.setStopTime(Duration.millis(1));
+
         rollDicePlayer = getMediaPlayer("rollingDice");
+        rollDicePlayer.setStartTime(Duration.millis(0));
+        rollDicePlayer.setStopTime(Duration.millis(1));
+
         horseKickPlayer = getMediaPlayer("horseKick");
+        horseKickPlayer.setStartTime(Duration.millis(0));
+        horseKickPlayer.setStopTime(Duration.millis(1));
     }
 
     private MediaPlayer getMediaPlayer(String fileName){
@@ -40,17 +48,14 @@ public class SoundController {
         return instance;
     }
 
-
-
     public void setVolume(double music, double effect){
         backgroundPlayer.setVolume(music);
         releaseHorsePlayer.setVolume(effect);
         horseMovePlayer.setVolume(effect);
         rollDicePlayer.setVolume(effect);
         horseMovePlayer.setVolume(effect);
-
+        horseKickPlayer.setVolume(effect);
     }
-
     public void playMusic(){
         backgroundPlayer.play();
     }
