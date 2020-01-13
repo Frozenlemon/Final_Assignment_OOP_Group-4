@@ -57,7 +57,7 @@ public class GamePane {
         moveCount--;
         TranslateTransition transition = new TranslateTransition(Duration.seconds(1), horses[horseIndex]);
 
-        transition.setToX(paths[pathIndex].getTranslateX() + 110);
+        transition.setToX(paths[pathIndex].getTranslateX() + 10);
         transition.setToY(paths[pathIndex].getTranslateY());
 
         pathIndex--;
@@ -99,7 +99,6 @@ public class GamePane {
     private void setStartingHorse(){
         for (int i = 0; i < NO_OF_HORSES; i++){
             double[] coordinate = getInitialCoordinate(i);
-            System.out.println(coordinate[0] + "    " + coordinate[1]);
             horses[i].setTranslateX(coordinate[0]);
             horses[i].setTranslateY(coordinate[1]);
         }
@@ -110,8 +109,8 @@ public class GamePane {
         double[] coordinate = new double[2];
         switch (index){
             case 0:
-                coordinate[0] = i0.getTranslateX();
-                coordinate[1] = i0.getTranslateY();
+                coordinate[0] = i0.getCenterX();
+                coordinate[1] = i0.getCenterY();
                 break;
             case 1:
                 coordinate[0] = i1.getTranslateX();
@@ -174,7 +173,6 @@ public class GamePane {
                 coordinate[1] = i15.getTranslateY();
                 break;
         }
-        coordinate[0] += 100;
         return coordinate;
     }
 

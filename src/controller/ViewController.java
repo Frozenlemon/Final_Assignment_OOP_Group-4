@@ -30,13 +30,13 @@ public class ViewController {
         return instance;
     }
 
+    public int getInAnimation(){
+        return this.inAnimation;
+    }
+
     public void startGame(Human... humans){
         ModelController.getInstance().initVariable(humans);
         //backGroundPane.startGame();
-    }
-
-    public int getInAnimation(){
-        return this.inAnimation;
     }
 
     public void horseMoveAndKick(@NamedArg("Horse to move") Horse moveHorse, @NamedArg("Horse to kick") Horse kickedHorse){

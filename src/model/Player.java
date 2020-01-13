@@ -1,57 +1,100 @@
 package model;
 
+
 import controller.ModelController;
-import model.Horse;
-import javafx.scene.paint.Color;
+
+import java.util.ArrayList;
 
 public class Player {
 
     private Horse[] horses;
     private int colorCode;
-    private Dice[] dices;
-    public Player(int colorCode){
+    ArrayList<Integer> choices = new ArrayList<>();
+
+    public Player(int colorCode) {
         this.colorCode = colorCode;
-        horses = new Horse[]{new Horse(colorCode*4+0), new Horse(colorCode*4+1), new Horse(colorCode*4+2), new Horse(colorCode*4+3)};
-        dices = new Dice[]{new Dice()};
+        horses = new Horse[4];
     }
 
-    public boolean isHuman(){
-        if (this instanceof Player)
-            return true;
+    public boolean isHuman() {
         return false;
     }
 
-    //getter and setter here
-    public int getColorCode(){
+    public int getColorCode() {
         return colorCode;
     }
 
-    public Horse getHorse(int id){
+    public Horse getHorse(int id) {
         return horses[id];
     }
 
     public void autoMove() {
         ModelController.getInstance().rollDice();
-        int[] dice_values = ModelController.getInstance().getAllDiceValue();
-        //while (ModelController.getInstance().getAnimationCount() != 0) {
-        //}
-        for (int i = 0; i < dices.length; i++) {
-            int init_possible = -1;
-            int init_horse = -1;
-            for (int j = 0; j < horses.length; j++) {
-                if (init_possible < getHorse(j).checkMove(dice_values[i])){
-                    init_horse = j;
-                    init_possible = getHorse(j).checkMove(dice_values[i]);
-                }
+        Dice[] allDice = ModelController.getInstance().getAllDice();
+        while (ModelController.getInstance().getAnimationCount() != 0) {}
+        while (checkDice(allDice)) {
+            getChoices(allDice);
+            selectMove(allDice);
+            if (canMove()) {
+                selectMove(allDice);
+                while (ModelController.getInstance().getAnimationCount() != 0) {}
+
             }
-            getHorse(init_horse).move(init_possible, dice_values[i]);
-            //while (ModelController.getInstance().getAnimationCount() != 0);
+            else {
+                allDice[0].setUsed(true);
+                allDice[1].setUsed(true);
             }
-        ModelController.getInstance().nextPlayer();
+        }
     }
 
-    private boolean checkDice(Dice[] dices){
-        for (Dice dice: dices)
+    private boolean canMove() {
+        for (int choice : choices) {
+            if (choice != 0)
+                return true;
+        }
+        return false;
+    }
+
+
+    public void getChoices(Dice[] allDice) {
+        for (int i = 0; i < allDice.length; i++) {
+            if (!allDice[i].isUsed()) {
+                for (int j = 0; j < horses.length; j++) {
+                    choices.add(getHorse(j).checkMove(allDice[i].getValue()));
+                }
+            }
+        }
+    }
+
+    public void selectMove(Dice[] allDice) {
+        int bestChoice = -1;
+        int choice_index = -1;
+        for (int i = 0; i < choices.size(); i++) {
+            if (bestChoice < choices.get(i)) {
+                bestChoice = choices.get(i);
+                choice_index = i;
+            }
+        }
+        switch (choice_index % 4) {
+            case 0:
+                horses[0].move(bestChoice, allDice[choice_index / 4].getValue());
+                break;
+            case 1:
+                horses[1].move(bestChoice, allDice[choice_index / 4].getValue());
+                break;
+            case 2:
+                horses[2].move(bestChoice, allDice[choice_index / 4].getValue());
+                break;
+            case 3:
+                horses[3].move(bestChoice, allDice[choice_index / 4].getValue());
+                break;
+        }
+        choices = new ArrayList<>();
+        allDice[choice_index].setUsed(true);
+    }
+
+    private boolean checkDice(Dice[] dices) {
+        for (Dice dice : dices)
             while (!dice.isUsed())
                 return true;
         return false;
