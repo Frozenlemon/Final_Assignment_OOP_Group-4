@@ -4,11 +4,15 @@ import controller.ModelController;
 import model.Horse;
 import javafx.scene.paint.Color;
 
+import java.util.ArrayList;
+
 public class Player {
 
     private Horse[] horses;
     private int colorCode;
     private Dice[] dices;
+    ArrayList<Integer> choices = new ArrayList<>();
+
     public Player(int colorCode){
         this.colorCode = colorCode;
         horses = new Horse[]{new Horse(colorCode*4+0), new Horse(colorCode*4+1), new Horse(colorCode*4+2), new Horse(colorCode*4+3)};
@@ -21,7 +25,6 @@ public class Player {
         return false;
     }
 
-    //getter and setter here
     public int getColorCode(){
         return colorCode;
     }
@@ -32,23 +35,43 @@ public class Player {
 
     public void autoMove() {
         ModelController.getInstance().rollDice();
-        int[] dice_values = ModelController.getInstance().getAllDiceValue();
-        //while (ModelController.getInstance().getAnimationCount() != 0) {
-        //}
-        for (int i = 0; i < dices.length; i++) {
-            int init_possible = -1;
-            int init_horse = -1;
-            for (int j = 0; j < horses.length; j++) {
-                if (init_possible < getHorse(j).checkMove(dice_values[i])){
-                    init_horse = j;
-                    init_possible = getHorse(j).checkMove(dice_values[i]);
-                }
-            }
-            getHorse(init_horse).move(init_possible, dice_values[i]);
-            //while (ModelController.getInstance().getAnimationCount() != 0);
-            }
+        Dice[] allDice = ModelController.getInstance().getAllDice();
+        while (ModelController.getInstance().getAnimationCount() != 0) {}
+        while (checkDice(allDice)){
+            getChoice(allDice);
+            selectMove(allDice);
+
+        }
         ModelController.getInstance().nextPlayer();
     }
+
+    public void getChoice(Dice[] allDice){
+        for (int i = 0; i < dices.length; i++) {
+            if (!dices[i].isUsed()) {
+                for (int j = 0; j < horses.length; j++){
+                    choices.add(getHorse(j).checkMove(allDice[i].getValue()));
+                }
+            }
+        }
+    }
+
+    public void selectMove(Dice[] allDice){
+        int bestChoice = -1;
+        int choice_index = -1;
+        for (int i = 0; i < choices.size(); i++){
+            if (bestChoice < choices.get(i)) {
+                bestChoice = choices.get(i);
+                choice_index = i;
+            }
+        }
+        switch (choice_index % 4){
+            case 0:
+                horses[0].move(bestChoice, allDice[choice_index/4].getValue());
+                choices = new ArrayList<>();
+                break;
+        }
+    }
+
 
     private boolean checkDice(Dice[] dices){
         for (Dice dice: dices)
