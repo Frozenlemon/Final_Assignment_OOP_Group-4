@@ -24,6 +24,12 @@ public class ModelController {
         return instance;
     }
 
+    public static ModelController getInstance(Human... humans){
+        if (instance == null)
+            instance = new ModelController(humans);
+        return instance;
+    }
+
     private void initVariable(Human... humans){
         players = new Player[NO_OF_PLAYER];
         for (Human human : humans){
@@ -39,6 +45,15 @@ public class ModelController {
         hasRolled = false;
     }
 
+//    public Horse checkCollision(Horse horse){
+//        for (Horse rHorse: releasedHorses){
+//            if (horse.getId() != rHorse.getId()){
+//                if (rHose.getCurrentAreaCode() == horse.getCurrentAreaCode() && rHose.getLocationOnPath() == horse.getLocationOnPath())
+//                    return rHorse;
+//            }
+//        }
+//        return null;
+//    }
 
     public void updateHorses(Horse horse, Horse kickedHorse){
         if (kickedHorse != null){
@@ -68,9 +83,8 @@ public class ModelController {
     public void moveHorse(int diceId){
         if (focusedHorse != null){
             int moveCount =  dices[diceId].getValue();
-            int status = focusedHorse.checkMove(moveCount);
-            if (status != 0)
-                focusedHorse.move( status, moveCount);
+            ;
+            //focusedHorse.move(focusedHorse.checkMove(), moveCount);
         }
     }
 

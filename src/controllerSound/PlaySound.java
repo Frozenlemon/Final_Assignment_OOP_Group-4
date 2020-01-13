@@ -1,38 +1,30 @@
-package controller;
+package controllerSound;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
-import util.FileIO;
 
 import java.io.File;
 
 
-public class SoundController {
+public class PlaySound {
 
     public static final int STATUS_PLAY = 1;
     public static final int STATUS_STOP = 2;
     public static final String SOUND_ON = "Sound on";
     public static final String SOUND_OFF = "Sound off";
-    public static SoundController instance;
 
     private boolean status;
-    private MediaPlayer backgroundPlayer, releaseHorsePlayer, horseMovePlayer, rollDicePlayer;
+    private Media mMedia;
+    private MediaPlayer mMediaPlayer;
 
-
-    private SoundController(){
+    public PlaySound(){
         status = false;
 
         String path = new File("src\\fxml\\Sound\\doorOpen.mp3").getAbsolutePath();
-        Media media = new Media(FileIO.getMusicFile("insert file name here"));
+        mMedia = new Media(new File(path).toURI().toString());
+        mMediaPlayer = new MediaPlayer(mMedia);
 
-        backgroundPlayer = new MediaPlayer(media);
-    }
-
-    public static SoundController getInstance(){
-        if (instance == null)
-            instance = new SoundController();
-        return instance;
     }
 
     public String changeStatus(){
@@ -53,15 +45,15 @@ public class SoundController {
     }
 
     public void playSound(){
-        backgroundPlayer.play();
+        mMediaPlayer.play();
     }
 
     public void stopSound(){
-        backgroundPlayer.stop();
+        mMediaPlayer.stop();
     }
 
     public void restartSound(){
-        backgroundPlayer.seek(new Duration(0));
-        backgroundPlayer.play();
+        mMediaPlayer.seek(new Duration(0));
+        mMediaPlayer.play();
     }
 }

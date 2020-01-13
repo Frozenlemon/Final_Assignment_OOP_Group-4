@@ -30,9 +30,6 @@ public class SettingController implements Initializable {
 
     @FXML
     private Pane paneMain;
-    
-    @FXML
-    private Slider sliderBackground, sliderReleaseHorse, sliderHorseMove, sliderRollDice;
 
     @FXML
     private VBox vboxMain;
@@ -97,15 +94,12 @@ public class SettingController implements Initializable {
     }
     
     @FXML
-    public void saveSetting() {
-        SoundController.getInstance().setBackgroundPlayerVolume(sliderBackground.getValue());
-        SoundController.getInstance().setHorseMovePlayerVolume(sliderHorseMove.getValue());
-        SoundController.getInstance().setReleaseHorsePlayerVolume(sliderReleaseHorse.getValue());
-        SoundController.getInstance().setRollDicePlayerVolume(sliderRollDice.getValue());
+    private void saveSetting() {
+    
     }
     
     @FXML
-    public void cancelSetting() {
+    private void cancelSetting() {
         Language.setLocale(localeCurrent);
         numSwitches = numSwitchesCurrent;
     }

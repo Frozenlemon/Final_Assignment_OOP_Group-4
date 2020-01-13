@@ -50,28 +50,23 @@ public class GamePane {
         GamePane.setTranslateY(y);
     }
 
-    public void moveHorse(int horseIndex, int pathIndex, int moveCount, TranslateTransition queueTransition){
+    public void moveHorse(ImageView horse, int pathIndex, int moveCount, TranslateTransition queueTransition){
         moveCount--;
-        TranslateTransition transition = new TranslateTransition(Duration.seconds(1), horses[horseIndex]);
+        TranslateTransition transition = new TranslateTransition(Duration.seconds(1),horse);
 
         transition.setToX(paths[pathIndex].getTranslateX() + 10);
         transition.setToY(paths[pathIndex].getTranslateY());
 
         pathIndex--;
         transition.setOnFinished(e -> {
-            if (queueTransition != null) {
-                ViewController.getInstance().startAnimation();
+            if (queueTransition != null)
                 queueTransition.play();
-            }
-            ViewController.getInstance().finishAnimation();
         });
 
         if (moveCount > 0)
-            moveHorse(horseIndex, pathIndex, moveCount, transition);
-        else {
-            ViewController.getInstance().startAnimation();
+            moveHorse(horse, pathIndex, moveCount, transition);
+        else
             transition.play();
-        }
     }
 
     public void kickHorse(int horseIndex){

@@ -7,7 +7,6 @@ import javafx.stage.Stage;
 import model.Horse;
 import util.FileIO;
 import view.BackGroundPane;
-import view.GamePane;
 
 public class ViewController {
 
@@ -39,19 +38,7 @@ public class ViewController {
 
     public void horseMove(@NamedArg("Horse to move") Horse horse){
         int horseIndex = horseIdConverter(horse.getId());
-        backGroundPane.getGamePane().moveHorse(horseIndex, horse.getPathIndex(), horse.getMoveCount(), null);
-    }
-
-    public void clickOnDice(int diceId){
-        ModelController.getInstance().moveHorse(diceId);
-    }
-
-    public void clickRollDice(){
-        ModelController.getInstance().rollDice();
-    }
-
-    public void setHorse_Highlight(int horseIndex){
-        backGroundPane.getGamePane().change_Horse_Highlight(horseIndex);
+//        backGroundPane.getGamePane().moveHorse(horseIndex, horse.getPathIndex(), horse.getMoveCount());
     }
 
     public void highlight_On(String id){
@@ -80,12 +67,6 @@ public class ViewController {
     public void updateDice(int value_0, int value_1){
         backGroundPane.getMenu().getDice(0).setImage(new Image(FileIO.getDiceImage(value_0)));
         backGroundPane.getMenu().getDice(1).setImage(new Image(FileIO.getDiceImage(value_1)));
-    }
-
-    public void clickOnHorse(int horseIndex){
-        Boolean success = ModelController.getInstance().selectHorse(horseIndex);
-        if (success)
-            backGroundPane.getGamePane().change_Horse_Highlight(horseIndex);
     }
 
     public void finishAnimation(){
