@@ -5,9 +5,9 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import model.Horse;
+import model.Human;
 import util.FileIO;
 import view.BackGroundPane;
-import view.GamePane;
 
 public class ViewController {
 
@@ -28,6 +28,11 @@ public class ViewController {
         if (instance == null)
             instance = new ViewController();
         return instance;
+    }
+
+    public void startGame(Human... humans){
+        ModelController.getInstance().initVariable(humans);
+        //backGroundPane.startGame();
     }
 
     public void horseMoveAndKick(@NamedArg("Horse to move") Horse moveHorse, @NamedArg("Horse to kick") Horse kickedHorse){
@@ -78,8 +83,8 @@ public class ViewController {
     }
 
     public void updateDice(int value_0, int value_1){
-        backGroundPane.getMenu().getDice(0).setImage(new Image(FileIO.getDiceImage(value_0)));
-        backGroundPane.getMenu().getDice(1).setImage(new Image(FileIO.getDiceImage(value_1)));
+        backGroundPane.getMenu().getDice(0).setImage(new Image("file:" + FileIO.getDiceImage(value_0)));
+        backGroundPane.getMenu().getDice(1).setImage(new Image("file:" + FileIO.getDiceImage(value_1)));
     }
 
     public void clickOnHorse(int horseIndex){
