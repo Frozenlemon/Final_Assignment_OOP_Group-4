@@ -43,6 +43,8 @@ public class Horse {
     }
 
     public void move(int moveStatus, int moveCount){
+        if (moveStatus == 3 || moveCount == 4)
+            moveCount = 1;
         this.moveCount = moveCount;
         //Move or move and kick horse
         if (moveStatus == 1 || moveStatus == 2 || moveStatus == 3 || moveCount == 4)
@@ -65,42 +67,52 @@ public class Horse {
                 ModelController.getInstance().updateHorses(this, null);
             }
         }
+        //Move to the end
+        if (moveStatus == 5)
+        {
+            setNewHorseLocation();
+            homeOnPath = 0;
+        }
     }
 
-    //If horse can reach to home return 5, if horse can exit and kick return 4, if horse can exit return 3, if horse can move and kick return 2, if horse can move return 1, if horse cant do anything return 0
+    //If horse can go to the end return 5, if horse can exit and kick return 4, if horse can exit return 3, if horse can move and kick return 2, if horse can move return 1, if horse cant do anything return 0
     public int checkMove(int moveCount){
         int checkLocationOnPath = locationOnPath;
         int checkCurrentAreaCode = currentAreaCode;
-        int checkHomeOnPath = homeOnPath;
         int checkMoveCount = moveCount;
-        //if (checkHomeOnPath == 0)
-
         if (checkMoveCount == 1 || checkMoveCount == 6) {
-            if (canBlockOrKick(checkLocationOnPath, checkCurrentAreaCode))
-                return 4;
-            else
-                return 3;
-        }
-        else {
-            while (checkMoveCount > 0)
+            if (checkLocationOnPath == -1 && checkCurrentAreaCode == -1)
             {
-                checkLocationOnPath++;
-                if (checkLocationOnPath > 11)
-                {
-                    checkLocationOnPath = 0;
-                    checkCurrentAreaCode++;
-                    if (checkCurrentAreaCode > 3)
-                        checkCurrentAreaCode = 0;
-                    if (canBlockOrKick(checkLocationOnPath, checkCurrentAreaCode))
-                        return 0;
-                }
-                checkMoveCount--;
+                checkLocationOnPath = 1;
+                checkCurrentAreaCode = Converter.getColorCodeFromId(id)[0];
+                if (canBlockOrKick(checkLocationOnPath, checkCurrentAreaCode))
+                    return 4;
+                else
+                    return 3;
             }
         }
-        if (canBlockOrKick(checkLocationOnPath, checkCurrentAreaCode))
-            return 2;
-        else
-            return 1;
+        while (checkMoveCount > 0)
+        {
+            checkLocationOnPath++;
+            if (checkLocationOnPath > 11)
+            {
+                checkLocationOnPath = 0;
+                checkCurrentAreaCode++;
+                if (checkCurrentAreaCode > 3)
+                    checkCurrentAreaCode = 0;
+                if (checkMoveCount == 1 && checkCurrentAreaCode == Converter.getColorCodeFromId(id)[0])
+                    return 5;
+            }
+            if (canBlockOrKick(checkLocationOnPath, checkCurrentAreaCode))
+            {
+                if (checkMoveCount == 1)
+                    return 2;
+                else
+                    return 0;
+            }
+            checkMoveCount--;
+        }
+        return 1;
     }
 
     public boolean canBlockOrKick(int checkLocationMove,int checkAreaCodeMove){
