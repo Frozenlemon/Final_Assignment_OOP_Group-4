@@ -17,16 +17,21 @@ public class SoundController {
     public static SoundController instance;
 
     private boolean status;
-    private MediaPlayer backgroundPlayer, releaseHorsePlayer, horseMovePlayer, rollDicePlayer;
+    private MediaPlayer backgroundPlayer, releaseHorsePlayer, horseMovePlayer, rollDicePlayer,horseKickPlayer;
 
 
     private SoundController(){
         status = false;
+        backgroundPlayer = getMediaPlayer("backgroundMusic");
+        releaseHorsePlayer =  getMediaPlayer("doorOpen");
+        horseMovePlayer = getMediaPlayer("horseMove");
+        rollDicePlayer = getMediaPlayer("rollingDice");
+        horseKickPlayer = getMediaPlayer("horseKick");
+    }
 
-        String path = new File("src\\fxml\\Sound\\doorOpen.mp3").getAbsolutePath();
-        Media media = new Media(FileIO.getMusicFile("backgroundMusic.mp3"));
-
-        backgroundPlayer = new MediaPlayer(media);
+    private MediaPlayer getMediaPlayer(String fileName){
+        Media media = new Media(FileIO.getMusicFile(fileName));
+        return new MediaPlayer(media);
     }
 
     public static SoundController getInstance(){
@@ -35,33 +40,18 @@ public class SoundController {
         return instance;
     }
 
-    public String changeStatus(){
-        if(status){
-            // Status on
-            stopSound();
-        } else {
-            playSound();
-        }
 
-        status = !status;
-        if (status){
-            // Status off
-            return SOUND_OFF;
-        } else {
-            return SOUND_ON;
-        }
+
+    public void setVolume(double music, double effect){
+        backgroundPlayer.setVolume(music);
+        releaseHorsePlayer.setVolume(effect);
+        horseMovePlayer.setVolume(effect);
+        rollDicePlayer.setVolume(effect);
+        horseMovePlayer.setVolume(effect);
+
     }
 
-    public void playSound(){
-        backgroundPlayer.play();
-    }
-
-    public void stopSound(){
-        backgroundPlayer.stop();
-    }
-
-    public void restartSound(){
-        backgroundPlayer.seek(new Duration(0));
+    public void playMusic(){
         backgroundPlayer.play();
     }
 }
