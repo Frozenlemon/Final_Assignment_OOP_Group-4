@@ -16,7 +16,13 @@ public class ModelController {
     private Horse focusedHorse;
     private boolean hasRolled;
 
-    private ModelController(){}
+    private ModelController(){
+        players = new Player[]{null, null, null, null};
+        playerTurn = -1;
+        dices = new Dice[]{new Dice(), new Dice()};
+        focusedHorse = null;
+        hasRolled = false;
+    }
 
     public static ModelController getInstance(){
         if (instance == null)
@@ -24,8 +30,7 @@ public class ModelController {
         return instance;
     }
 
-    private void initVariable(Human... humans){
-        players = new Player[NO_OF_PLAYER];
+    public void initVariable(Human... humans){
         for (Human human : humans){
             players[human.getColorCode()] = human;
         }
@@ -33,10 +38,6 @@ public class ModelController {
             if (players[i] == null)
                 players[i] = new Player(i);
         }
-        playerTurn = -1;
-        dices = new Dice[2];
-        focusedHorse = null;
-        hasRolled = false;
     }
 
 
