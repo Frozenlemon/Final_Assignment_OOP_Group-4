@@ -105,7 +105,7 @@ public class ModelController {
         return false;
     }
 
-    private void nextPlayer(){
+    public void nextPlayer(){
         resetDices();
         playerTurn++;
         deselectHorse();
