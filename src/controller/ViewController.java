@@ -110,4 +110,8 @@ public class ViewController {
         int index = id % 10;
         return (areaCode * 4) + index;
     }
+    
+    public void showSetting() {
+        backGroundPane.initSetting();
+    }
 }

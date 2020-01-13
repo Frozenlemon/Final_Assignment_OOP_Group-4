@@ -65,7 +65,7 @@ public class BackGroundPane extends StackPane {
         gamePane.init();
     }
 
-    private void initSetting(){
+    public void initSetting(){
         initFXMLLoader(setting, "setting");
         setting.init();
     }

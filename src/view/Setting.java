@@ -1,5 +1,6 @@
 package view;
 
+import controller.SoundController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -10,18 +11,18 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import util.Language;
 
 import java.net.URL;
 import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
+import util.Language;
 
 /**
  *
  * @author Phu Le
  */
-public class Setting{
+public class Setting {
 
     @FXML
     private ToggleGroup group;
@@ -31,37 +32,41 @@ public class Setting{
 
     @FXML
     private VBox vBoxMain;
-    
+
     private Locale localeCurrent;
 
     int numSwitches, numSwitchesCurrent = 0; //0: English, 1 VietNamese
 
-    public Setting(){}
+    public Setting() {
+    }
 
     public void init() {
         setLanguageText(vBoxMain.getChildrenUnmodifiable());
         setSelectedEvent();
     }
 
-    public void setVisible(boolean status){
+    public void setVisible(boolean status) {
         settingPane.setVisible(status);
     }
 
     private void setLanguageText(List<Node> listNode) {
         for (Node node : listNode) {
-            if (node instanceof Label) {
-                Label label = (Label) node;
-                label.textProperty().bind(Language.createStringBinding(label.getId(), numSwitches));
-                continue;
-            }
-            if (node instanceof Button) {
-                Button button = (Button) node;
-                button.textProperty().bind(Language.createStringBinding(button.getId(), numSwitches));
-                continue;
-            }
+            try {
+                if (node instanceof Label) {
+                    Label label = (Label) node;
+                    label.textProperty().bind(Language.createStringBinding(label.getId(), numSwitches));
+                    continue;
+                }
+                if (node instanceof Button) {
+                    Button button = (Button) node;
+                    button.textProperty().bind(Language.createStringBinding(button.getId(), numSwitches));
+                    continue;
+                }
 
-            if (node instanceof Parent) {
-                setLanguageText(((Parent)node).getChildrenUnmodifiable());
+                if (node instanceof Parent) {
+                    setLanguageText(((Parent) node).getChildrenUnmodifiable());
+                }
+            } catch (Exception ex) {
             }
         }
     }
@@ -95,12 +100,11 @@ public class Setting{
         numSwitches = language;
         Language.setLocale(locale);
     }
-    
+
     @FXML
     private void saveSetting() {
-    
     }
-    
+
     @FXML
     private void cancelSetting() {
         Language.setLocale(localeCurrent);

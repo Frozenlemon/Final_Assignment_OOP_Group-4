@@ -44,14 +44,14 @@ public class Language {
      * gets the string with the given key from the resource bundle for the current locale and uses it as first argument
      * to MessageFormat.format, passing in the optional args and returning the result.
      */
-    public static String get(final String key, final Object... args) {
+    public static String get(final String key, final Object... args) throws MissingResourceException {
         ResourceBundle bundle = ResourceBundle.getBundle("messages", getLocale());
         return MessageFormat.format(bundle.getString(key), args);
     }
     /**
      * creates a String binding to a localized String for the given message bundle key
      */
-    public static StringBinding createStringBinding(final String key, Object... args) {
+    public static StringBinding createStringBinding(final String key, Object... args)  throws MissingResourceException {
         return Bindings.createStringBinding(() -> get(key, args), locale);
     }
     /**

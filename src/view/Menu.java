@@ -111,4 +111,9 @@ public class Menu {
         ViewController.getInstance().clickOnDice(diceId);
     }
 
+    
+    @FXML
+    private void showSetting() {
+        ViewController.getInstance().showSetting();
+    }
 }

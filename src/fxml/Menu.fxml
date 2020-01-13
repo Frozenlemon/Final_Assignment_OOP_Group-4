@@ -27,6 +27,16 @@
             <Font size="18.0" />
          </font>
       </Button>
+      
+      <Button id="setting" fx:id="settingButton" onAction="#showSetting" minWidth="150.0" mnemonicParsing="false" styleClass="button" stylesheets="@ButtonMenu.css" text="Setting" wrapText="true"  translateY="-500.0"  StackPane.alignment="BOTTOM_CENTER">
+         <StackPane.margin>
+            <Insets bottom="0" />
+         </StackPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      
       <ToggleButton id="music" fx:id="musicButton" contentDisplay="CENTER" minWidth="150.0" mnemonicParsing="false" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" stylesheets="@ButtonMenu.css" text="Music on/off" StackPane.alignment="BOTTOM_CENTER">
          <StackPane.margin>
             <Insets bottom="430.0" />
