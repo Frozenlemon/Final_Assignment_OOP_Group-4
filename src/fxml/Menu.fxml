@@ -48,7 +48,7 @@
                     <media>
                        <Media>
                           <source>
-                             <URL value ="@Sound/Nhong Nhong Nhong - Xuan Mai.mp3"/>
+                             <URL value ="@Sound/backgroundMusic.mp3"/>
                           </source>
                        </Media>
                     </media>
