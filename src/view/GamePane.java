@@ -5,7 +5,9 @@ import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
 import javafx.beans.NamedArg;
 import javafx.fxml.FXML;
+import javafx.scene.effect.Effect;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
@@ -13,10 +15,10 @@ import javafx.util.Duration;
 public class GamePane {
     private static final int NO_OF_HORSES = 16;
     private static final int NO_OF_BASE = 4;
-    private static final int NO_OF_PATHS_IN_BASE = 12;
+    private static final int NO_OF_PATHS = 48;
 
     @FXML
-    private StackPane GamePane, redBase, yellowBase, greenBase, blueBase, imagePane;
+    private StackPane GamePane, imagePane, circleBase;
     @FXML
     private StackPane blueHorseCage, yellowHorseCage, greenHorseCage, redHorseCage;
     @FXML
@@ -33,12 +35,8 @@ public class GamePane {
         for (int i = 0; i < NO_OF_HORSES; i++){
             horses[i] = (ImageView) imagePane.getChildren().get(i);
         }
-        for (int i = 0; i < NO_OF_BASE; i++){
-            StackPane base = (StackPane) GamePane.getChildren().get(i);
-            for (int j = 0; j < NO_OF_PATHS_IN_BASE; j++){
-                int index = (i * 12) + j;
-                paths[index] = (Circle) base.getChildren().get(j);
-            }
+        for (int i = 0; i < NO_OF_PATHS; i++){
+            paths[i] = (Circle) circleBase.getChildren().get(i);
         }
         translate(-100,0);
     }
@@ -52,23 +50,28 @@ public class GamePane {
         GamePane.setTranslateY(y);
     }
 
-    public void moveHorse(ImageView horse, int pathIndex, int moveCount, TranslateTransition queueTransition){
+    public void moveHorse(int horseIndex, int pathIndex, int moveCount, TranslateTransition queueTransition){
         moveCount--;
-        TranslateTransition transition = new TranslateTransition(Duration.seconds(1),horse);
+        TranslateTransition transition = new TranslateTransition(Duration.seconds(1), horses[horseIndex]);
 
         transition.setToX(paths[pathIndex].getTranslateX() + 10);
         transition.setToY(paths[pathIndex].getTranslateY());
 
         pathIndex--;
         transition.setOnFinished(e -> {
-            if (queueTransition != null)
+            if (queueTransition != null) {
+                ViewController.getInstance().startAnimation();
                 queueTransition.play();
+            }
+            ViewController.getInstance().finishAnimation();
         });
 
         if (moveCount > 0)
-            moveHorse(horse, pathIndex, moveCount, transition);
-        else
+            moveHorse(horseIndex, pathIndex, moveCount, transition);
+        else {
+            ViewController.getInstance().startAnimation();
             transition.play();
+        }
     }
 
     public void kickHorse(int horseIndex){
@@ -82,6 +85,14 @@ public class GamePane {
         translateTransition.play();
         rotateTransition.play();
     }
+
+    public void change_Horse_Highlight(@NamedArg("Horse Index") int horseIndex){
+        if (horses[horseIndex].getEffect() == null)
+            horses[horseIndex].setEffect(new javafx.scene.effect.Bloom());
+        else
+            horses[horseIndex].setEffect(null);
+    }
+
 
     private double[] getInitialCoordinate(int index){
         double[] coordinate = new double[2];
@@ -154,4 +165,18 @@ public class GamePane {
         return coordinate;
     }
 
+    private int getHorseIndex(ImageView horse){
+        for (int i = 0; i < NO_OF_HORSES; i++){
+            if(horse.getId().equals(horses[i].getId()))
+                return i;
+        }
+        return -1;
+    }
+
+    @FXML
+    private void clickOnHorse(MouseEvent evt){
+        ImageView horse = (ImageView) evt.getSource();
+        int horseIndex = getHorseIndex(horse);
+        ViewController.getInstance().clickOnHorse(horseIndex);
+    }
 }

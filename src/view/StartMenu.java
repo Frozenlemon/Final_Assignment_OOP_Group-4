@@ -1,8 +1,6 @@
 package view;
 
 import com.sun.scenario.effect.DropShadow;
-import controller.ModelController;
-import controller.ModelController;
 import javafx.application.Platform;
 import javafx.beans.NamedArg;
 import javafx.fxml.FXML;
@@ -52,7 +50,7 @@ public class StartMenu {
          */
         if (type ==0 || type==1 || type ==2){
             DropShadow shadow = new DropShadow();
-            exitGameButton.setEffect(new javafx.scene.effect.DropShadow());
+//            exitGameButton.setEffect(new javafx.scene.effect.DropShadow());
 
             System.out.println("highlight on");
         }}
@@ -62,7 +60,7 @@ public class StartMenu {
          * function to turn off highlight for a button. Button selected by the type provided in argument
          */
         if (type ==0 || type==1 || type ==2){
-            getExitGameButton().setEffect(null);
+//            getExitGameButton().setEffect(null);
 
 
             System.out.println("highlight off");
@@ -73,7 +71,7 @@ public class StartMenu {
     private void mouseHover_On(MouseEvent event){
         if (event.getSource() instanceof javafx.scene.control.Button){
             javafx.scene.control.Button source = (javafx.scene.control.Button) event.getSource();
-            ModelController.getInstance().highlight_On(source.getId());
+//            ModelController.getInstance().highlight_On(source.getId());
         }
     }
 
@@ -81,7 +79,7 @@ public class StartMenu {
     private void mouseHover_Off(MouseEvent event){
         if (event.getSource() instanceof javafx.scene.control.Button){
             javafx.scene.control.Button source = (javafx.scene.control.Button) event.getSource();
-            ModelController.getInstance().highlight_Off(source.getId());
+//            ModelController.getInstance().highlight_Off(source.getId());
         }
     }
 
