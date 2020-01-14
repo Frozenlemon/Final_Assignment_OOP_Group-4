@@ -1,39 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<StackPane fx:id="startMenuSceen" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="startMenuSceen" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="startMenuBackground" fitHeight="800.0" fitWidth="1100.0" pickOnBounds="true" StackPane.alignment="TOP_LEFT">
+      <ImageView fx:id="startMenuBackground" fitHeight="800.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
    <image>
-       <Image url="@Images/background2.JPG" />
+       <Image url="@Images/Background.jpg" />
       </image>
       </ImageView>
-      <Button fx:id="startGameButton" mnemonicParsing="false" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" prefHeight="70.0" prefWidth="200.0" text="Start Game" styleClass="button" stylesheets="@ButtonStartMenu.css" textAlignment="CENTER" translateY="-50.0" StackPane.alignment="CENTER">
-         <font>
-            <Font name="System Bold" size="30.0" />
-         </font>
-         <StackPane.margin>
-            <Insets top="-150.0" />
-         </StackPane.margin></Button>
-      <Button fx:id="exitGameButton" mnemonicParsing="false" onAction="#exitPlatform" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" prefHeight="70.0" prefWidth="200.0" text="Exit" translateY="50.0" StackPane.alignment="CENTER">
-         <font>
-            <Font name="System Bold" size="30.0" />
-         </font>
-         <StackPane.margin>
-            <Insets top="150.0" />
-         </StackPane.margin></Button>
-      <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="Setting" StackPane.alignment="CENTER">
-         <StackPane.margin>
-            <Insets />
-         </StackPane.margin>
+      <Button fx:id="startGameButton" mnemonicParsing="false" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" text="Start Game" textAlignment="CENTER" translateY="-50.0" StackPane.alignment="CENTER">
          <font>
             <Font name="System Bold" size="30.0" />
          </font></Button>
+      <Button fx:id="exitGameButton" mnemonicParsing="false" onAction="#exitPlatform" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" text="Exit" translateY="50.0" StackPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font></Button>
+      <ToggleButton fx:id="musicButton" mnemonicParsing="false" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" text="Music on/off" textAlignment="CENTER" StackPane.alignment="TOP_RIGHT">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></ToggleButton>
    </children>
 </StackPane>

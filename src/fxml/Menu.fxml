@@ -11,7 +11,15 @@
 
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#196bb200" height="400.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="200.0" />
-      <Button id="stop" fx:id="stopButton" minWidth="150.0" mnemonicParsing="false" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" styleClass="button" stylesheets="@ButtonMenu.css" text="Stop" wrapText="true" StackPane.alignment="BOTTOM_CENTER">
+      <Button id="rollDice" fx:id="rollDice" minWidth="150.0" mnemonicParsing="false" onMouseClicked="#clickRollDice" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" styleClass="button" stylesheets="@ButtonMenu.css" text="Roll Dices" textAlignment="CENTER" textFill="#000000d3" translateX="25.0" translateY="520.0">
+         <StackPane.margin>
+            <Insets bottom="330.0" />
+         </StackPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button id="stop" fx:id="stopButton" minWidth="150.0" mnemonicParsing="false" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" styleClass="button" stylesheets="@ButtonMenu.css" text="Stop" translateX="25.0" translateY="750.0" wrapText="true">
          <StackPane.margin>
             <Insets bottom="230.0" />
          </StackPane.margin>
@@ -20,7 +28,7 @@
          </font>
       </Button>
       
-      <Button id="setting" fx:id="settingButton" minWidth="150.0" mnemonicParsing="false" onAction="#showSetting" styleClass="button" stylesheets="@ButtonMenu.css" text="Setting" translateY="-500.0" wrapText="true" StackPane.alignment="BOTTOM_CENTER">
+      <Button id="setting" fx:id="settingButton" minWidth="150.0" mnemonicParsing="false" onAction="#showSetting" styleClass="button" stylesheets="@ButtonMenu.css" text="Setting" translateX="25.0" translateY="640.0" wrapText="true">
          <StackPane.margin>
             <Insets bottom="0" />
          </StackPane.margin>
@@ -28,15 +36,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <ImageView fx:id="dice1" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" translateX="25.0" translateY="25.0" StackPane.alignment="TOP_LEFT" />
-      <ImageView fx:id="dice2" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" translateX="25.0" translateY="225.0" />
-      <Button id="rollDice" fx:id="rollDice" minWidth="150.0" mnemonicParsing="false" onMouseClicked="#clickRollDice" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" styleClass="button" stylesheets="@ButtonMenu.css" text="Roll Dices" textAlignment="CENTER" textFill="#000000d3" StackPane.alignment="BOTTOM_CENTER">
-         <StackPane.margin>
-            <Insets bottom="330.0" />
-         </StackPane.margin>
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
+      <ImageView id="b0" fx:id="dice1" fitHeight="150.0" fitWidth="150.0" onMouseClicked="#clickOnDice" pickOnBounds="true" preserveRatio="true" translateX="25.0" translateY="25.0" StackPane.alignment="TOP_LEFT" />
+      <ImageView id="b1" fx:id="dice2" fitHeight="150.0" fitWidth="150.0" onMouseClicked="#clickOnDice" pickOnBounds="true" preserveRatio="true" translateX="25.0" translateY="225.0" />
    </children>
 </StackPane>

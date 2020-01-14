@@ -15,8 +15,8 @@ import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 import util.FileIO;
 
-import java.awt.event.ActionEvent;
 import java.util.Random;
+import util.Language;
 
 public class Menu {
 
@@ -30,6 +30,7 @@ public class Menu {
     private ImageView dice1, dice2;
 
     public Menu() {
+        Language.setLanguageText(menuArea.getChildrenUnmodifiable());
     }
 
     public Button getRollDice() {
@@ -124,9 +125,9 @@ public class Menu {
         }
     }
 
-    
+    @FXML
     private void clickOnDice(MouseEvent evt){
-        Button button = (Button) evt.getSource();
+        ImageView button = (ImageView) evt.getSource();
         int diceId;
         if (button.getId().equals("b0"))
             diceId = 0;
@@ -134,7 +135,6 @@ public class Menu {
             diceId = 1;
         ViewController.getInstance().clickOnDice(diceId);
     }
-
     
     @FXML
     private void showSetting() {
