@@ -47,6 +47,15 @@ public class SoundController {
             instance = new SoundController();
         return instance;
     }
+    public void setVolume(double master, double music, double effect){
+
+    }
+    public void setEffect(double master, double music){
+
+    }
+    public void setMusic(double master, double effect){
+
+    }
 
     public void setVolume(double music, double effect){
         backgroundPlayer.setVolume(music);

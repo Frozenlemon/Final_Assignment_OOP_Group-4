@@ -41,12 +41,34 @@ public class Setting {
     }
 
     public void init() {
-        Language.setLanguageText(vBoxMain.getChildrenUnmodifiable());
+        setLanguageText(vBoxMain.getChildrenUnmodifiable());
         setSelectedEvent();
     }
 
     public void setVisible(boolean status) {
         settingPane.setVisible(status);
+    }
+
+    private void setLanguageText(List<Node> listNode) {
+        for (Node node : listNode) {
+            try {
+                if (node instanceof Label) {
+                    Label label = (Label) node;
+                    label.textProperty().bind(Language.createStringBinding(label.getId(), numSwitches));
+                    continue;
+                }
+                if (node instanceof Button) {
+                    Button button = (Button) node;
+                    button.textProperty().bind(Language.createStringBinding(button.getId(), numSwitches));
+                    continue;
+                }
+
+                if (node instanceof Parent) {
+                    setLanguageText(((Parent) node).getChildrenUnmodifiable());
+                }
+            } catch (Exception ex) {
+            }
+        }
     }
 
     public void setSelectedEvent() {
@@ -62,7 +84,7 @@ public class Setting {
                             break;
                         case "rdoVietnam":
                             switchLanguage(Locale.forLanguageTag("vi-VN"), 1);
-                            Language.setLanguageText(vBoxMain.getChildrenUnmodifiable());
+                            setLanguageText(vBoxMain.getChildrenUnmodifiable());
                             break;
                         default:
                             break;
@@ -86,7 +108,6 @@ public class Setting {
     @FXML
     private void cancelSetting() {
         Language.setLocale(localeCurrent);
-        Language.setNumSwitches(numSwitchesCurrent);
         numSwitches = numSwitchesCurrent;
     }
 }
