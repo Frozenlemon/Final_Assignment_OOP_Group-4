@@ -16,6 +16,7 @@ import javafx.util.Duration;
 import util.FileIO;
 
 import java.util.Random;
+import util.Language;
 
 public class Menu {
 
@@ -29,6 +30,7 @@ public class Menu {
     private ImageView dice1, dice2;
 
     public Menu() {
+        Language.setLanguageText(menuArea.getChildrenUnmodifiable());
     }
 
     public Button getRollDice() {

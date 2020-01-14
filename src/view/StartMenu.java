@@ -10,6 +10,7 @@ import javafx.scene.layout.StackPane;
 
 import javax.swing.text.html.ImageView;
 import java.awt.*;
+import util.Language;
 
 public class StartMenu {
 
@@ -24,7 +25,9 @@ public class StartMenu {
     @FXML
     private ImageView backGround;
 
-    public StartMenu() {}
+    public StartMenu() {
+        Language.setLanguageText(startMenuSceen.getChildrenUnmodifiable());
+    }
 
     public StackPane getStartMenuSceen(){
         return startMenuSceen;

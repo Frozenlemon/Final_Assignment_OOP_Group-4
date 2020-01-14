@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
+import util.Language;
 
 public class GamePane {
     private static final int NO_OF_HORSES = 16;
@@ -40,6 +41,7 @@ public class GamePane {
         }
         setStartingHorse();
         translate(-100,0);
+        Language.setLanguageText(gamePane.getChildrenUnmodifiable());
     }
 
     public StackPane getGamePane(){
