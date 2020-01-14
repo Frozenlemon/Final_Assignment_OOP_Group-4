@@ -31,9 +31,9 @@
       <TextField fx:id="txtGreenName" layoutX="325.0" layoutY="187.0" />
       <TextField fx:id="txtYellowName" layoutX="325.0" layoutY="128.0" />
       <TextField fx:id="txtBlueName" layoutX="325.0" layoutY="246.0" />
-      <Button layoutX="424.0" layoutY="293.0" mnemonicParsing="false" onAction="#continueGame" text="Continue" />
-      <Button layoutX="80.0" layoutY="293.0" mnemonicParsing="false" text="Back" />
-      <Label layoutX="197.0" layoutY="25.0" prefHeight="17.0" prefWidth="301.0" text="Choose Color &amp; Enter Your Name" textFill="#0a0a0a" textOverrun="CLIP">
+      <Button id="continueLabel" fx:id="continueButton" layoutX="424.0" layoutY="293.0" mnemonicParsing="false" onAction="#continueGame" text="Continue" />
+      <Button id="backLabel" fx:id="backButton" layoutX="80.0" layoutY="293.0" mnemonicParsing="false" text="Back" />
+      <Label id="chooseLabel" fx:id="choosePlayer" layoutX="197.0" layoutY="25.0" prefHeight="17.0" prefWidth="301.0" text="Choose Color &amp; Enter Your Name" textFill="#0a0a0a" textOverrun="CLIP">
          <font>
             <Font size="19.0" />
          </font>

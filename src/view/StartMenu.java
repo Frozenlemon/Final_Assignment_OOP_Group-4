@@ -25,9 +25,9 @@ public class StartMenu {
     @FXML
     private ImageView backGround;
 
-    public StartMenu() {
+    /*public StartMenu() {
         Language.setLanguageText(startMenuSceen.getChildrenUnmodifiable());
-    }
+    }*/
 
     public StackPane getStartMenuSceen(){
         return startMenuSceen;
@@ -63,10 +63,7 @@ public class StartMenu {
          * function to turn off highlight for a button. Button selected by the type provided in argument
          */
         if (type ==0 || type==1 || type ==2){
-   getExitGameButton().setEffect(null);
-
-
-
+            getExitGameButton().setEffect(null);
         }
     }
 

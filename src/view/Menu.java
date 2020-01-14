@@ -26,14 +26,13 @@ public class Menu {
     @FXML
     private StackPane menuArea;
     @FXML
-    private Button rollDice, stopButton;
+    private Button rollDice, stopButton, settingButton;
     @FXML
     private ToggleButton musicButton;
     @FXML
     private ImageView dice1, dice2;
 
     public Menu() {
-        Language.setLanguageText(menuArea.getChildrenUnmodifiable());
     }
 
     public Button getRollDice() {
@@ -44,12 +43,20 @@ public class Menu {
         return stopButton;
     }
 
+    public Button getSettingButton() {return settingButton; }
+
     public ToggleButton getMusicButton() {
         return musicButton;
     }
 
     public StackPane getMenuArea() {
         return menuArea;
+    }
+
+    public void setMenuSwitchLanguage(String... inputs){
+        rollDice.setText(inputs[0]);
+        stopButton.setText(inputs[1]);
+        settingButton.setText(inputs[2]);
     }
 
     public ImageView getDice(int id) {
@@ -149,9 +156,4 @@ public class Menu {
         ViewController.getInstance().showSetting();
     }
 
-    public static void setLocalLanguage(String[] arg) {
-        Locale.setDefault(new Locale("vi","VN"));
-        ResourceBundle bundle = ResourceBundle.getBundle("MessageBundle");
-        System.out.println(bundle.getString("ten ben tieng anh"));
-    }
 }
