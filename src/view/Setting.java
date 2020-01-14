@@ -39,7 +39,7 @@ public class Setting {
     private VBox vBoxMain;
 
     @FXML
-    private Button saveButton;
+    private Button btnButton, saveButton, btnHome;
     private Slider masterSlider;
 
     @FXML
@@ -50,13 +50,17 @@ public class Setting {
 
     @FXML
     private CheckBox enCheckBox;
+
     @FXML
     private CheckBox vnCheckBox;
+
+    @FXML
+    private Label chooseLanguageLabel, volumeControlLabel, msVolume, efVolume, bgmVolume;
 
     private Locale localeCurrent;
     private SoundController backgroundPlayer;
 
-    int numSwitches, numSwitchesCurrent = 0; //0: English, 1 VietNamese
+    //int numSwitches, numSwitchesCurrent = 0; //0: English, 1 VietNamese
 
     public Setting() {
     }
@@ -128,4 +132,16 @@ public class Setting {
         numSwitches = numSwitchesCurrent;
     }*/
 
+    public void SettingSwitchLanguage(String...inputs){
+        btnButton.setText(inputs[0]);
+        btnHome.setText(inputs[1]);
+        saveButton.setText(inputs[2]);
+        enCheckBox.setText(inputs[3]);
+        vnCheckBox.setText(inputs[4]);
+        chooseLanguageLabel.setText(inputs[5]);
+        volumeControlLabel.setText(inputs[6]);
+        msVolume.setText(inputs[7]);
+        efVolume.setText(inputs[8]);
+        bgmVolume.setText(inputs[9]);
+    }
 }

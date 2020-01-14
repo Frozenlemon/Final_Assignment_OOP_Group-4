@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import model.Horse;
 import model.Human;
 import view.BackGroundPane;
+import view.Setting;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -118,14 +119,23 @@ public class ViewController {
         }
     }
 
-    public void switchLanguage(Locale locale, int language){
-        Locale vnLocale = new Locale("vi","VN");
-        Locale.setDefault(vnLocale);
-        int lang;
-        Scanner s = new Scanner(System.in);
-        lang = s.nextInt();
-        ResourceBundle messages;
-        messages =s.nextLine();
+    public void switchLanguage(String choice){
+        if (choice.equals("vn")) {
+            Locale.setDefault(new Locale("vi", "VN"));
+        }
+        else{
+            Locale.setDefault(new Locale("en", "US"));
+        }
+        ResourceBundle bundle = ResourceBundle.getBundle("messege");
+        String rollDice = bundle.getString("rollDice");
+        String stopButton = bundle.getString("stopButton");
+        String settingButton = bundle.getString("settingButton");
+        backGroundPane.getMenu().setMenuSwitchLanguage(rollDice, stopButton, settingButton);
+        String backButton = bundle.getString("backButton");
+        String continueButton = bundle.getString("continueButton");
+        String choosePlayer = bundle.getString("choosePlayer");
+        backGroundPane.getSettingName().setSettingNameSwitchLanguage(backButton,continueButton,choosePlayer);
+        String
     }
 
     public void addAnimation(){
