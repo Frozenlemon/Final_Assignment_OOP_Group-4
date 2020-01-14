@@ -1,6 +1,7 @@
 package view;
 
 import controller.SoundController;
+import controller.ViewController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -12,6 +13,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.List;
 import java.util.Locale;
@@ -32,6 +35,9 @@ public class Setting {
 
     @FXML
     private VBox vBoxMain;
+
+    @FXML
+    private Button saveButton;
 
     private Locale localeCurrent;
 
@@ -71,22 +77,38 @@ public class Setting {
             }
         });
     }
-
-    private void switchLanguage(Locale locale, int language) {
-        localeCurrent = Language.getLocale();
-        numSwitchesCurrent = numSwitches;
-        numSwitches = language;
-        Language.setLocale(locale);
+    @FXML
+    public void clickOnRadioButton(MouseEvent evt){
+        RadioButton button = (RadioButton) evt.getSource();
+        ViewController.getInstance().changeSetting();
     }
 
-    @FXML
-    private void saveSetting() {
+
+    private void saveSetting(ActionEvent event) {
+        event.
     }
 
-    @FXML
     private void cancelSetting() {
         Language.setLocale(localeCurrent);
         Language.setNumSwitches(numSwitchesCurrent);
         numSwitches = numSwitchesCurrent;
     }
+    private ResourceBundle bundle = ResourceBundle.getBundle("sample.messages", new Locale("en"));
+    @FXML
+    private RadioButton rdoVietnam;
+    @FXML
+    private RadioButton rdoEnglish;
+
+
+    private Label lbChooseLanguage;
+    private  void setLanguage(){
+        lbChooseLanguage.setText(bundle.getString("lbChooseLanguage"));
+
+    }
+    public void defaultLanguage(){
+        Locale enLocale = new Locale("en","US");
+        Locale.setDefault(enLocale);
+    }
+
+
 }
