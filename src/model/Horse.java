@@ -7,13 +7,13 @@ import java.util.ArrayList;
 
 public class Horse {
     private static ArrayList<Horse> releasedHorses = new ArrayList<>();
-    private int id, currentAreaCode, locationOnPath, moveCount, home;
+    private int id, currentAreaCode, locationOnPath, moveCount, homeOnPath;
 
     public Horse(int id){
         this.id = id;
         currentAreaCode = -1;
         locationOnPath = -1;
-        home = -1;
+        homeOnPath = -1;
         moveCount = 0;
     }
 
@@ -24,18 +24,147 @@ public class Horse {
     }
 
     private void setKickedHorse(Horse kickedHorse){
-        releasedHorses.remove(kickedHorse);
         kickedHorse.currentAreaCode = -1;
         kickedHorse.locationOnPath = -1;
-        kickedHorse.home = -1;
+        releasedHorses.remove(kickedHorse);
     }
 
     public int getId(){
         return this.id;
     }
 
-    public int getHome(){
-        return home;
+    public int getColorCode(){
+        return Converter.getColorCodeFromId(id)[0];
+    }
+
+    public int getPathIndex(){
+        return (currentAreaCode * 12) + locationOnPath;
+    }
+
+    public int getMoveCount(){
+        return this.moveCount;
+    }
+
+    public int getHomeOnPath(){
+        return homeOnPath;
+    }
+
+    public void move(int moveStatus, int moveCount){
+        System.out.println("Status: " + moveStatus);
+        if (moveStatus == 3 || moveStatus == 4)
+            moveCount = 1;
+        this.moveCount = moveCount;
+        //Move or move and kick horse
+        if (moveStatus != 0)
+        {
+            //set location of all move
+            if (moveStatus != 3 && moveStatus != 4) {
+                int[] location = get_HorseNewLocation(moveCount);
+                setHorseLocation(location[0], location[1]);
+            }
+            else
+                setExitHorseLocation();     //set location of all exit
+
+            //call the function updateHorses in ModelController
+            if (moveStatus == 5 || moveStatus == 6)
+                System.out.println("Hprse ID: " + this.id + "\nAREA CODE: " + currentAreaCode + "\nPATH: " + locationOnPath);
+            if (moveStatus == 2 || moveStatus == 4 || moveStatus == 6){
+                Horse colliedHorse = checkCollision(this);
+                setKickedHorse(colliedHorse);
+                ModelController.getInstance().updateHorses(this, colliedHorse);
+            }
+            else
+                ModelController.getInstance().updateHorses(this, null);
+        }
+    }
+
+    private void setHorseLocation(int currentAreaCode, int locationOnPath){
+        this.currentAreaCode = currentAreaCode;
+        this.locationOnPath = locationOnPath;
+    }
+    /*
+    If Horse reach home and kick return 6,
+    if horse can reach to home return 5,
+    if horse can exit and kick return 4,
+    if horse can exit return 3,
+    if horse can move and kick return 2,
+    if horse can move return 1,
+    if horse cant do anything return 0
+     */
+    public int checkMove(int moveCount){
+        if (currentAreaCode == getColorCode() && (locationOnPath == 0 || locationOnPath == -1)) {
+            if (canUpgrade(moveCount))
+                return 7;
+            else
+                return 0;
+        }
+        int value = canRelease(moveCount, currentAreaCode, locationOnPath); //check if the horse can be release
+        if (value != -1)
+            return value; //can return 0, 3 or 4
+        else{
+            int moveStatus = canMove(moveCount - 1, moveOneStep(currentAreaCode, locationOnPath));
+            return isLastPoint(moveStatus, moveCount); //convert from regular move/ kick to got to last point if possible
+        }
+    }
+
+    public boolean canUpgrade(int moveCount){
+        if (currentAreaCode == getColorCode() && locationOnPath == 0){
+            if (moveCount > homeOnPath){
+                for (int i = homeOnPath + 1; i < moveCount; i++){
+                    if (!checkHomeBlock(i))
+                        return false;
+                }
+                return true;
+            }
+        }
+        else if (currentAreaCode == getColorCode() && locationOnPath == -1){
+            if (moveCount == homeOnPath + 1){
+                if (!checkHomeBlock(moveCount))
+                    return false;
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public void upgradeHorse(int moveCount){
+        if (this.locationOnPath == 0)
+            this.locationOnPath = -1;
+        homeOnPath = moveCount;
+        ModelController.getInstance().upgradeHorse(this);
+    }
+
+    public boolean checkHomeBlock(int home){
+        for (Horse horse: releasedHorses){
+            if (horse.getColorCode() == this.getColorCode()){
+                if (home == horse.getHomeOnPath())
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    public int checkCollision(int colorCode, int checkLocationMove, int checkAreaCodeMove){
+        for (Horse checkHorse: releasedHorses) {
+            if (checkLocationMove == checkHorse.getLocationOnPath() && checkAreaCodeMove == checkHorse.getCurrentAreaCode()){
+                if (colorCode != checkHorse.getColorCode())
+                    return 2; //collision with other player horse
+                else
+                    return 1; //collision with player horse
+            }
+        }
+        return 0; //no collision
+    }
+
+    public Horse checkCollision(Horse horse){
+        for (Horse rHorse: releasedHorses){
+            if (horse.getColorCode() != rHorse.getColorCode()) {
+                if (rHorse.getCurrentAreaCode() == horse.getCurrentAreaCode() && rHorse.getLocationOnPath() == horse.getLocationOnPath())
+                    return rHorse;
+            }
+        }
+        return null;
     }
 
     public int getLocationOnPath() {
@@ -46,128 +175,85 @@ public class Horse {
         return currentAreaCode;
     }
 
-    public int getPathIndex(){
-        return currentAreaCode * 12 + locationOnPath;
+    private int[] get_HorseNewLocation(int moveCount){
+        int pathIndex = locationOnPath;
+        int areaCode = currentAreaCode;
+
+        pathIndex += moveCount;
+        if (pathIndex > 11){
+            pathIndex -= 12;
+            areaCode += 1;
+        }
+        if (areaCode > 3)
+            areaCode = 0;
+        return new int[]{areaCode, pathIndex};
     }
 
-    public int getMoveCount(){
-        return this.moveCount;
-    }
-
-    public int getColor(int id){
-        return Converter.getColorCodeFromId(id)[0];
-    }
-
-    public void move(int moveStatus, int moveCount){
-        if (moveStatus == 3 || moveStatus == 4)
-            moveCount = 1;
-        this.moveCount = moveCount;
-        //Move or move and kick horse
-        if (moveStatus == 1 || moveStatus == 2 || moveStatus == 3 || moveStatus == 4)
-        {
-            //set location of move and move kick
-            if (moveStatus == 1 || moveStatus == 2)
-                setNewHorseLocation();
-            else
-                //set location of exit exit kick
-                setExitHorseLocation();
-            //call the function updateHorses in ModelController
-            if (moveStatus == 2 || moveStatus == 4){
-                Horse colliedHorse = checkCollision(this);
-                ModelController.getInstance().updateHorses(this, colliedHorse);
-                setKickedHorse(colliedHorse);
+    private int canRelease(int moveCount, int... location){
+        if (location[0] == -1 && location[1] == -1){
+            if (moveCount == 1 || moveCount == 6){
+                int isCollied = checkCollision(getColorCode(),1, Converter.getColorCodeFromId(this.id)[0]);
+                if (isCollied == 2)
+                    return 4;// release and kick
+                else if(isCollied == 0)
+                    return 3; //release
+                else
+                    return 0; //cannot move
             }
             else
-                ModelController.getInstance().updateHorses(this, null);
+                return 0; //cant move
         }
-        //Move to home
-        if (currentAreaCode == getColor(id) && locationOnPath == 0)
-            home = 0;
+        return -1; //already release
     }
 
-    //If horse can reach to home return 5, if horse can exit and kick return 4, if horse can exit return 3, if horse can move and kick return 2, if horse can move return 1, if horse cant do anything return 0
-    public int checkMove(int moveCount){
-        int checkLocationOnPath = locationOnPath;
-        int checkCurrentAreaCode = currentAreaCode;
-        int checkHome = home;
-        int checkMoveCount = moveCount;
-        if (checkHome >= 0)
-        {
-            if (canMoveHome(checkMoveCount))
-                return 5;
-            else
-                return 0;
+    private int canMove(int remainMove, int... location){
+        int isCollied = checkCollision(getColorCode(), location[1], location[0]);
+        if (location[0] == getColorCode() && location[1] == 0 && remainMove > 0)
+            return 0;   //get to last point but still have move left => cannot move
+        if (isCollied != 0){
+            if (remainMove > 0)
+                return 0; // collied but still have move => cannot move
+            else {
+                if (isCollied == 2)
+                    return 2; //collied with other's horse and have 0 move left => move kick
+                else
+                    return 0; //collied with own horse => cannot move
+            }
         }
         else {
-            if (checkMoveCount == 1 || checkMoveCount == 6)
-                if (checkLocationOnPath == -1 && checkCurrentAreaCode == -1)
-                    return checkRelease(checkLocationOnPath, checkLocationOnPath);
-
-            while (checkMoveCount > 0) {
-                checkLocationOnPath++;
-                if (checkLocationOnPath > 11) {
-                    checkLocationOnPath = 0;
-                    checkCurrentAreaCode++;
-                    if (checkCurrentAreaCode > 3)
-                        checkCurrentAreaCode = 0;
-                    if (checkMoveCount > 1 && checkCurrentAreaCode == getColor(id))
-                        return 0;
-                }
-                if (checkCollision(checkLocationOnPath, checkCurrentAreaCode)) {
-                    if (checkMoveCount == 1)
-                        return 2;
-                    else
-                        return 0;
-                }
-                checkMoveCount--;
-            }
-            return 1;
+            if (remainMove > 0)
+                return canMove(remainMove - 1, moveOneStep(location)); //not collied and still have move => check next step
+            else
+                return 1; // not collied and no move left => can move
         }
     }
 
-    private int checkRelease(int...check){
-        check[0] = 1;
-        check[1] = getColor(id);
-        if (checkCollision(check[0], check[1]))
-            return 4;
-        else
-            return 3;
-    }
+    private int isLastPoint(int moveStatus, int moveCount){
+        int[] newLocation = get_HorseNewLocation(moveCount);
+        boolean isLastPoint = false;
+        if (newLocation[1] == 0 && newLocation[0] == getColorCode())
+            isLastPoint = true;
 
-    private boolean canMoveHome(int checkMoveCount){
-        int checkHomePlace = 7;
-        for (Horse checkHorse: releasedHorses)
-            if (id != checkHorse.getId() && getColor(id) == getColor(checkHorse.getId()))
-                if (checkHomePlace > checkHorse.getHome() && home < checkHorse.getHome())
-                    checkHomePlace = checkHorse.getHome();
-        return checkHomePlace > checkMoveCount;
-    }
-
-    private boolean checkCollision(int checkLocationMove,int checkAreaCodeMove){
-        for (Horse checkHorse: releasedHorses) {
-            if (checkLocationMove == checkHorse.getLocationOnPath() && checkAreaCodeMove == checkHorse.getCurrentAreaCode())
-                return true;
+        if (moveStatus == 2){
+            if (isLastPoint)
+                return 6;
         }
-        return false;
+        else if (moveStatus == 1){
+            if (isLastPoint)
+                return 5;
+        }
+        return moveStatus;
     }
 
-    public Horse checkCollision(Horse horse){
-        for (Horse rHorse: releasedHorses){
-            if (horse.getId() != rHorse.getId()){
-                if (rHorse.getCurrentAreaCode() == horse.getCurrentAreaCode() && rHorse.getLocationOnPath() == horse.getLocationOnPath())
-                    return rHorse;
-            }
+    private int[] moveOneStep(int...location){
+        int areaCode = location[0];
+        int path = location[1] + 1;
+        if (path > 11){
+            path = 0;
+            areaCode++;
         }
-        return null;
-    }
-
-    private void setNewHorseLocation(){
-        locationOnPath += moveCount;
-        if (locationOnPath > 11){
-            locationOnPath -= 12;
-            currentAreaCode++;
-            if (currentAreaCode > 3)
-                currentAreaCode = 0;
-        }
+        if (areaCode > 3)
+            areaCode = 0;
+        return new int[]{areaCode, path};
     }
 }
