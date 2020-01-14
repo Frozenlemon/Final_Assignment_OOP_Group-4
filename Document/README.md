@@ -39,7 +39,7 @@ Checking which player has the remaining turn
 Users click Run to run the project. Then the system will display the Start Game screen, the player will set up the sound and language, then press the start game to play or Exit to exit the game. Then the player will choose how many players to play with if less than 4 systems will automatically select the remaining player as the machine.After entering the main screen, the player will click on Roll Dice to take turns out of the stable for horses . Horses only sloop when the roll dice are 6 points. After leaving the stables will move based on the number of points the player can roll dice. After the roll of dice is over and the horse is selected to move, another player will play. When all four horses of a player enter the barn, the player wins and the other players continue to play until the last player's horse finally entered the barn. Users can pause the game if they click on the Pause button. Players can also adjust the volume for the game or quit the game if they want.
 
 5. KNOWN BUGS
-Do not hae Networking
+Do not have Networking
 
 6. ACKNOWLEDGEMENT
 [1] "Java Internationalization - javatpoint", www.javatpoint.com, 2020. [Online]. Available: https://www.javatpoint.com/internationalization-in-java. [Accessed: 14- Jan- 2020]
