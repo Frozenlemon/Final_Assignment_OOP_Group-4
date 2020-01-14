@@ -3,8 +3,7 @@ package util;
 import javafx.beans.NamedArg;
 
 import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URI;
+import java.net.MalformedURLException;;
 import java.net.URL;
 
 public class FileIO {
@@ -24,7 +23,7 @@ public class FileIO {
     }
 
     public static String getMusicFile(@NamedArg("Audio filename") String fileName){
-        File file = new File(PATH_TO_AUDIO + fileName + ".fxml");
+        File file = new File(PATH_TO_AUDIO + fileName + ".mp3");
         try{
             return file.toURI().toString();
         }catch (Exception e){

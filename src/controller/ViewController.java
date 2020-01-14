@@ -135,7 +135,8 @@ public class ViewController {
         String continueButton = bundle.getString("continueButton");
         String choosePlayer = bundle.getString("choosePlayer");
         backGroundPane.getSettingName().setSettingNameSwitchLanguage(backButton,continueButton,choosePlayer);
-        String
+        String btnButton = bundle.getString("btnButton");
+        String btnHome =  bundle.getString()
     }
 
     public void addAnimation(){
