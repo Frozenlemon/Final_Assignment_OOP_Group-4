@@ -68,6 +68,7 @@ public class Menu {
             ViewController.getInstance().finishAnimation();
         });
         animation.getKeyFrames().add(kf);
+        ViewController.getInstance().addAnimation();
         animation.playFromStart();
     }
 
