@@ -121,8 +121,19 @@ public class ModelController {
         }
     }
 
+    private boolean endGame(){
+        for (int i = 0; i < 4; i++){
+            if (players[playerTurn].getHorse(i).getHomeOnPath() < 0)
+                return false;
+        }
+        return true;
+    }
+
     public void endTurn(){
-        if (!canMove())
+        if (endGame() || ViewController.getInstance().isEndGame()) {
+            ViewController.getInstance().setIsEndGame(true);
+        }
+        else if (!canMove())
             nextPlayer();
         else{
             if (!isPlayer())
@@ -146,7 +157,6 @@ public class ModelController {
 
     public void nextPlayer(){
         playerTurn++;
-        System.out.println("Current player: " + playerTurn);
         hasRolled = false;
         setDiceStatus(true);
         deselectHorse();
