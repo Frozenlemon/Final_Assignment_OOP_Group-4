@@ -48,23 +48,25 @@ public class SoundController {
         return instance;
     }
     public void setVolume(double master, double music, double effect){
-
+        backgroundPlayer.setVolume(master/100 * music);
+        releaseHorsePlayer.setVolume(master / 100 * effect);
+        horseMovePlayer.setVolume(master / 100 * effect);
+        rollDicePlayer.setVolume(master / 100 * effect);
+        horseMovePlayer.setVolume(master / 100 * effect);
+        horseKickPlayer.setVolume(master / 100 * effect);
     }
-    public void setEffect(double master, double music){
-
+    public void setMusic(double master, double music){
+        backgroundPlayer.setVolume(master/100 * music);
     }
-    public void setMusic(double master, double effect){
-
+    public void setEffect(double master, double effect){
+        releaseHorsePlayer.setVolume(master / 100 * effect);
+        horseMovePlayer.setVolume(master / 100 * effect);
+        rollDicePlayer.setVolume(master / 100 * effect);
+        horseMovePlayer.setVolume(master / 100 * effect);
+        horseKickPlayer.setVolume(master / 100 * effect);
     }
 
-    public void setVolume(double music, double effect){
-        backgroundPlayer.setVolume(music);
-        releaseHorsePlayer.setVolume(effect);
-        horseMovePlayer.setVolume(effect);
-        rollDicePlayer.setVolume(effect);
-        horseMovePlayer.setVolume(effect);
-        horseKickPlayer.setVolume(effect);
-    }
+
     public void playMusic(){
         backgroundPlayer.play();
     }
