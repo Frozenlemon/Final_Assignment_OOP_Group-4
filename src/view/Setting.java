@@ -39,7 +39,7 @@ public class Setting {
     private VBox vBoxMain;
 
     @FXML
-    private Button btnButton, saveButton, btnHome;
+    private Button btnButton, btnHome;
     private Slider masterSlider;
 
     @FXML
@@ -135,7 +135,6 @@ public class Setting {
     public void SettingSwitchLanguage(String...inputs){
         btnButton.setText(inputs[0]);
         btnHome.setText(inputs[1]);
-        saveButton.setText(inputs[2]);
         enCheckBox.setText(inputs[3]);
         vnCheckBox.setText(inputs[4]);
         chooseLanguageLabel.setText(inputs[5]);

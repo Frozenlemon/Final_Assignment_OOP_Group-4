@@ -19,8 +19,7 @@ public class ViewController {
     private Stage primaryStage;
     private BackGroundPane backGroundPane;
     private int inAnimation;
-    private String localSetting, oldLocalSetting;
-    private double[] volumeSetting, oldVolumeSetting;
+
 
     private ViewController(){
         primaryStage = new Stage();
@@ -28,8 +27,6 @@ public class ViewController {
         backGroundPane = new BackGroundPane();
         primaryStage.setScene(new Scene(backGroundPane, 1010, 800));
         inAnimation = 0;
-        volumeSetting = new double[]{0.5, 0.5, 0.5};
-        localSetting = "local0";
     }
 
     public static ViewController getInstance(){
@@ -136,7 +133,18 @@ public class ViewController {
         String choosePlayer = bundle.getString("choosePlayer");
         backGroundPane.getSettingName().setSettingNameSwitchLanguage(backButton,continueButton,choosePlayer);
         String btnButton = bundle.getString("btnButton");
-        String btnHome =  bundle.getString()
+        String btnHome =  bundle.getString("btnHome");
+        String enCheckBox = bundle.getString("enCheckBox");
+        String vnCheckBox = bundle.getString("vnCheckBox");
+        String chooseLanguageLabel = bundle.getString("chooseLanguageLabel");
+        String volumeControlLabel = bundle.getString("volumeControlLabel");
+        String msVolume = bundle.getString("msVolume");
+        String efVolume = bundle.getString("efVolume");
+        String bgmVolume = bundle.getString("bgmVolume");
+        backGroundPane.getSetting().setSettingSwitchLanguage(btnButton,btnHome,enCheckBox,vnCheckBox,chooseLanguageLabel,volumeControlLabel,msVolume,efVolume,bgmVolume);
+        String startGameButton = bundle.getString("startGameButton");
+        String exitGameButton = bundle.getString("exitGameButton");
+        backGroundPane.getStartMenu().setStartMenuSwitchLanguage(startGameButton,exitGameButton);
     }
 
     public void addAnimation(){
