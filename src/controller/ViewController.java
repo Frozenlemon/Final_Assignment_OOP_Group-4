@@ -130,6 +130,23 @@ public class ViewController {
         lang = s.nextInt();
         ResourceBundle messages;
 
+        if (choice.equals("vn")) {
+            Locale.setDefault(new Locale("vi", "VN"));
+        }
+        else{
+            Locale.setDefault(new Locale("en", "US"));
+        }
+        ResourceBundle bundle = ResourceBundle.getBundle("messege");
+        String rollDice = bundle.getString("rollDice");
+        String stopButton = bundle.getString("stopButton");
+        String settingButton = bundle.getString("settingButton");
+        backGroundPane.getMenu().setMenuSwitchLanguage(rollDice, stopButton, settingButton);
+        String backButton = bundle.getString("backButton");
+        String continueButton = bundle.getString("continueButton");
+        String choosePlayer = bundle.getString("choosePlayer");
+        backGroundPane.getSettingName().setSettingNameSwitchLanguage(backButton,continueButton,choosePlayer);
+        String btnButton = bundle.getString("btnButton");
+        String btnHome =  bundle.getString()
     }
 
     public void addAnimation(){

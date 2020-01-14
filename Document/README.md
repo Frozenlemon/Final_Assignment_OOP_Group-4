@@ -17,10 +17,10 @@ Move: The horse will only leave the barn when the player rolls 6 or 1 point, and
 Stop: The game will pause when the user clicks on "Pause". Then the game will stop until the player continues to play.	
 Moving algorithm: 	
 Sound:	There are 3 sound bars in the Setting function. User can adjust the volume as a percentage of Sound Effect and Background Music. In addition, users can adjust the volume for the whole game via the Maser sound bar.
-Score:	
-Play again or Quit:	
+Score:
+Play again or Quit:  	
 Game status:	
-Language: 
+Language: Players can convert 2 languages Vietnamese and English in Menu.
 
 3. DESIGN
 Describe major design decisions and major algorithms.
