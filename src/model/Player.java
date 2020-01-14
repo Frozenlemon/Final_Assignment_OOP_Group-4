@@ -2,6 +2,7 @@ package model;
 
 
 import controller.ModelController;
+import controller.ViewController;
 
 import java.util.ArrayList;
 
@@ -20,10 +21,6 @@ public class Player {
                 new Horse((colorCode*4) + 3)};
     }
 
-    public boolean isHuman() {
-        return false;
-    }
-
     public int getColorCode() {
         return colorCode;
     }
@@ -33,21 +30,13 @@ public class Player {
     }
 
     public void autoMove() {
-        ModelController.getInstance().rollDice();
         Dice[] allDice = ModelController.getInstance().getAllDice();
-        while (ModelController.getInstance().getAnimationCount() != 0) {}
-        while (checkDice(allDice)) {
-            getChoices(allDice);
-            selectMove(allDice);
-            if (canMove()) {
-                selectMove(allDice);
-                while (ModelController.getInstance().getAnimationCount() != 0) {}
+        getChoices(allDice);
 
-            }
-            else {
-                allDice[0].setUsed(true);
-                allDice[1].setUsed(true);
-            }
+        printChoice();
+
+        if (canMove()) {
+            selectMove(allDice);
         }
     }
 
@@ -73,34 +62,47 @@ public class Player {
     public void selectMove(Dice[] allDice) {
         int bestChoice = -1;
         int choice_index = -1;
+        int diceIndex;
         for (int i = 0; i < choices.size(); i++) {
             if (bestChoice < choices.get(i)) {
-                bestChoice = choices.get(i);
+                    bestChoice = choices.get(i);
+                    choice_index = i;
+            }
+            else if (bestChoice == choices.get(i)){
+                if (choice_index != -1){
+                    if (horses[choice_index % 4].getPathIndex() < horses[i % 4].getPathIndex())
+                    bestChoice = choices.get(i);
+                }
+                else{
+                    bestChoice = choices.get(i);
+                }
                 choice_index = i;
             }
         }
-        switch (choice_index % 4) {
-            case 0:
-                horses[0].move(bestChoice, allDice[choice_index / 4].getValue());
-                break;
-            case 1:
-                horses[1].move(bestChoice, allDice[choice_index / 4].getValue());
-                break;
-            case 2:
-                horses[2].move(bestChoice, allDice[choice_index / 4].getValue());
-                break;
-            case 3:
-                horses[3].move(bestChoice, allDice[choice_index / 4].getValue());
-                break;
+
+        System.out.println("BEST CHOICE: " + bestChoice);
+        int horseIndex = choice_index % 4;
+        if (choices.size() == 8)
+            diceIndex = choice_index / 4;
+        else {
+            diceIndex = -1;
+            for (int i = 0; i < allDice.length; i++){
+                if (!allDice[i].isUsed())
+                    diceIndex = i;
+            }
         }
+        if (bestChoice != 7)
+            horses[horseIndex].move(bestChoice, allDice[diceIndex].getValue());
+        else
+            horses[horseIndex].upgradeHorse(allDice[diceIndex].getValue());
         choices = new ArrayList<>();
-        allDice[choice_index].setUsed(true);
+        allDice[diceIndex].setUsed(true);
     }
 
-    private boolean checkDice(Dice[] dices) {
-        for (Dice dice : dices)
-            while (!dice.isUsed())
-                return true;
-        return false;
+    public void printChoice(){
+        String result = "Posible choice: ";
+        for (int choice: choices)
+            result += choice + " ";
+        System.out.println(result);
     }
 }
