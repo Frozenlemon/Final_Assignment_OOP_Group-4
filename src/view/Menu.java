@@ -1,16 +1,22 @@
 package view;
 
 import controller.ViewController;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.beans.NamedArg;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.effect.Effect;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import javafx.util.Duration;
+import util.FileIO;
 
 import java.awt.event.ActionEvent;
+import java.util.Random;
 
 public class Menu {
 
@@ -47,6 +53,24 @@ public class Menu {
             return dice1;
         }
         return dice2;
+    }
+
+    public void rollAnimation(int value1, int value2){
+        Timeline animation = new Timeline();
+        KeyFrame kf = new KeyFrame(Duration.millis(200), e-> {
+            Random rand = new Random();
+            dice1.setImage(new Image("file:" + FileIO.getDiceImage(rand.nextInt(6))));
+            dice2.setImage(new Image("file:" + FileIO.getDiceImage(rand.nextInt(6))));
+        });
+        animation.setCycleCount(10);
+        animation.setOnFinished(e -> {
+            dice1.setImage(new Image("file:" + FileIO.getDiceImage(value1)));
+            dice2.setImage(new Image("file:" + FileIO.getDiceImage(value2)));
+            ViewController.getInstance().finishAnimation();
+        });
+        animation.getKeyFrames().add(kf);
+        ViewController.getInstance().addAnimation();
+        animation.playFromStart();
     }
 
     //function to move the menuArea by x and y amount

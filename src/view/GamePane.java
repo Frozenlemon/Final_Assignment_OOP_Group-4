@@ -58,7 +58,7 @@ public class GamePane {
         TranslateTransition transition = new TranslateTransition(Duration.seconds(1), horses[horseIndex]);
 
         transition.setToX(paths[pathIndex].getTranslateX() + 110);
-        transition.setToY(paths[pathIndex].getTranslateY() - 20);
+        transition.setToY(paths[pathIndex].getTranslateY() - 10);
 
         pathIndex--;
         transition.setOnFinished(e -> {
@@ -72,21 +72,18 @@ public class GamePane {
         if (moveCount > 0)
             moveHorse(horseIndex, pathIndex, moveCount, transition);
         else {
-            ViewController.getInstance().startAnimation();
+            ViewController.getInstance().addAnimation();
             transition.play();
         }
     }
 
-    public void kickHorse(int horseIndex){
+    public TranslateTransition kickHorseAnimation(int horseIndex){
         TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(1), horses[horseIndex]);
         double[] coordinate = getInitialCoordinate(horseIndex);
         translateTransition.setToX(coordinate[0]);
         translateTransition.setToY(coordinate[1]);
         translateTransition.setOnFinished(e -> ViewController.getInstance().finishAnimation());
-
-        RotateTransition rotateTransition = new RotateTransition(Duration.seconds(1), horses[horseIndex]);
-        translateTransition.play();
-        rotateTransition.play();
+        return translateTransition;
     }
 
     public void change_Horse_Highlight(@NamedArg("Horse Index") int horseIndex){

@@ -232,7 +232,17 @@
                 <StackPane fx:id="blueInitial" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="240.0" StackPane.alignment="TOP_LEFT">
                     <children>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="240.0" StackPane.alignment="TOP_LEFT" />
+                  <ImageView fitHeight="240.0" fitWidth="240.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@Images/Blue.jpg" />
+                     </image>
+                  </ImageView>
                         <Circle fill="WHITE" radius="80.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="40.0" translateY="40.0" StackPane.alignment="TOP_LEFT" />
+                  <Label alignment="CENTER" prefHeight="44.0" prefWidth="100.0" text="00" textFill="WHITE" translateX="80.0" translateY="200.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
                     </children>
                 </StackPane>				
             </children>
