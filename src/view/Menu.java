@@ -15,7 +15,10 @@ import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 import util.FileIO;
 
+import java.util.Locale;
 import java.util.Random;
+import java.util.ResourceBundle;
+
 import util.Language;
 
 public class Menu {
@@ -54,6 +57,11 @@ public class Menu {
             return dice1;
         }
         return dice2;
+    }
+
+    public void setText(String... textValue){
+        rollDice.setText(textValue[0]);
+        stopButton.setText(textValue[1]);
     }
 
     public void rollAnimation(int value1, int value2){
@@ -138,5 +146,11 @@ public class Menu {
     @FXML
     private void showSetting() {
         ViewController.getInstance().showSetting();
+    }
+
+    public static void setLocalLanguage(String[] arg) {
+        Locale.setDefault(new Locale("vi","VN"));
+        ResourceBundle bundle = ResourceBundle.getBundle("MessageBundle");
+        System.out.println(bundle.getString("ten ben tieng anh"));
     }
 }
