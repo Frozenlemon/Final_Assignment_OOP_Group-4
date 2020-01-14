@@ -22,7 +22,7 @@ public class ModelController {
         dices = new Dice[]{new Dice(), new Dice()};
         focusedHorse = null;
         hasRolled = false;
-        initVariable(new Human(0, "test"), new Human(3, "test2"));
+        initVariable();
     }
 
     public static ModelController getInstance(){
@@ -64,6 +64,10 @@ public class ModelController {
         }
     }
 
+    public void upgradeHorse(Horse horse){
+        ViewController.getInstance().horseMoveToHome(horse.getId(), horse.getHomeOnPath());
+    }
+
 
     public boolean selectHorse(int horseIndex){
         int[] idCode = Converter.getColorCodeFromId(horseIndex);
@@ -85,9 +89,13 @@ public class ModelController {
     public void moveHorse(int diceId){
         if (focusedHorse != null) {
             int moveCount = dices[diceId].getValue();
-            if (focusedHorse.canUpgrade(moveCount))
+            if (focusedHorse.canUpgrade(moveCount)) {
+
+                System.out.println("CAN UPGRADE");
                 focusedHorse.upgradeHorse(moveCount);
+            }
             else if (!dices[diceId].isUsed()){
+                System.out.println("CAN MOVE");
                 int status = focusedHorse.checkMove(moveCount);
                 if (status != 0) {
                     focusedHorse.move(status, moveCount);
@@ -108,6 +116,7 @@ public class ModelController {
                 dices[i].roll();
             }
             ViewController.getInstance().updateDice(dices[0].getValue(), dices[1].getValue());
+            setDiceStatus(false);
             hasRolled = true;
         }
     }
@@ -136,8 +145,10 @@ public class ModelController {
 
 
     public void nextPlayer(){
-        resetDices();
         playerTurn++;
+        System.out.println("Current player: " + playerTurn);
+        hasRolled = false;
+        setDiceStatus(true);
         deselectHorse();
         if (playerTurn > 3)
             playerTurn = 0;
@@ -145,19 +156,11 @@ public class ModelController {
             rollDice();
     }
 
-    private void resetDices(){
-        for (Dice dice : dices)
-            dice.setUsed(false);
-        hasRolled = false;
+    private void setDiceStatus(boolean status){
+        for (int i =0; i < dices.length; i++)
+            dices[i].setUsed(status);
     }
 
-    private boolean dicesUsed(){
-        for (int i = 0; i < dices.length; i++){
-            if (!dices[i].isUsed())
-                return false;
-        }
-        return true;
-    }
 
     public boolean isPlayer(){
         if (players[playerTurn] instanceof Human)
