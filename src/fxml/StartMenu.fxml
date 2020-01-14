@@ -14,14 +14,12 @@
        <Image url="@Images/background2.JPG" />
       </image>
       </ImageView>
-      <Button fx:id="startGameButton" mnemonicParsing="false" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" prefHeight="70.0" prefWidth="200.0" text="Start Game" textAlignment="CENTER" translateY="-50.0" StackPane.alignment="CENTER">
+
+      <Button id="startGameButton" fx:id="startGameButton" mnemonicParsing="false" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" text="Start Game" textAlignment="CENTER" translateY="-50.0" StackPane.alignment="CENTER">
          <font>
             <Font name="System Bold" size="30.0" />
-         </font>
-         <StackPane.margin>
-            <Insets top="-150.0" />
-         </StackPane.margin></Button>
-      <Button fx:id="exitGameButton" mnemonicParsing="false" onAction="#exitPlatform" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" prefHeight="70.0" prefWidth="200.0" text="Exit" translateY="50.0" StackPane.alignment="CENTER">
+         </font></Button>
+      <Button id="exitGameButton" fx:id="exitGameButton" mnemonicParsing="false" onAction="#exitPlatform" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" text="Exit" translateY="50.0" StackPane.alignment="CENTER">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>

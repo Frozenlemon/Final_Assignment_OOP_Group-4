@@ -4,10 +4,13 @@ import controller.ModelController;
 import controller.ViewController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import model.Human;
 
+import javax.swing.plaf.basic.BasicButtonUI;
 import javax.swing.text.html.ImageView;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,9 +27,15 @@ public class SettingName{
     @FXML
     private TextField txtYellowName, txtRedName, txtBlueName, txtGreenName;
 
-    public SettingName(){
+    @FXML
+    private Button backButton, continueButton;
+
+    @FXML
+    private Label choosePlayer;
+
+    /*public SettingName(){
         Language.setLanguageText(playerSelectPane.getChildrenUnmodifiable());
-    }
+    }*/
 
     @FXML
     public void continueGame() {
@@ -53,4 +62,9 @@ public class SettingName{
         ViewController.getInstance().startGame(humanBlue, humanYellow, humanGreen, humanRed);
     }
 
+    public void setSettingNameSwitchLanguage(String...inputs){
+        backButton.setText(inputs[0]);
+        continueButton.setText(inputs[1]);
+        choosePlayer.setText(inputs[2]);
+    }
 }
