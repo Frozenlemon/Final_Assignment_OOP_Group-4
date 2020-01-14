@@ -2,57 +2,28 @@ package view;
 
 import controller.SoundController;
 import controller.ViewController;
-import util.Language;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.*;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
-
-import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
-import java.net.URL;
-import java.util.List;
 import java.util.Locale;
-import java.util.ResourceBundle;
 
-import javafx.scene.media.MediaPlayer;
-import util.Language;
 
 
 public class Setting {
 
     @FXML
-    private ToggleGroup group;
-
-    @FXML
     private StackPane settingPane;
 
-    @FXML
-    private VBox vBoxMain;
 
     @FXML
-    private Button btnButton, btnHome;
-    private Slider masterSlider;
+    private Button btnBack, btnHome;
 
     @FXML
-    private Slider effectSlider;
+    private Slider effectSlider, masterSlider, bgmSlider;
 
     @FXML
-    private Slider bgmSlider;
-
-    @FXML
-    private CheckBox enCheckBox;
-
-    @FXML
-    private CheckBox vnCheckBox;
+    private CheckBox enCheckBox, vnCheckBox;
 
     @FXML
     private Label chooseLanguageLabel, volumeControlLabel, msVolume, efVolume, bgmVolume;
@@ -63,6 +34,10 @@ public class Setting {
     //int numSwitches, numSwitchesCurrent = 0; //0: English, 1 VietNamese
 
     public Setting() {
+    }
+
+    public StackPane getSettingPane(){
+        return settingPane;
     }
 
     /*public void init() {
@@ -96,35 +71,53 @@ public class Setting {
             }
         });
     }*/
+
+    @FXML
+    private void clickOnSlider(MouseEvent evt){
+        SoundController.getInstance().setVolume(masterSlider.getValue(), bgmSlider.getValue(), effectSlider.getValue());
+    }
+
+    @FXML
+    private void clickHome(){
+        ViewController.getInstance().clickHome();
+    }
+
+    @FXML
+    private void clickBack(){
+        ViewController.getInstance().turnOffSetting();
+    }
+
     @FXML
     public void clickOnCheckBox(MouseEvent evt) {
         CheckBox button = (CheckBox) evt.getSource();
-        if (button.getId().equals("en"))
+        if (button.getId().equals("en")){
             if (!button.isSelected()) {
                 button.setSelected(true);
                 ViewController.getInstance().switchLanguage("en");
                 if (vnCheckBox.isSelected())
                     vnCheckBox.setSelected(false);
             }
+        }
         if (button.getId().equals("vn"))
             if(!button.isSelected()){
                 button.setSelected(true);
                 ViewController.getInstance().switchLanguage("vn");
                 if (enCheckBox.isSelected())
                     enCheckBox.setSelected(false);
-    }
-
-    private void setVolume(){
-        masterSlider.setValue(100);
-        masterSlider.valueProperty().addListener(new InvalidationListener() {
-            @Override
-            public void invalidated(Observable observable) {
-                backgroundPlayer.setVolume(masterSlider.getValue() / 100);
             }
-        });
     }
 
-    }
+//    private void setVolume(){
+//        masterSlider.setValue(100);
+//        masterSlider.valueProperty().addListener(new InvalidationListener() {
+//            @Override
+//            public void invalidated(Observable observable) {
+//                backgroundPlayer.setVolume(masterSlider.getValue() / 100);
+//            }
+//        });
+//    }
+
+
 
     /*private void cancelSetting() {
         Language.setLocale(localeCurrent);
@@ -132,8 +125,12 @@ public class Setting {
         numSwitches = numSwitchesCurrent;
     }*/
 
-    public void SettingSwitchLanguage(String...inputs){
-        btnButton.setText(inputs[0]);
+    public void setDisplay(boolean status){
+        settingPane.setVisible(status);
+    }
+
+    public void setSettingSwitchLanguage(String...inputs){
+        btnBack.setText(inputs[0]);
         btnHome.setText(inputs[1]);
         enCheckBox.setText(inputs[3]);
         vnCheckBox.setText(inputs[4]);

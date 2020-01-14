@@ -1,28 +1,18 @@
 package view;
 
-import controller.ModelController;
 import controller.ViewController;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import model.Human;
-
-import javax.swing.plaf.basic.BasicButtonUI;
-import javax.swing.text.html.ImageView;
-import java.net.URL;
-import java.util.ResourceBundle;
-import util.Language;
 
 public class SettingName{
 
     @FXML
-    private StackPane playerSelectPane;
-
-    @FXML
-    private ImageView imgYellow, imgRed, imgBlue, imgGreen;
+    private AnchorPane playerSelectPane;
 
     @FXML
     private TextField txtYellowName, txtRedName, txtBlueName, txtGreenName;
@@ -33,9 +23,16 @@ public class SettingName{
     @FXML
     private Label choosePlayer;
 
-    /*public SettingName(){
-        Language.setLanguageText(playerSelectPane.getChildrenUnmodifiable());
-    }*/
+    public SettingName(){
+    }
+
+    public AnchorPane getPlayerSelectPane(){
+        return playerSelectPane;
+    }
+
+    public void setDisplay(boolean status){
+        playerSelectPane.setVisible(status);
+    }
 
     @FXML
     public void continueGame() {

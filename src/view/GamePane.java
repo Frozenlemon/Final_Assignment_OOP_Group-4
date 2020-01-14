@@ -38,6 +38,15 @@ public class GamePane {
         }
         setStartingHorse();
         translatePane(gamePane,-100, 0);
+        gamePane.setVisible(false);
+    }
+
+    public void reset(){
+        setStartingHorse();
+    }
+
+    public void setDisplay(boolean status){
+        gamePane.setVisible(status);
     }
 
     public StackPane getGamePane(){

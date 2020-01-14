@@ -31,6 +31,14 @@ public class ModelController {
         return instance;
     }
 
+    public void reset(){
+        playerTurn = -1;
+        players = new Player[NO_OF_PLAYER];
+        dices = new Dice[]{new Dice(), new Dice()};
+        focusedHorse = null;
+        hasRolled = false;
+    }
+
     public void initVariable(Human... humans){
         for (Human human : humans){
             players[human.getColorCode()] = human;

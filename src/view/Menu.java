@@ -35,6 +35,9 @@ public class Menu {
     public Menu() {
     }
 
+    public void setDisplay(boolean value){
+        menuArea.setVisible(value);
+    }
     public Button getRollDice() {
         return rollDice;
     }
@@ -69,6 +72,11 @@ public class Menu {
     public void setText(String... textValue){
         rollDice.setText(textValue[0]);
         stopButton.setText(textValue[1]);
+    }
+
+    public void reset(){
+        dice1.setImage(null);
+        dice2.setImage(null);
     }
 
     public void rollAnimation(int value1, int value2){
@@ -150,6 +158,7 @@ public class Menu {
             diceId = 1;
         ViewController.getInstance().clickOnDice(diceId);
     }
+
     
     @FXML
     private void showSetting() {

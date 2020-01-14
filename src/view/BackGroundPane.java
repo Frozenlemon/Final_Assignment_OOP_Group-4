@@ -21,7 +21,7 @@ public class BackGroundPane extends StackPane {
         super.setPrefSize(1010,800);
         super.setAlignment(Pos.TOP_LEFT);
         initBackGroundPane();
-        super.getChildren().addAll(gamePane.getGamePane(), menu.getMenuArea());
+        super.getChildren().addAll(startMenu.getStartMenu(), settingName.getPlayerSelectPane(), gamePane.getGamePane(), menu.getMenuArea());
     }
 
     public Menu getMenu(){
@@ -30,6 +30,20 @@ public class BackGroundPane extends StackPane {
     public GamePane getGamePane(){
         return this.gamePane;
     }
+
+    public Setting getSetting(){
+        return this.setting;
+    }
+
+    public StartMenu getStartMenu(){
+        return this.startMenu;
+    }
+
+    public SettingName getSettingName(){
+        return this.settingName;
+    }
+
+
 
 //    public void startGame(){
 //        setting.setVisible(false);
@@ -41,7 +55,7 @@ public class BackGroundPane extends StackPane {
     private void initBackGroundPane(){
         gamePane = new GamePane();
         menu = new Menu();
-        setting = new Setting();
+        //setting = new Setting();
         startMenu = new StartMenu();
         settingName = new SettingName();
         initWindow();
@@ -50,9 +64,9 @@ public class BackGroundPane extends StackPane {
     private void initWindow(){
         initMenu();
         initGameArea();
-//        initSetting();
-//        initStartMenu();
-//        initSettingName();
+        //initSetting();
+        initStartMenu();
+        initSettingName();
     }
 
     private void initMenu(){
@@ -60,14 +74,19 @@ public class BackGroundPane extends StackPane {
         menu.translate(810,0);
     }
 
+    public void setDisplay(boolean value){
+        gamePane.setDisplay(value);
+        menu.setDisplay(value);
+    }
+
     private void initGameArea(){
         initFXMLLoader(gamePane, "GamePane");
         gamePane.init();
+        setDisplay(false);
     }
 
     public void initSetting(){
         initFXMLLoader(setting, "setting");
-        setting.init();
     }
 
     private void initStartMenu(){

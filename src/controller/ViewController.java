@@ -10,7 +10,6 @@ import view.BackGroundPane;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 
 public class ViewController {
 
@@ -23,7 +22,7 @@ public class ViewController {
 
     private ViewController(){
         primaryStage = new Stage();
-        primaryStage.setTitle("PLACE HOLDER NAME");
+        primaryStage.setTitle("Game");
         backGroundPane = new BackGroundPane();
         primaryStage.setScene(new Scene(backGroundPane, 1010, 800));
         inAnimation = 0;
@@ -41,8 +40,35 @@ public class ViewController {
     }
 
     public void startGame(Human... humans){
+        ModelController.getInstance().reset();
         ModelController.getInstance().initVariable(humans);
-        //backGroundPane.startGame();
+        backGroundPane.getGamePane().reset();
+        backGroundPane.getMenu().reset();
+        backGroundPane.getSettingName().setDisplay(false);
+        backGroundPane.setDisplay(true);
+    }
+
+    public void clickStart(){
+        backGroundPane.getStartMenu().setDisplay(false);
+        backGroundPane.getSettingName().setDisplay(true);
+    }
+
+    public void clickSetting(){
+        backGroundPane.getSetting().setDisplay(true);
+    }
+
+    public void clickExit(){
+        System.exit(0);
+    }
+
+    public void clickHome(){
+        isEndGame = true;
+        backGroundPane.getGamePane().setDisplay(false);
+        backGroundPane.getStartMenu().setDisplay(true);
+    }
+
+    public void turnOffSetting(){
+        backGroundPane.getSetting().setDisplay(false);
     }
 
     public void horseMoveAndKick(@NamedArg("Horse to move") Horse moveHorse, @NamedArg("Horse to kick") Horse kickedHorse){
@@ -101,7 +127,7 @@ public class ViewController {
     }
 
     public void update(){
-        //SoundController.getInstance().playMusic();
+        SoundController.getInstance().playMusic();
         primaryStage.show();
     }
 
@@ -122,10 +148,6 @@ public class ViewController {
     public void switchLanguage(String choice){
         Locale vnLocale = new Locale("vi","VN");
         Locale.setDefault(vnLocale);
-        int lang;
-        Scanner s = new Scanner(System.in);
-        lang = s.nextInt();
-        ResourceBundle messages;
 
         if (choice.equals("vn")) {
             Locale.setDefault(new Locale("vi", "VN"));
@@ -133,15 +155,30 @@ public class ViewController {
         else{
             Locale.setDefault(new Locale("en", "US"));
         }
+        setMenuText();
+        setSettingNameText();
+        setSettingText();
+        setStartMenuText();
+    }
+
+    private void setMenuText(){
         ResourceBundle bundle = ResourceBundle.getBundle("messege");
         String rollDice = bundle.getString("rollDice");
         String stopButton = bundle.getString("stopButton");
         String settingButton = bundle.getString("settingButton");
         backGroundPane.getMenu().setMenuSwitchLanguage(rollDice, stopButton, settingButton);
+    }
+
+    private void setSettingNameText(){
+        ResourceBundle bundle = ResourceBundle.getBundle("messege");
         String backButton = bundle.getString("backButton");
         String continueButton = bundle.getString("continueButton");
         String choosePlayer = bundle.getString("choosePlayer");
         backGroundPane.getSettingName().setSettingNameSwitchLanguage(backButton,continueButton,choosePlayer);
+    }
+
+    private void setSettingText(){
+        ResourceBundle bundle = ResourceBundle.getBundle("messege");
         String btnButton = bundle.getString("btnButton");
         String btnHome =  bundle.getString("btnHome");
         String enCheckBox = bundle.getString("enCheckBox");
@@ -151,10 +188,15 @@ public class ViewController {
         String msVolume = bundle.getString("msVolume");
         String efVolume = bundle.getString("efVolume");
         String bgmVolume = bundle.getString("bgmVolume");
-        backGroundPane.getSetting().setSettingSwitchLanguage(btnButton,btnHome,enCheckBox,vnCheckBox,chooseLanguageLabel,volumeControlLabel,msVolume,efVolume,bgmVolume);
+        backGroundPane.getSetting().setSettingSwitchLanguage(btnButton, btnHome, enCheckBox,vnCheckBox,chooseLanguageLabel,volumeControlLabel,msVolume,efVolume,bgmVolume);
+    }
+
+    private void setStartMenuText(){
+        ResourceBundle bundle = ResourceBundle.getBundle("messege");
         String startGameButton = bundle.getString("startGameButton");
         String exitGameButton = bundle.getString("exitGameButton");
-        backGroundPane.getStartMenu().setStartMenuSwitchLanguage(startGameButton,exitGameButton);
+        String settingButton = bundle.getString("settingButton");
+        backGroundPane.getStartMenu().setStartMenuSwitchLanguage(startGameButton, settingButton,exitGameButton);
     }
 
     public void addAnimation(){
