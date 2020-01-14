@@ -18,6 +18,7 @@ public class ViewController {
     private Stage primaryStage;
     private BackGroundPane backGroundPane;
     private int inAnimation;
+    private boolean isEndGame;
     private String localSetting, oldLocalSetting;
     private double[] volumeSetting, oldVolumeSetting;
 
@@ -27,6 +28,7 @@ public class ViewController {
         backGroundPane = new BackGroundPane();
         primaryStage.setScene(new Scene(backGroundPane, 1010, 800));
         inAnimation = 0;
+        isEndGame = false;
         volumeSetting = new double[]{0.5, 0.5, 0.5};
         localSetting = "local0";
     }
@@ -63,7 +65,7 @@ public class ViewController {
     }
 
     public void clickOnDice(int diceId){
-        if (ModelController.getInstance().isPlayer()) {
+        if (!isEndGame && ModelController.getInstance().isPlayer()) {
             System.out.println(inAnimation);
             if (inAnimation == 0)
                 ModelController.getInstance().requestFilter("moveHorse", diceId);
@@ -71,7 +73,7 @@ public class ViewController {
     }
 
     public void clickRollDice(){
-        if (ModelController.getInstance().isPlayer()) {
+        if (!isEndGame && ModelController.getInstance().isPlayer()) {
             System.out.println(inAnimation);
             if (inAnimation == 0)
                 ModelController.getInstance().requestFilter("rollDice", -1);
@@ -102,7 +104,7 @@ public class ViewController {
     }
 
     public void update(){
-        SoundController.getInstance().playMusic();
+        //SoundController.getInstance().playMusic();
         primaryStage.show();
     }
 
@@ -111,21 +113,23 @@ public class ViewController {
     }
 
     public void clickOnHorse(int horseIndex){
-        if (ModelController.getInstance().isPlayer()) {
-            Boolean success = ModelController.getInstance().selectHorse(horseIndex);
-            if (success)
-                backGroundPane.getGamePane().change_Horse_Highlight(horseIndex);
+        if (!isEndGame) {
+            if (ModelController.getInstance().isPlayer()) {
+                Boolean success = ModelController.getInstance().selectHorse(horseIndex);
+                if (success)
+                    backGroundPane.getGamePane().change_Horse_Highlight(horseIndex);
+            }
         }
     }
 
-    public void switchLanguage(Locale locale, int language){
+    public void switchLanguage(String choice){
         Locale vnLocale = new Locale("vi","VN");
         Locale.setDefault(vnLocale);
         int lang;
         Scanner s = new Scanner(System.in);
         lang = s.nextInt();
         ResourceBundle messages;
-        messages =s.nextLine();
+
     }
 
     public void addAnimation(){
@@ -139,5 +143,13 @@ public class ViewController {
     public void finishAnimation(){
         inAnimation--;
         ModelController.getInstance().endTurn();
+    }
+
+    public void setIsEndGame(boolean status){
+        this.isEndGame = status;
+    }
+
+    public boolean isEndGame(){
+        return isEndGame;
     }
 }
