@@ -21,7 +21,7 @@
             <Image url="@Images/background2.JPG" />
          </image>
       </ImageView>
-      <VBox fx:id="vBoxMain" prefHeight="800.0" prefWidth="1100.0" stylesheets="@../fxml/style.css">
+      <VBox fx:id="vBoxMain" prefHeight="800.0" prefWidth="1100.0" stylesheets="@../fxml/ButtonMenu.css">
           <children>
               <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
                   <children>
