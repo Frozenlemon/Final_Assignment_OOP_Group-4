@@ -1,6 +1,8 @@
 package view;
 
 import controller.SoundController;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -16,6 +18,8 @@ import java.net.URL;
 import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
+
+import javafx.scene.media.MediaPlayer;
 import util.Language;
 
 /**
@@ -33,7 +37,17 @@ public class Setting {
     @FXML
     private VBox vBoxMain;
 
+    @FXML
+    private Slider masterSlider;
+
+    @FXML
+    private Slider effectSlider;
+
+    @FXML
+    private Slider bgmSlider;
+
     private Locale localeCurrent;
+    private SoundController backgroundPlayer;
 
     int numSwitches, numSwitchesCurrent = 0; //0: English, 1 VietNamese
 
@@ -101,8 +115,21 @@ public class Setting {
         Language.setLocale(locale);
     }
 
+    private void setVolumn(){
+        masterSlider.setValue(100);
+        masterSlider.valueProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+                backgroundPlayer.setVolume(masterSlider.getValue() / 100);
+            }
+        });
+    }
+
+
+
     @FXML
-    private void saveSetting() {
+    private void saveSetting(URL location, ResourceBundle resourceBundle) {
+
     }
 
     @FXML
