@@ -1,7 +1,6 @@
 package view;
 
 import controller.ViewController;
-import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
 import javafx.beans.NamedArg;
 import javafx.fxml.FXML;
@@ -11,16 +10,14 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
-import util.Language;
 
 public class GamePane {
     private static final int NO_OF_HORSES = 16;
     private static final int NO_OF_PATHS = 48;
+    private static final int ANIMATION_DURATION = 100;
 
     @FXML
-    private StackPane gamePane, imagePane, circleBase;
-    @FXML
-    private StackPane blueHorseCage, yellowHorseCage, greenHorseCage, redHorseCage;
+    private StackPane gamePane, imagePane, circleBase, cages;
     @FXML
     private Circle i0, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15;
 
@@ -40,22 +37,20 @@ public class GamePane {
             paths[i] = (Circle) circleBase.getChildren().get(i);
         }
         setStartingHorse();
-        translate(-100,0);
-        Language.setLanguageText(gamePane.getChildrenUnmodifiable());
+        translatePane(gamePane,-100, 0);
     }
 
     public StackPane getGamePane(){
         return gamePane;
     }
 
-    public void translate(@NamedArg("Translate the gamePane by x-horizontal and y vertical") double x, double y){
-        gamePane.setTranslateX(x);
-        gamePane.setTranslateY(y);
+    public void translatePane(@NamedArg("Translate the gamePane by x-horizontal and y vertical") StackPane pane, double x, double y){
+        pane.setTranslateX(x);
+        pane.setTranslateY(y);
     }
-
     public void moveHorse(int horseIndex, int pathIndex, int moveCount, TranslateTransition queueTransition){
         moveCount--;
-        TranslateTransition transition = new TranslateTransition(Duration.seconds(1), horses[horseIndex]);
+        TranslateTransition transition = new TranslateTransition(Duration.millis(ANIMATION_DURATION), horses[horseIndex]);
 
         transition.setToX(paths[pathIndex].getTranslateX() + 110);
         transition.setToY(paths[pathIndex].getTranslateY() - 10);
@@ -79,28 +74,15 @@ public class GamePane {
 
     public void moveHorseToHome(int horseIndex, int moveCount, TranslateTransition queueTransition){
         moveCount--;
-        TranslateTransition transition = new TranslateTransition(Duration.seconds(1), horses[horseIndex]);
+        TranslateTransition transition = new TranslateTransition(Duration.millis(ANIMATION_DURATION), horses[horseIndex]);
+        int id = ((horseIndex/4) * 6) + moveCount;
         double[] coordinate = new double[2];
-        switch (horseIndex/4){
-            case 0:
-                coordinate[0] = blueHorseCage.getChildren().get(moveCount).getTranslateX();
-                coordinate[1] = blueHorseCage.getChildren().get(moveCount).getTranslateY();
-                break;
-            case 1:
-                coordinate[0] = yellowHorseCage.getChildren().get(moveCount).getTranslateX();
-                coordinate[1] = yellowHorseCage.getChildren().get(moveCount).getTranslateY();
-                break;
-            case 2:
-                coordinate[0] = greenHorseCage.getChildren().get(moveCount).getTranslateX();
-                coordinate[1] = greenHorseCage.getChildren().get(moveCount).getTranslateY();
-                break;
-            case 3:
-                coordinate[0] = redHorseCage.getChildren().get(moveCount).getTranslateX();
-                coordinate[1] = redHorseCage.getChildren().get(moveCount).getTranslateY();
-                break;
-            default:
-                break;
-        }
+
+        coordinate[0] =  cages.getChildren().get(id).getTranslateX();
+        coordinate[1] =  cages.getChildren().get(id).getTranslateY();
+        transition.setToX(coordinate[0] + 100);
+        transition.setToY(coordinate[1]);
+
         if (queueTransition != null)
             transition.setOnFinished(e -> queueTransition.play());
         else
@@ -115,7 +97,7 @@ public class GamePane {
     }
 
     public TranslateTransition kickHorseAnimation(int horseIndex){
-        TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(1), horses[horseIndex]);
+        TranslateTransition translateTransition = new TranslateTransition(Duration.millis(ANIMATION_DURATION), horses[horseIndex]);
         double[] coordinate = getInitialCoordinate(horseIndex);
         translateTransition.setToX(coordinate[0]);
         translateTransition.setToY(coordinate[1]);
