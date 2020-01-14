@@ -9,9 +9,9 @@
 
 <StackPane fx:id="gamePane" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-		<StackPane fx:id="circleBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-			<children>
-				<Circle fx:id="b0" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="375.0" StackPane.alignment="TOP_LEFT" />
+        <StackPane fx:id="circleBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+            <children>
+                <Circle fx:id="b0" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="375.0" StackPane.alignment="TOP_LEFT" />
                 <Circle fx:id="b1" fill="WHITE" radius="25.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="5.0" translateX="250.0">
                     <StackPane.margin>
                         <Insets />
@@ -63,7 +63,7 @@
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-				<Circle fx:id="y0" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateY="375.0" StackPane.alignment="TOP_LEFT">
+                <Circle fx:id="y0" fill="WHITE" radius="25.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" translateY="375.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
                         <Insets />
                     </StackPane.margin>
@@ -116,8 +116,8 @@
                     </StackPane.margin>
                 </Circle>
                 <Circle fx:id="g1" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="5.0" translateX="375.0" translateY="750.0" StackPane.alignment="TOP_LEFT" />
-				
-				<Circle fx:id="g0" fill="#f8f8f8" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="500.0" translateY="750.0" StackPane.alignment="TOP_LEFT" />
+
+                <Circle fx:id="g0" fill="#f8f8f8" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="500.0" translateY="750.0" StackPane.alignment="TOP_LEFT" />
                 <Circle fx:id="g2" fill="WHITE" radius="25.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" translateX="500.0" translateY="700.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
                         <Insets />
@@ -160,8 +160,8 @@
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-				
-				<Circle fx:id="r0" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="750.0" translateY="375.0" StackPane.alignment="TOP_LEFT" />
+
+                <Circle fx:id="r0" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="750.0" translateY="375.0" StackPane.alignment="TOP_LEFT" />
                 <Circle fx:id="r1" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="5.0" translateX="750.0" translateY="250.0" StackPane.alignment="TOP_LEFT" />
                 <Circle fx:id="r2" fill="WHITE" radius="25.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" translateX="700.0" translateY="250.0" StackPane.alignment="TOP_LEFT">
                     <StackPane.margin>
@@ -209,42 +209,37 @@
                         <Insets />
                     </StackPane.margin>
                 </Circle>
-            <Circle fx:id="i0" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="70.0" translateY="40.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i1" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="70.0" translateY="130.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i2" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="140.0" translateY="40.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i3" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="140.0" translateY="130.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i4" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="70.0" translateY="600.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i5" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="70.0" translateY="690.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i6" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="140.0" translateY="600.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i7" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="140.0" translateY="690.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i8" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="630.0" translateY="600.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i9" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="630.0" translateY="690.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i10" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="700.0" translateY="600.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i11" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="700.0" translateY="690.0" StackPane.alignment="TOP_LEFT" />
-            <Circle fx:id="i12" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="630.0" translateY="40.0" />
-            <Circle fx:id="i13" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="630.0" translateY="130.0" />
-            <Circle fx:id="i14" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="700.0" translateY="40.0" />
-            <Circle fx:id="i15" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="700.0" translateY="130.0" />
-			</children>
-		</StackPane>
+                <Circle fx:id="i0" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="70.0" translateY="40.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="i1" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="70.0" translateY="130.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="i2" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="140.0" translateY="40.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="i3" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="140.0" translateY="130.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="i4" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="70.0" translateY="600.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="i5" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="70.0" translateY="690.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="i6" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="140.0" translateY="600.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="i7" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="140.0" translateY="690.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="i8" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="630.0" translateY="600.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="i9" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="630.0" translateY="690.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="i10" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="700.0" translateY="600.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="i11" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="700.0" translateY="690.0" StackPane.alignment="TOP_LEFT" />
+                <Circle fx:id="i12" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="630.0" translateY="40.0" />
+                <Circle fx:id="i13" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="630.0" translateY="130.0" />
+                <Circle fx:id="i14" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="700.0" translateY="40.0" />
+                <Circle fx:id="i15" fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" translateX="700.0" translateY="130.0" />
+            </children>
+        </StackPane>
         <StackPane fx:id="blueBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" translateX="-150.0" translateY="-250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
             <children>
                 <StackPane fx:id="blueInitial" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="240.0" StackPane.alignment="TOP_LEFT">
                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="240.0" StackPane.alignment="TOP_LEFT" />
-                  <ImageView fitHeight="240.0" fitWidth="240.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@Images/Blue.jpg" />
-                     </image>
-                  </ImageView>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#005df2" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="240.0" StackPane.alignment="TOP_LEFT" />
                         <Circle fill="WHITE" radius="80.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="40.0" translateY="40.0" StackPane.alignment="TOP_LEFT" />
-                  <Label alignment="CENTER" prefHeight="44.0" prefWidth="100.0" text="00" textFill="WHITE" translateX="80.0" translateY="200.0">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
+                        <Label fx:id="bluepoint" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="100.0" text="00" textAlignment="CENTER" StackPane.alignment="BOTTOM_CENTER">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
                     </children>
-                </StackPane>				
+                </StackPane>
             </children>
         </StackPane>
         <StackPane fx:id="blueHorseCages" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="125.0" rotate="180.0" translateY="-212.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
@@ -317,12 +312,17 @@
             <children>
                 <StackPane fx:id="yellowInitial" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="240.0" translateY="260.0" StackPane.alignment="TOP_LEFT">
                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="240.0" StackPane.alignment="CENTER" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffd400" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="240.0" StackPane.alignment="CENTER" />
                         <Circle fill="WHITE" radius="80.0" stroke="#ffd400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="CENTER">
                             <StackPane.margin>
                                 <Insets />
                             </StackPane.margin>
                         </Circle>
+                        <Label fx:id="yellowpoint" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="100.0" text="00" textAlignment="CENTER" StackPane.alignment="TOP_CENTER">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
                     </children>
                 </StackPane>
             </children>
@@ -381,15 +381,20 @@
         </StackPane>
         <StackPane fx:id="greenBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" translateX="150.0" translateY="250.0">
             <children>
-                
+
                 <StackPane fx:id="greenInitial" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="240.0" translateX="260.0" translateY="60.0" StackPane.alignment="TOP_LEFT">
                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="240.0" StackPane.alignment="CENTER" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#008400" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="240.0" StackPane.alignment="CENTER" />
                         <Circle fill="WHITE" radius="80.0" stroke="#008400" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="CENTER">
                             <StackPane.margin>
                                 <Insets />
                             </StackPane.margin>
                         </Circle>
+                        <Label fx:id="greenpoint" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="100.0" text="00" StackPane.alignment="TOP_CENTER">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
                     </children>
                 </StackPane>
             </children>
@@ -462,15 +467,20 @@
         </StackPane>
         <StackPane fx:id="redBase" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" translateX="250.0" translateY="-150.0">
             <children>
-                
+
                 <StackPane fx:id="redInitial" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="240.0" translateX="60.0" StackPane.alignment="TOP_LEFT">
                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" stroke="BLACK" strokeType="INSIDE" width="240.0" StackPane.alignment="CENTER" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="240.0" stroke="BLACK" strokeType="INSIDE" width="240.0" StackPane.alignment="CENTER" />
                         <Circle fill="WHITE" radius="80.0" stroke="RED" strokeType="INSIDE" strokeWidth="2.0" StackPane.alignment="CENTER">
                             <StackPane.margin>
                                 <Insets />
                             </StackPane.margin>
                         </Circle>
+                        <Label fx:id="redpoint" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="100.0" text="00" StackPane.alignment="BOTTOM_CENTER">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
                     </children>
                 </StackPane>
             </children>
@@ -527,73 +537,73 @@
                     </children></StackPane>
             </children>
         </StackPane>
-      <StackPane fx:id="imagePane" alignment="TOP_LEFT" prefHeight="800.0" prefWidth="800.0">
-         <children>
-            <ImageView id="h0" fx:id="h0" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/0.png" />
-               </image></ImageView>
-            <ImageView id="h1" fx:id="h1" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/0.png" />
-               </image></ImageView>
-            <ImageView id="h2" fx:id="h2" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/0.png" />
-               </image></ImageView>
-            <ImageView id="h3" fx:id="h3" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/0.png" />
-               </image></ImageView>
-            <ImageView id="h4" fx:id="h4" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/1.png" />
-               </image></ImageView>
-            <ImageView id="h5" fx:id="h5" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/1.png" />
-               </image></ImageView>
-            <ImageView id="h6" fx:id="h6" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/1.png" />
-               </image></ImageView>
-            <ImageView id="h7" fx:id="h7" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/1.png" />
-               </image></ImageView>
-            <ImageView id="h8" fx:id="h8" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/2.png" />
-               </image></ImageView>
-            <ImageView id="h9" fx:id="h9" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/2.png" />
-               </image></ImageView>
-            <ImageView id="h10" fx:id="h10" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/2.png" />
-               </image></ImageView>
-            <ImageView id="h11" fx:id="h11" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/2.png" />
-               </image></ImageView>
-            <ImageView id="h12" fx:id="h12" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/3.png" />
-               </image></ImageView>
-            <ImageView id="h13" fx:id="h13" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/3.png" />
-               </image></ImageView>
-            <ImageView id="h14" fx:id="h14" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/3.png" />
-               </image></ImageView>
-            <ImageView id="h15" fx:id="h15" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/3.png" />
-               </image></ImageView>
-         </children>
-      </StackPane>
+        <StackPane fx:id="imagePane" alignment="TOP_LEFT" prefHeight="800.0" prefWidth="800.0">
+            <children>
+                <ImageView id="h0" fx:id="h0" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/0.png" />
+                    </image></ImageView>
+                <ImageView id="h1" fx:id="h1" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/0.png" />
+                    </image></ImageView>
+                <ImageView id="h2" fx:id="h2" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/0.png" />
+                    </image></ImageView>
+                <ImageView id="h3" fx:id="h3" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/0.png" />
+                    </image></ImageView>
+                <ImageView id="h4" fx:id="h4" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/1.png" />
+                    </image></ImageView>
+                <ImageView id="h5" fx:id="h5" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/1.png" />
+                    </image></ImageView>
+                <ImageView id="h6" fx:id="h6" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/1.png" />
+                    </image></ImageView>
+                <ImageView id="h7" fx:id="h7" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/1.png" />
+                    </image></ImageView>
+                <ImageView id="h8" fx:id="h8" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/2.png" />
+                    </image></ImageView>
+                <ImageView id="h9" fx:id="h9" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/2.png" />
+                    </image></ImageView>
+                <ImageView id="h10" fx:id="h10" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/2.png" />
+                    </image></ImageView>
+                <ImageView id="h11" fx:id="h11" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/2.png" />
+                    </image></ImageView>
+                <ImageView id="h12" fx:id="h12" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/3.png" />
+                    </image></ImageView>
+                <ImageView id="h13" fx:id="h13" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/3.png" />
+                    </image></ImageView>
+                <ImageView id="h14" fx:id="h14" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/3.png" />
+                    </image></ImageView>
+                <ImageView id="h15" fx:id="h15" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/3.png" />
+                    </image></ImageView>
+            </children>
+        </StackPane>
     </children>
 </StackPane>
