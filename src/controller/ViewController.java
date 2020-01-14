@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.animation.TranslateTransition;
 import javafx.beans.NamedArg;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -39,8 +40,9 @@ public class ViewController {
 
     public void horseMoveAndKick(@NamedArg("Horse to move") Horse moveHorse, @NamedArg("Horse to kick") Horse kickedHorse){
         int kickedHorseIndex = kickedHorse.getId();
-        horseMove(moveHorse);
-        backGroundPane.getGamePane().kickHorse(kickedHorseIndex);
+        int moveHorseIndex = moveHorse.getId();
+        TranslateTransition transition = backGroundPane.getGamePane().kickHorseAnimation(kickedHorseIndex);
+        backGroundPane.getGamePane().moveHorse(moveHorseIndex, moveHorse.getPathIndex(), moveHorse.getMoveCount(), transition);
     }
 
     public void horseMove(@NamedArg("Horse to move") Horse horse){
@@ -48,8 +50,13 @@ public class ViewController {
         backGroundPane.getGamePane().moveHorse(horseIndex, horse.getPathIndex(), horse.getMoveCount(), null);
     }
 
+    public void horseMoveToHome(int horseIndex, int home){
+        backGroundPane.getGamePane().moveHorseToHome(horseIndex, home, null);
+    }
+
     public void clickOnDice(int diceId){
         if (ModelController.getInstance().isPlayer()) {
+            System.out.println(inAnimation);
             if (inAnimation == 0)
                 ModelController.getInstance().requestFilter("moveHorse", diceId);
         }
@@ -57,6 +64,7 @@ public class ViewController {
 
     public void clickRollDice(){
         if (ModelController.getInstance().isPlayer()) {
+            System.out.println(inAnimation);
             if (inAnimation == 0)
                 ModelController.getInstance().requestFilter("rollDice", -1);
         }
@@ -86,6 +94,7 @@ public class ViewController {
     }
 
     public void update(){
+        SoundController.getInstance().playMusic();
         primaryStage.show();
     }
 
@@ -101,7 +110,7 @@ public class ViewController {
         }
     }
 
-    public void startAnimation(){
+    public void addAnimation(){
         this.inAnimation++;
     }
     
@@ -110,6 +119,7 @@ public class ViewController {
     }
 
     public void finishAnimation(){
+        inAnimation--;
         ModelController.getInstance().endTurn();
     }
 }

@@ -77,6 +77,43 @@ public class GamePane {
         }
     }
 
+    public void moveHorseToHome(int horseIndex, int moveCount, TranslateTransition queueTransition){
+        moveCount--;
+        TranslateTransition transition = new TranslateTransition(Duration.seconds(1), horses[horseIndex]);
+        double[] coordinate = new double[2];
+        switch (horseIndex/4){
+            case 0:
+                coordinate[0] = blueHorseCage.getChildren().get(moveCount).getTranslateX();
+                coordinate[1] = blueHorseCage.getChildren().get(moveCount).getTranslateY();
+                break;
+            case 1:
+                coordinate[0] = yellowHorseCage.getChildren().get(moveCount).getTranslateX();
+                coordinate[1] = yellowHorseCage.getChildren().get(moveCount).getTranslateY();
+                break;
+            case 2:
+                coordinate[0] = greenHorseCage.getChildren().get(moveCount).getTranslateX();
+                coordinate[1] = greenHorseCage.getChildren().get(moveCount).getTranslateY();
+                break;
+            case 3:
+                coordinate[0] = redHorseCage.getChildren().get(moveCount).getTranslateX();
+                coordinate[1] = redHorseCage.getChildren().get(moveCount).getTranslateY();
+                break;
+            default:
+                break;
+        }
+        if (queueTransition != null)
+            transition.setOnFinished(e -> queueTransition.play());
+        else
+            transition.setOnFinished(e -> ViewController.getInstance().finishAnimation());
+
+        if (moveCount > 0)
+            moveHorseToHome(horseIndex, moveCount, transition);
+        else {
+            ViewController.getInstance().addAnimation();
+            transition.play();
+        }
+    }
+
     public TranslateTransition kickHorseAnimation(int horseIndex){
         TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(1), horses[horseIndex]);
         double[] coordinate = getInitialCoordinate(horseIndex);
