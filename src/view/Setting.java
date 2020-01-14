@@ -2,6 +2,8 @@ package view;
 
 import controller.SoundController;
 import controller.ViewController;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -19,6 +21,8 @@ import java.net.URL;
 import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
+
+import javafx.scene.media.MediaPlayer;
 import util.Language;
 
 /**
@@ -38,24 +42,32 @@ public class Setting {
 
     @FXML
     private Button saveButton;
+    private Slider masterSlider;
+
+    @FXML
+    private Slider effectSlider;
+
+    @FXML
+    private Slider bgmSlider;
 
     private Locale localeCurrent;
+    private SoundController backgroundPlayer;
 
     int numSwitches, numSwitchesCurrent = 0; //0: English, 1 VietNamese
 
     public Setting() {
     }
 
-    public void init() {
+    /*public void init() {
         Language.setLanguageText(vBoxMain.getChildrenUnmodifiable());
         setSelectedEvent();
-    }
+    }*/
 
     public void setVisible(boolean status) {
         settingPane.setVisible(status);
     }
 
-    public void setSelectedEvent() {
+    /*public void setSelectedEvent() {
         group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle,
                     Toggle new_toggle) {
@@ -76,7 +88,7 @@ public class Setting {
                 }
             }
         });
-    }
+    }*/
     @FXML
     public void clickOnRadioButton(MouseEvent evt){
         RadioButton button = (RadioButton) evt.getSource();
@@ -84,8 +96,21 @@ public class Setting {
     }
 
 
+
     private void saveSetting(ActionEvent event) {
-        event.
+
+    private void setVolumn(){
+        masterSlider.setValue(100);
+        masterSlider.valueProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+                backgroundPlayer.setVolume(masterSlider.getValue() / 100);
+            }
+        });
+    }
+
+
+
     }
 
     private void cancelSetting() {

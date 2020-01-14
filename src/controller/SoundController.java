@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.animation.Timeline;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
@@ -19,6 +20,7 @@ public class SoundController {
     private SoundController(){
         status = false;
         backgroundPlayer = getMediaPlayer("backgroundMusic");
+        backgroundPlayer.setCycleCount(Timeline.INDEFINITE);
 
         releaseHorsePlayer =  getMediaPlayer("doorOpen");
         releaseHorsePlayer.setStartTime(Duration.millis(0));
@@ -48,14 +50,22 @@ public class SoundController {
         return instance;
     }
 
-    public void setVolume(double music, double effect){
-        backgroundPlayer.setVolume(music);
-        releaseHorsePlayer.setVolume(effect);
-        horseMovePlayer.setVolume(effect);
-        rollDicePlayer.setVolume(effect);
-        horseMovePlayer.setVolume(effect);
-        horseKickPlayer.setVolume(effect);
+    public void setVolume(double master, double music, double effect){
+        setMusic(master, music);
+        setEffect(master, effect);
     }
+    public void setMusic(double master, double music){
+        backgroundPlayer.setVolume(master/100 * music);
+    }
+    public void setEffect(double master, double effect){
+        releaseHorsePlayer.setVolume(master / 100 * effect);
+        horseMovePlayer.setVolume(master / 100 * effect);
+        rollDicePlayer.setVolume(master / 100 * effect);
+        horseMovePlayer.setVolume(master / 100 * effect);
+        horseKickPlayer.setVolume(master / 100 * effect);
+    }
+
+
     public void playMusic(){
         backgroundPlayer.play();
     }

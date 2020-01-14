@@ -55,7 +55,7 @@ public class StartMenu {
             DropShadow shadow = new DropShadow();
 //            exitGameButton.setEffect(new javafx.scene.effect.DropShadow());
 
-            System.out.println("highlight on");
+
         }}
 
     public void highlightButton_Off(@NamedArg("Button type: 0: rollDice, 1: musicButton, 2: stopButton") int type) {
@@ -63,10 +63,10 @@ public class StartMenu {
          * function to turn off highlight for a button. Button selected by the type provided in argument
          */
         if (type ==0 || type==1 || type ==2){
-//            getExitGameButton().setEffect(null);
+   getExitGameButton().setEffect(null);
 
 
-            System.out.println("highlight off");
+
         }
     }
 
