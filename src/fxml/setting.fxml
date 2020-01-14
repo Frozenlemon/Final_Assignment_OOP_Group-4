@@ -19,7 +19,7 @@
                   <children>
                       <Pane prefHeight="70.0" prefWidth="831.0" HBox.hgrow="ALWAYS">
                           <children>
-                              <Button fx:id="btnBack" layoutX="28.0" layoutY="24.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="117.0" text="Back" />
+                              <Button fx:id="btnButton" layoutX="28.0" layoutY="24.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="117.0" text="Back" />
                               <Button fx:id="btnHome" layoutX="164.0" layoutY="24.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="117.0" style="-fx-background-image: url('Images/cancel.png'); &quot;: ;" text="Home" />
                           </children>
                       </Pane>
@@ -32,36 +32,38 @@
                   <children>
                   <StackPane alignment="TOP_LEFT" prefHeight="500.0" prefWidth="1100.0">
                      <children>
-                              <RadioButton fx:id="rdoEnglish" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" selected="true" text="English" translateX="250.0">
-                                  <toggleGroup>
-                                      <ToggleGroup fx:id="group" />
-                                  </toggleGroup>
-                              </RadioButton>
-                              <RadioButton fx:id="rdoVietnam" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Tiếng Việt" toggleGroup="$group" translateX="350.0" />
+                        <CheckBox id="en" fx:id="enCheckBox" mnemonicParsing="false" onMouseClicked="#clickOnCheckBox" text="English" translateX="300.0" translateY="10.0" StackPane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font></CheckBox>
+                        <CheckBox id="vn" fx:id="vnCheckBox" mnemonicParsing="false" onMouseClicked="#clickOnCheckBox" text="Vietnamese" translateX="500.0" translateY="10.0" StackPane.alignment="TOP_LEFT">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font></CheckBox>
                               <Slider fx:id="bgmSlider" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="900.0" showTickLabels="true" showTickMarks="true" translateX="150.0" translateY="400.0" value="50.0" />
-                              <Label fx:id="lbVolumn" prefHeight="50.0" prefWidth="100.0" text="Master" translateX="80.0" translateY="190.0">
+                              <Label fx:id="msVolume" prefHeight="50.0" prefWidth="100.0" text="Master" translateX="80.0" translateY="190.0">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                              <Label id="lbChooseLanguage" fx:id="lbChooseLanguage" prefHeight="50.0" prefWidth="150.0" text="Choose Language" translateX="50.0">
+                              <Label id="lbChooseLanguage" fx:id="chooseLanguageLabel" prefHeight="50.0" prefWidth="150.0" text="Choose Language" translateX="50.0">
                            <font>
                               <Font name="Consolas Bold" size="17.0" />
                            </font>
                         </Label>
                         <Slider fx:id="effectSlider" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="900.0" showTickLabels="true" showTickMarks="true" translateX="150.0" translateY="300.0" value="50.0" />
                         <Slider fx:id="masterSlider" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="900.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" translateX="150.0" translateY="200.0" value="50.0" StackPane.alignment="TOP_LEFT" />
-                        <Label fx:id="lbVolumn21" prefHeight="50.0" prefWidth="100.0" text="BGM" translateX="80.0" translateY="390.0">
+                        <Label fx:id="bgmVolume" prefHeight="50.0" prefWidth="100.0" text="BGM" translateX="80.0" translateY="390.0">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lbVolumn211" prefHeight="50.0" prefWidth="100.0" text="Effect" translateX="80.0" translateY="290.0">
+                        <Label fx:id="efVolume" prefHeight="50.0" prefWidth="100.0" text="Effect" translateX="80.0" translateY="290.0">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lbVolumn1" prefHeight="50.0" prefWidth="150.0" text=" Volumn Control" translateX="50.0" translateY="100.0">
+                        <Label fx:id="chooseControlLabel" prefHeight="50.0" prefWidth="150.0" text=" Volumn Control" translateX="50.0" translateY="100.0">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
