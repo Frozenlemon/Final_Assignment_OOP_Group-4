@@ -6,13 +6,12 @@ import javafx.animation.TranslateTransition;
 import javafx.beans.NamedArg;
 import javafx.fxml.FXML;
 import javafx.scene.effect.Bloom;
-import javafx.scene.effect.Effect;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
-import model.Horse;
+import util.Language;
 
 public class GamePane {
     private static final int NO_OF_HORSES = 16;
@@ -42,6 +41,7 @@ public class GamePane {
         }
         setStartingHorse();
         translate(-100,0);
+        Language.setLanguageText(gamePane.getChildrenUnmodifiable());
     }
 
     public StackPane getGamePane(){
@@ -61,16 +61,53 @@ public class GamePane {
         transition.setToY(paths[pathIndex].getTranslateY() - 10);
 
         pathIndex--;
-        transition.setOnFinished(e -> {
-            if (queueTransition != null) {
-                ViewController.getInstance().startAnimation();
-                queueTransition.play();
-            }
-            ViewController.getInstance().finishAnimation();
-        });
+        if(pathIndex == -1)
+            pathIndex = 47;
+
+        if (queueTransition == null)
+            transition.setOnFinished(e -> ViewController.getInstance().finishAnimation());
+        else
+            transition.setOnFinished(e -> queueTransition.play());
 
         if (moveCount > 0)
             moveHorse(horseIndex, pathIndex, moveCount, transition);
+        else {
+            ViewController.getInstance().addAnimation();
+            transition.play();
+        }
+    }
+
+    public void moveHorseToHome(int horseIndex, int moveCount, TranslateTransition queueTransition){
+        moveCount--;
+        TranslateTransition transition = new TranslateTransition(Duration.seconds(1), horses[horseIndex]);
+        double[] coordinate = new double[2];
+        switch (horseIndex/4){
+            case 0:
+                coordinate[0] = blueHorseCage.getChildren().get(moveCount).getTranslateX();
+                coordinate[1] = blueHorseCage.getChildren().get(moveCount).getTranslateY();
+                break;
+            case 1:
+                coordinate[0] = yellowHorseCage.getChildren().get(moveCount).getTranslateX();
+                coordinate[1] = yellowHorseCage.getChildren().get(moveCount).getTranslateY();
+                break;
+            case 2:
+                coordinate[0] = greenHorseCage.getChildren().get(moveCount).getTranslateX();
+                coordinate[1] = greenHorseCage.getChildren().get(moveCount).getTranslateY();
+                break;
+            case 3:
+                coordinate[0] = redHorseCage.getChildren().get(moveCount).getTranslateX();
+                coordinate[1] = redHorseCage.getChildren().get(moveCount).getTranslateY();
+                break;
+            default:
+                break;
+        }
+        if (queueTransition != null)
+            transition.setOnFinished(e -> queueTransition.play());
+        else
+            transition.setOnFinished(e -> ViewController.getInstance().finishAnimation());
+
+        if (moveCount > 0)
+            moveHorseToHome(horseIndex, moveCount, transition);
         else {
             ViewController.getInstance().addAnimation();
             transition.play();

@@ -11,6 +11,7 @@ import model.Human;
 import javax.swing.text.html.ImageView;
 import java.net.URL;
 import java.util.ResourceBundle;
+import util.Language;
 
 public class SettingName{
 
@@ -23,7 +24,9 @@ public class SettingName{
     @FXML
     private TextField txtYellowName, txtRedName, txtBlueName, txtGreenName;
 
-    public SettingName(){}
+    public SettingName(){
+        Language.setLanguageText(playerSelectPane.getChildrenUnmodifiable());
+    }
 
     @FXML
     public void continueGame() {

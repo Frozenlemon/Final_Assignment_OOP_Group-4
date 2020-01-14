@@ -15,8 +15,11 @@ import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 import util.FileIO;
 
-import java.awt.event.ActionEvent;
+import java.util.Locale;
 import java.util.Random;
+import java.util.ResourceBundle;
+
+import util.Language;
 
 public class Menu {
 
@@ -30,6 +33,7 @@ public class Menu {
     private ImageView dice1, dice2;
 
     public Menu() {
+        Language.setLanguageText(menuArea.getChildrenUnmodifiable());
     }
 
     public Button getRollDice() {
@@ -53,6 +57,11 @@ public class Menu {
             return dice1;
         }
         return dice2;
+    }
+
+    public void setText(String... textValue){
+        rollDice.setText(textValue[0]);
+        stopButton.setText(textValue[1]);
     }
 
     public void rollAnimation(int value1, int value2){
@@ -124,9 +133,9 @@ public class Menu {
         }
     }
 
-    
+    @FXML
     private void clickOnDice(MouseEvent evt){
-        Button button = (Button) evt.getSource();
+        ImageView button = (ImageView) evt.getSource();
         int diceId;
         if (button.getId().equals("b0"))
             diceId = 0;
@@ -134,10 +143,15 @@ public class Menu {
             diceId = 1;
         ViewController.getInstance().clickOnDice(diceId);
     }
-
     
     @FXML
     private void showSetting() {
         ViewController.getInstance().showSetting();
+    }
+
+    public static void setLocalLanguage(String[] arg) {
+        Locale.setDefault(new Locale("vi","VN"));
+        ResourceBundle bundle = ResourceBundle.getBundle("MessageBundle");
+        System.out.println(bundle.getString("ten ben tieng anh"));
     }
 }
