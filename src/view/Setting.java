@@ -2,6 +2,7 @@ package view;
 
 import controller.SoundController;
 import controller.ViewController;
+import util.Language;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
@@ -25,10 +26,7 @@ import java.util.ResourceBundle;
 import javafx.scene.media.MediaPlayer;
 import util.Language;
 
-/**
- *
- * @author Phu Le
- */
+
 public class Setting {
 
     @FXML
@@ -50,6 +48,11 @@ public class Setting {
     @FXML
     private Slider bgmSlider;
 
+    @FXML
+    private CheckBox enCheckBox;
+    @FXML
+    private CheckBox vnCheckBox;
+
     private Locale localeCurrent;
     private SoundController backgroundPlayer;
 
@@ -61,13 +64,13 @@ public class Setting {
     /*public void init() {
         Language.setLanguageText(vBoxMain.getChildrenUnmodifiable());
         setSelectedEvent();
-    }*/
+    }
 
     public void setVisible(boolean status) {
         settingPane.setVisible(status);
     }
 
-    /*public void setSelectedEvent() {
+    public void setSelectedEvent() {
         group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle,
                     Toggle new_toggle) {
@@ -90,16 +93,24 @@ public class Setting {
         });
     }*/
     @FXML
-    public void clickOnRadioButton(MouseEvent evt){
-        RadioButton button = (RadioButton) evt.getSource();
-        ViewController.getInstance().changeSetting();
+    public void clickOnCheckBox(MouseEvent evt) {
+        CheckBox button = (CheckBox) evt.getSource();
+        if (button.getId().equals("en"))
+            if (!button.isSelected()) {
+                button.setSelected(true);
+                ViewController.getInstance().switchLanguage("en");
+                if (vnCheckBox.isSelected())
+                    vnCheckBox.setSelected(false);
+            }
+        if (button.getId().equals("vn"))
+            if(!button.isSelected()){
+                button.setSelected(true);
+                ViewController.getInstance().switchLanguage("vn");
+                if (enCheckBox.isSelected())
+                    enCheckBox.setSelected(false);
     }
 
-
-
-    private void saveSetting(ActionEvent event) {
-
-    private void setVolumn(){
+    private void setVolume(){
         masterSlider.setValue(100);
         masterSlider.valueProperty().addListener(new InvalidationListener() {
             @Override
@@ -109,31 +120,12 @@ public class Setting {
         });
     }
 
-
-
     }
 
-    private void cancelSetting() {
+    /*private void cancelSetting() {
         Language.setLocale(localeCurrent);
         Language.setNumSwitches(numSwitchesCurrent);
         numSwitches = numSwitchesCurrent;
-    }
-    private ResourceBundle bundle = ResourceBundle.getBundle("sample.messages", new Locale("en"));
-    @FXML
-    private RadioButton rdoVietnam;
-    @FXML
-    private RadioButton rdoEnglish;
-
-
-    private Label lbChooseLanguage;
-    private  void setLanguage(){
-        lbChooseLanguage.setText(bundle.getString("lbChooseLanguage"));
-
-    }
-    public void defaultLanguage(){
-        Locale enLocale = new Locale("en","US");
-        Locale.setDefault(enLocale);
-    }
-
+    }*/
 
 }

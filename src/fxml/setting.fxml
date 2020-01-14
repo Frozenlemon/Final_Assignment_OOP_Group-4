@@ -32,34 +32,34 @@
                   <children>
                   <StackPane alignment="TOP_LEFT" prefHeight="500.0" prefWidth="1100.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" text="CheckBox" />
-                        <ChoiceBox prefWidth="150.0" translateX="250.0" translateY="15.0" StackPane.alignment="TOP_LEFT" />
+                        <CheckBox id="en" fx:id="enCheckBox" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#clickOnCheckBox" selected="true" text="English" translateX="300.0" translateY="15.0" />
+                        <CheckBox id="vn" fx:id="vnCheckBox" mnemonicParsing="false" onAction="#clickOnCheckBox" onMouseClicked="#clickOnCheckBox" text="Vietnamese" translateX="450.0" translateY="15.0" StackPane.alignment="TOP_LEFT" />
                               <Button fx:id="btnCancel" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Cancel" translateX="400.0" translateY="500.0" />
                               <Button fx:id="btnSave" mnemonicParsing="false" onAction="#saveSettng" prefHeight="50.0" prefWidth="100.0" text="Save" translateX="200.0" translateY="500.0" />
                               <Slider maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="900.0" showTickLabels="true" showTickMarks="true" translateX="150.0" translateY="400.0" value="50.0" />
-                              <Label id="msLabel" fx:id="lbVolumn" prefHeight="50.0" prefWidth="100.0" text="Master" translateX="80.0" translateY="190.0">
+                              <Label id="msLabel" fx:id="msVolume" prefHeight="50.0" prefWidth="100.0" text="Master" translateX="80.0" translateY="190.0">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                              <Label id="chooseLanguageLable" fx:id="lbChooseLanguage" prefHeight="50.0" prefWidth="150.0" text="Choose Language" translateX="50.0">
+                              <Label id="chooseLanguageLable" fx:id="chooseLanguageLabel" prefHeight="50.0" prefWidth="150.0" text="Choose Language" translateX="50.0">
                            <font>
                               <Font name="Consolas Bold" size="17.0" />
                            </font>
                         </Label>
                         <Slider maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="900.0" showTickLabels="true" showTickMarks="true" translateX="150.0" translateY="300.0" value="50.0" />
                         <Slider maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="900.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" translateX="150.0" translateY="200.0" value="50.0" StackPane.alignment="TOP_LEFT" />
-                        <Label id="efLabel" fx:id="lbVolumn211" prefHeight="50.0" prefWidth="100.0" text="Effect" translateX="80.0" translateY="290.0">
+                        <Label id="efLabel" fx:id="efVolume" prefHeight="50.0" prefWidth="100.0" text="Effect" translateX="80.0" translateY="290.0">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label id="volumeControlLabel" fx:id="lbVolumn1" prefHeight="50.0" prefWidth="150.0" text=" Volumn Control" translateX="50.0" translateY="100.0">
+                        <Label id="volumeControlLabel" fx:id="volumeControlLabel" prefHeight="50.0" prefWidth="150.0" text=" Volume Control" translateX="50.0" translateY="100.0">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label id="bgmLabel" fx:id="lbVolumn21" prefHeight="50.0" prefWidth="100.0" text="BGM" translateX="80.0" translateY="390.0">
+                        <Label id="bgmLabel" fx:id="bgmVolume" prefHeight="50.0" prefWidth="100.0" text="BGM" translateX="80.0" translateY="390.0">
                            <font>
                               <Font size="15.0" />
                            </font>
