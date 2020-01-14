@@ -2,11 +2,9 @@ package controller;
 
 import javafx.beans.NamedArg;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import model.Horse;
 import model.Human;
-import util.FileIO;
 import view.BackGroundPane;
 
 public class ViewController {
@@ -40,23 +38,28 @@ public class ViewController {
     }
 
     public void horseMoveAndKick(@NamedArg("Horse to move") Horse moveHorse, @NamedArg("Horse to kick") Horse kickedHorse){
-        int kickedHorseIndex = horseIdConverter(kickedHorse.getId());
+        int kickedHorseIndex = kickedHorse.getId();
         horseMove(moveHorse);
-        while (inAnimation !=0){};
         backGroundPane.getGamePane().kickHorse(kickedHorseIndex);
     }
 
     public void horseMove(@NamedArg("Horse to move") Horse horse){
-        int horseIndex = horseIdConverter(horse.getId());
+        int horseIndex = horse.getId();
         backGroundPane.getGamePane().moveHorse(horseIndex, horse.getPathIndex(), horse.getMoveCount(), null);
     }
 
     public void clickOnDice(int diceId){
-        ModelController.getInstance().moveHorse(diceId);
+        if (ModelController.getInstance().isPlayer()) {
+            if (inAnimation == 0)
+                ModelController.getInstance().requestFilter("moveHorse", diceId);
+        }
     }
 
     public void clickRollDice(){
-        ModelController.getInstance().rollDice();
+        if (ModelController.getInstance().isPlayer()) {
+            if (inAnimation == 0)
+                ModelController.getInstance().requestFilter("rollDice", -1);
+        }
     }
 
     public void setHorse_Highlight(int horseIndex){
@@ -87,31 +90,26 @@ public class ViewController {
     }
 
     public void updateDice(int value_0, int value_1){
-        backGroundPane.getMenu().getDice(0).setImage(new Image("file:" + FileIO.getDiceImage(value_0)));
-        backGroundPane.getMenu().getDice(1).setImage(new Image("file:" + FileIO.getDiceImage(value_1)));
+        backGroundPane.getMenu().rollAnimation(value_0, value_1);
     }
 
     public void clickOnHorse(int horseIndex){
-        Boolean success = ModelController.getInstance().selectHorse(horseIndex);
-        if (success)
-            backGroundPane.getGamePane().change_Horse_Highlight(horseIndex);
-    }
-
-    public void finishAnimation(){
-        this.inAnimation--;
+        if (ModelController.getInstance().isPlayer()) {
+            Boolean success = ModelController.getInstance().selectHorse(horseIndex);
+            if (success)
+                backGroundPane.getGamePane().change_Horse_Highlight(horseIndex);
+        }
     }
 
     public void startAnimation(){
         this.inAnimation++;
     }
-
-    private int horseIdConverter(int id){
-        int areaCode = id / 10;
-        int index = id % 10;
-        return (areaCode * 4) + index;
-    }
     
     public void showSetting() {
         backGroundPane.initSetting();
+    }
+
+    public void finishAnimation(){
+        ModelController.getInstance().endTurn();
     }
 }

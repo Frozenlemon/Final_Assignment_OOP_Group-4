@@ -6,13 +6,11 @@ import javafx.animation.TranslateTransition;
 import javafx.beans.NamedArg;
 import javafx.fxml.FXML;
 import javafx.scene.effect.Bloom;
-import javafx.scene.effect.Effect;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
-import model.Horse;
 
 public class GamePane {
     private static final int NO_OF_HORSES = 16;
@@ -61,18 +59,17 @@ public class GamePane {
         transition.setToY(paths[pathIndex].getTranslateY() - 20);
 
         pathIndex--;
-        transition.setOnFinished(e -> {
-            if (queueTransition != null) {
-                ViewController.getInstance().startAnimation();
-                queueTransition.play();
-            }
-            ViewController.getInstance().finishAnimation();
-        });
+        if(pathIndex == -1)
+            pathIndex = 47;
+
+        if (queueTransition == null)
+            transition.setOnFinished(e -> ViewController.getInstance().finishAnimation());
+        else
+            transition.setOnFinished(e -> queueTransition.play());
 
         if (moveCount > 0)
             moveHorse(horseIndex, pathIndex, moveCount, transition);
         else {
-            ViewController.getInstance().startAnimation();
             transition.play();
         }
     }
