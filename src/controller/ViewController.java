@@ -7,12 +7,18 @@ import model.Horse;
 import model.Human;
 import view.BackGroundPane;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+import java.util.Scanner;
+
 public class ViewController {
 
     private static ViewController instance;
     private Stage primaryStage;
     private BackGroundPane backGroundPane;
     private int inAnimation;
+    private String localSetting, oldLocalSetting;
+    private double[] volumeSetting, oldVolumeSetting;
 
     private ViewController(){
         primaryStage = new Stage();
@@ -20,6 +26,8 @@ public class ViewController {
         backGroundPane = new BackGroundPane();
         primaryStage.setScene(new Scene(backGroundPane, 1010, 800));
         inAnimation = 0;
+        volumeSetting = new double[]{0.5, 0.5, 0.5};
+        localSetting = "local0";
     }
 
     public static ViewController getInstance(){
@@ -99,6 +107,16 @@ public class ViewController {
             if (success)
                 backGroundPane.getGamePane().change_Horse_Highlight(horseIndex);
         }
+    }
+
+    public void switchLanguage(Locale locale, int language){
+        Locale vnLocale = new Locale("vi","VN");
+        Locale.setDefault(vnLocale);
+        int lang;
+        Scanner s = new Scanner(System.in);
+        lang = s.nextInt();
+        ResourceBundle messages;
+        messages =s.nextLine();
     }
 
     public void startAnimation(){
