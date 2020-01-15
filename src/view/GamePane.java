@@ -153,13 +153,14 @@ public class GamePane {
 
     public void moveHorseToHome(int horseIndex, int homeIndex){
         TranslateTransition transition = new TranslateTransition(Duration.millis(ANIMATION_DURATION), horses[horseIndex]);
-        int id = ((horseIndex/4) * 6) + homeIndex;
+        int id = ((horseIndex/4) * 6) + (homeIndex - 1);
         double[] coordinate = new double[2];
 
         coordinate[0] =  cages.getChildren().get(id).getTranslateX();
         coordinate[1] =  cages.getChildren().get(id).getTranslateY();
         transition.setToX(coordinate[0] + 105);
         transition.setToY(coordinate[1]);
+        transition.setOnFinished(e -> ViewController.getInstance().finishAnimation());
         ViewController.getInstance().addAnimation();
         transition.play();
         SoundController.getInstance().playHorseMove();

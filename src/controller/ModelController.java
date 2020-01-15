@@ -154,7 +154,7 @@ public class ModelController {
             nextPlayer();
         else{
             if (!isPlayer()){
-                if (dices[0].isUsed() && dices[1].isUsed() && !hasRolled)
+                if (!hasRolled)
                     rollDice();
                 else
                     players[playerTurn].autoMove();
@@ -173,10 +173,8 @@ public class ModelController {
             }
         }
         if (dices[0].getValue() == dices[1].getValue()){
-            if (dices[0].isUsed() && dices[1].isUsed()){
-                hasRolled = false;
-                return true;
-            }
+            hasRolled = false;
+            return true;
         }
         return false;
     }

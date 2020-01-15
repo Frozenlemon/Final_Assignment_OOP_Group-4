@@ -574,24 +574,24 @@
             <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="380.0" translateY="180.0" visible="false" />
             <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="380.0" translateY="225.0" visible="false" />
             <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="380.0" translateY="270.0" visible="false" />
-            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="45.0" translateY="355.0" visible="false" />
-            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="90.0" translateY="355.0" visible="false" />
-            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="135.0" translateY="355.0" visible="false" />
-            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="180.0" translateY="355.0" visible="false" />
-            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="225.0" translateY="355.0" visible="false" />
-            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="268.0" translateY="355.0" visible="false" />
+            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="50.0" translateY="355.0" visible="false" />
+            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="95.0" translateY="355.0" visible="false" />
+            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="140.0" translateY="355.0" visible="false" />
+            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="185.0" translateY="355.0" visible="false" />
+            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="230.0" translateY="355.0" visible="false" />
+            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="275.0" translateY="355.0" visible="false" />
             <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="380.0" translateY="690.0" visible="false" />
             <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="380.0" translateY="645.0" visible="false" />
             <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="380.0" translateY="600.0" visible="false" />
             <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="380.0" translateY="555.0" visible="false" />
             <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="380.0" translateY="510.0" visible="false" />
             <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="380.0" translateY="465.0" visible="false" />
-            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="690.0" translateY="355.0" visible="false" />
-            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="645.0" translateY="355.0" visible="false" />
-            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="600.0" translateY="355.0" visible="false" />
-            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="555.0" translateY="355.0" visible="false" />
-            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="510.0" translateY="355.0" visible="false" />
-            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="465.0" translateY="355.0" visible="false" />
+            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="695.0" translateY="355.0" visible="false" />
+            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="650.0" translateY="355.0" visible="false" />
+            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="605.0" translateY="355.0" visible="false" />
+            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="560.0" translateY="355.0" visible="false" />
+            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="515.0" translateY="355.0" visible="false" />
+            <Circle fill="DODGERBLUE" layoutX="15.0" layoutY="15.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" translateX="470.0" translateY="355.0" visible="false" />
          </children>
       </StackPane>
         <StackPane fx:id="imagePane" alignment="TOP_LEFT" prefHeight="800.0" prefWidth="800.0">

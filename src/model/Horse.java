@@ -51,14 +51,14 @@ public class Horse {
 
     public void move(int moveStatus, int moveCount){
         System.out.println("Status: " + moveStatus);
-        if (moveStatus == 3 || moveStatus == 4)
+        if (moveStatus == 2 || moveStatus == 4)
             moveCount = 1;
         this.moveCount = moveCount;
         //Move or move and kick horse
         if (moveStatus != 0)
         {
             //set location of all move
-            if (moveStatus != 3 && moveStatus != 4) {
+            if (moveStatus != 2 && moveStatus != 4) {
                 int[] location = get_HorseNewLocation(moveCount);
                 setHorseLocation(location[0], location[1]);
             }
@@ -68,7 +68,7 @@ public class Horse {
             //call the function updateHorses in ModelController
             if (moveStatus == 5 || moveStatus == 6)
                 System.out.println("Hprse ID: " + this.id + "\nAREA CODE: " + currentAreaCode + "\nPATH: " + locationOnPath);
-            if (moveStatus == 2 || moveStatus == 4 || moveStatus == 6){
+            if (moveStatus == 3 || moveStatus == 4 || moveStatus == 6){
                 Horse colliedHorse = checkCollision(this);
                 setKickedHorse(colliedHorse);
                 ModelController.getInstance().updateHorses(this, colliedHorse);
@@ -108,6 +108,8 @@ public class Horse {
     }
 
     public boolean canUpgrade(int moveCount){
+        if (homeOnPath == 6)
+            return false;
         if (currentAreaCode == getColorCode() && locationOnPath == 0){
             if (moveCount > homeOnPath){
                 for (int i = homeOnPath + 1; i < moveCount; i++){
