@@ -4,8 +4,8 @@ import controller.SoundController;
 import controller.ViewController;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
-import java.awt.event.MouseEvent;
 import java.util.Locale;
 
 
@@ -15,7 +15,6 @@ public class Setting {
     @FXML
     private StackPane settingPane;
 
-
     @FXML
     private Button btnBack, btnHome;
 
@@ -23,7 +22,7 @@ public class Setting {
     private Slider effectSlider, masterSlider, bgmSlider;
 
     @FXML
-    private CheckBox enCheckBox, vnCheckBox;
+    private RadioButton enCheckBox, vnCheckBox;
 
     @FXML
     private Label chooseLanguageLabel, volumeControlLabel, msVolume, efVolume, bgmVolume;
@@ -31,13 +30,16 @@ public class Setting {
     private Locale localeCurrent;
     private SoundController backgroundPlayer;
 
-    //int numSwitches, numSwitchesCurrent = 0; //0: English, 1 VietNamese
-
     public Setting() {
     }
 
     public StackPane getSettingPane(){
         return settingPane;
+    }
+
+    public void init(){
+        enCheckBox.setOnMouseClicked(e-> clickOnCheckBox(enCheckBox, vnCheckBox));
+        vnCheckBox.setOnMouseClicked(e -> clickOnCheckBox(vnCheckBox, enCheckBox));
     }
 
     /*public void init() {
@@ -87,24 +89,11 @@ public class Setting {
         ViewController.getInstance().turnOffSetting();
     }
 
-    @FXML
-    public void clickOnCheckBox(MouseEvent evt) {
-        CheckBox button = (CheckBox) evt.getSource();
-        if (button.getId().equals("en")){
-            if (!button.isSelected()) {
-                button.setSelected(true);
-                ViewController.getInstance().switchLanguage("en");
-                if (vnCheckBox.isSelected())
-                    vnCheckBox.setSelected(false);
-            }
-        }
-        if (button.getId().equals("vn"))
-            if(!button.isSelected()){
-                button.setSelected(true);
-                ViewController.getInstance().switchLanguage("vn");
-                if (enCheckBox.isSelected())
-                    enCheckBox.setSelected(false);
-            }
+
+    public void clickOnCheckBox(RadioButton checkBoxA, RadioButton checkBoxB) {
+        checkBoxA.setSelected(true);
+        checkBoxB.setSelected(false);
+        ViewController.getInstance().switchLanguage(checkBoxA.getId());
     }
 
 //    private void setVolume(){
@@ -125,19 +114,16 @@ public class Setting {
         numSwitches = numSwitchesCurrent;
     }*/
 
-    public void setDisplay(boolean status){
-        settingPane.setVisible(status);
-    }
 
     public void setSettingSwitchLanguage(String...inputs){
         btnBack.setText(inputs[0]);
         btnHome.setText(inputs[1]);
-        enCheckBox.setText(inputs[3]);
-        vnCheckBox.setText(inputs[4]);
-        chooseLanguageLabel.setText(inputs[5]);
-        volumeControlLabel.setText(inputs[6]);
-        msVolume.setText(inputs[7]);
-        efVolume.setText(inputs[8]);
-        bgmVolume.setText(inputs[9]);
+        enCheckBox.setText(inputs[2]);
+        vnCheckBox.setText(inputs[3]);
+        chooseLanguageLabel.setText(inputs[4]);
+        volumeControlLabel.setText(inputs[5]);
+        msVolume.setText(inputs[6]);
+        efVolume.setText(inputs[7]);
+        bgmVolume.setText(inputs[8]);
     }
 }

@@ -233,7 +233,7 @@
                     <children>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#005df2" height="240.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="240.0" StackPane.alignment="TOP_LEFT" />
                         <Circle fill="WHITE" radius="80.0" stroke="#005df2" strokeType="INSIDE" strokeWidth="2.0" translateX="40.0" translateY="40.0" StackPane.alignment="TOP_LEFT" />
-                        <Label fx:id="bluepoint" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="100.0" text="00" textAlignment="CENTER" StackPane.alignment="BOTTOM_CENTER">
+                        <Label fx:id="blueScore" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="100.0" text="00" textAlignment="CENTER" StackPane.alignment="BOTTOM_CENTER">
                             <font>
                                 <Font name="System Bold" size="20.0" />
                             </font>
@@ -252,7 +252,7 @@
                                 <Insets />
                             </StackPane.margin>
                         </Circle>
-                        <Label fx:id="yellowpoint" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="100.0" text="00" textAlignment="CENTER" StackPane.alignment="TOP_CENTER">
+                        <Label fx:id="yellowScore" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="100.0" text="00" textAlignment="CENTER" StackPane.alignment="TOP_CENTER">
                             <font>
                                 <Font name="System Bold" size="20.0" />
                             </font>
@@ -272,7 +272,7 @@
                                 <Insets />
                             </StackPane.margin>
                         </Circle>
-                        <Label fx:id="greenpoint" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="100.0" text="00" StackPane.alignment="TOP_CENTER">
+                        <Label fx:id="greenScore" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="100.0" text="00" StackPane.alignment="TOP_CENTER">
                             <font>
                                 <Font name="System Bold" size="20.0" />
                             </font>
@@ -292,7 +292,7 @@
                                 <Insets />
                             </StackPane.margin>
                         </Circle>
-                        <Label fx:id="redpoint" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="100.0" text="00" StackPane.alignment="BOTTOM_CENTER">
+                        <Label fx:id="redScore" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="100.0" text="00" StackPane.alignment="BOTTOM_CENTER">
                             <font>
                                 <Font name="System Bold" size="20.0" />
                             </font>
@@ -301,7 +301,7 @@
                 </StackPane>
             </children>
         </StackPane>
-      <StackPane fx:id="cagesBox" alignment="TOP_LEFT" prefHeight="150.0" prefWidth="200.0" translateX="100.0">
+      <StackPane fx:id="cagesBox" alignment="TOP_LEFT" prefHeight="150.0" prefWidth="200.0" translateX="105.0">
          <children>
               <StackPane fx:id="blueHorseCages" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="125.0" rotate="180.0" translateX="335.0" translateY="55.0">
                   <children>
@@ -596,7 +596,7 @@
       </StackPane>
         <StackPane fx:id="imagePane" alignment="TOP_LEFT" prefHeight="800.0" prefWidth="800.0">
             <children>
-                <ImageView id="h0" fx:id="h0" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true" translateX="-30.0" translateY="-212.0">
+                <ImageView id="h0" fx:id="h0" fitHeight="60.0" fitWidth="50.0" onMouseClicked="#clickOnHorse" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@Images/0.png" />
                     </image></ImageView>
@@ -662,5 +662,10 @@
                     </image></ImageView>
             </children>
         </StackPane>
+      <ImageView fx:id="playerTurn" fitHeight="110.0" fitWidth="110.0" pickOnBounds="true">
+         <image>
+            <Image url="@Images/Blue.png" />
+         </image>
+      </ImageView>
     </children>
 </StackPane>

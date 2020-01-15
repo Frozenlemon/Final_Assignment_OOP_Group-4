@@ -3,6 +3,7 @@ package view;
 import javafx.beans.NamedArg;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import util.FileIO;
@@ -21,7 +22,10 @@ public class BackGroundPane extends StackPane {
         super.setPrefSize(1010,800);
         super.setAlignment(Pos.TOP_LEFT);
         initBackGroundPane();
-        super.getChildren().addAll(startMenu.getStartMenu(), settingName.getPlayerSelectPane(), gamePane.getGamePane(), menu.getMenuArea());
+    }
+
+    public void addPane(Node... nodes){
+        super.getChildren().setAll(nodes);
     }
 
     public Menu getMenu(){
@@ -55,7 +59,7 @@ public class BackGroundPane extends StackPane {
     private void initBackGroundPane(){
         gamePane = new GamePane();
         menu = new Menu();
-        //setting = new Setting();
+        setting = new Setting();
         startMenu = new StartMenu();
         settingName = new SettingName();
         initWindow();
@@ -64,7 +68,7 @@ public class BackGroundPane extends StackPane {
     private void initWindow(){
         initMenu();
         initGameArea();
-        //initSetting();
+        initSetting();
         initStartMenu();
         initSettingName();
     }
@@ -74,27 +78,25 @@ public class BackGroundPane extends StackPane {
         menu.translate(810,0);
     }
 
-    public void setDisplay(boolean value){
-        gamePane.setDisplay(value);
-        menu.setDisplay(value);
-    }
-
     private void initGameArea(){
         initFXMLLoader(gamePane, "GamePane");
         gamePane.init();
-        setDisplay(false);
     }
 
     public void initSetting(){
         initFXMLLoader(setting, "setting");
+        System.out.println("Setting done");
+        setting.init();
     }
 
     private void initStartMenu(){
         initFXMLLoader(startMenu, "StartMenu");
+        System.out.println("StartMenu done");
     }
 
     private void initSettingName(){
         initFXMLLoader(settingName, "SettingName");
+        System.out.println("SettingName done");
     }
 
     private void initFXMLLoader(Object controller, String fileName){

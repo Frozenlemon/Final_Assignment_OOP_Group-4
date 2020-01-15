@@ -22,7 +22,6 @@ public class ModelController {
         dices = new Dice[]{new Dice(), new Dice()};
         focusedHorse = null;
         hasRolled = false;
-        initVariable();
     }
 
     public static ModelController getInstance(){
@@ -39,12 +38,11 @@ public class ModelController {
         hasRolled = false;
     }
 
-    public void initVariable(Human... humans){
-        for (Human human : humans){
-            players[human.getColorCode()] = human;
-        }
+    public void initVariable(String[] humans){
         for (int i = 0; i < NO_OF_PLAYER; i++){
-            if (players[i] == null)
+            if (humans[i] != null)
+                players[i] = new Human(i, humans[i]);
+            else
                 players[i] = new Player(i);
         }
         nextPlayer();
@@ -65,14 +63,20 @@ public class ModelController {
 
     public void updateHorses(Horse horse, Horse kickedHorse){
         if (kickedHorse != null){
+            updateScore(playerTurn, 2);
+            updateScore(kickedHorse.getColorCode(), -2);
             ViewController.getInstance().horseMoveAndKick(horse, kickedHorse);
         }
         else{
-            ViewController.getInstance().horseMove(horse);
+            if (horse.getCurrentAreaCode() == horse.getColorCode() && horse.getLocationOnPath() == 1)
+                ViewController.getInstance().horseMove(horse, true);
+            else
+                ViewController.getInstance().horseMove(horse, false);
         }
     }
 
     public void upgradeHorse(Horse horse){
+        updateScore(playerTurn, 0);
         ViewController.getInstance().horseMoveToHome(horse.getId(), horse.getHomeOnPath());
     }
 
@@ -98,12 +102,10 @@ public class ModelController {
         if (focusedHorse != null) {
             int moveCount = dices[diceId].getValue();
             if (focusedHorse.canUpgrade(moveCount)) {
-
-                System.out.println("CAN UPGRADE");
                 focusedHorse.upgradeHorse(moveCount);
             }
+
             else if (!dices[diceId].isUsed()){
-                System.out.println("CAN MOVE");
                 int status = focusedHorse.checkMove(moveCount);
                 if (status != 0) {
                     focusedHorse.move(status, moveCount);
@@ -117,6 +119,13 @@ public class ModelController {
         return dices;
     }
 
+    public void updateScore(int playerIndex, int value){
+        if (players[playerIndex] instanceof Human){
+            Human player = (Human) players[playerIndex];
+            player.addToAccumulativeScore(value);
+            ViewController.getInstance().upDateScore(playerIndex, player.getScore());
+        }
+    }
 
     public void rollDice(){
         if (!hasRolled) {
@@ -138,14 +147,18 @@ public class ModelController {
     }
 
     public void endTurn(){
-        if (endGame() || ViewController.getInstance().isEndGame()) {
+        if (endGame()) {
             ViewController.getInstance().setIsEndGame(true);
         }
         else if (!canMove())
             nextPlayer();
         else{
-            if (!isPlayer())
-                players[playerTurn].autoMove();
+            if (!isPlayer()){
+                if (dices[0].isUsed() && dices[1].isUsed() && !hasRolled)
+                    rollDice();
+                else
+                    players[playerTurn].autoMove();
+            }
         }
     }
 
@@ -159,6 +172,12 @@ public class ModelController {
                 }
             }
         }
+        if (dices[0].getValue() == dices[1].getValue()){
+            if (dices[0].isUsed() && dices[1].isUsed()){
+                hasRolled = false;
+                return true;
+            }
+        }
         return false;
     }
 
@@ -170,6 +189,7 @@ public class ModelController {
         deselectHorse();
         if (playerTurn > 3)
             playerTurn = 0;
+        ViewController.getInstance().showPlayerTurn(playerTurn);
         if (!isPlayer())
             rollDice();
     }

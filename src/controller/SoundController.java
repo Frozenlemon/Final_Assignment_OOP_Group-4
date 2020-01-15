@@ -12,6 +12,8 @@ import util.FileIO;
 public class SoundController {
 
     public static SoundController instance;
+    public static final int GENERAL_DURATION = 500;
+    public static final int SPECIAL_DURATION = 1000;
 
     private boolean status;
     private MediaPlayer backgroundPlayer, releaseHorsePlayer, horseMovePlayer, rollDicePlayer,horseKickPlayer;
@@ -24,19 +26,19 @@ public class SoundController {
 
         releaseHorsePlayer =  getMediaPlayer("doorOpen");
         releaseHorsePlayer.setStartTime(Duration.millis(0));
-        releaseHorsePlayer.setStopTime(Duration.millis(1));
+        releaseHorsePlayer.setStopTime(Duration.millis(GENERAL_DURATION));
 
         horseMovePlayer = getMediaPlayer("horseMove");
         horseMovePlayer.setStartTime(Duration.millis(0));
-        horseMovePlayer.setStopTime(Duration.millis(1));
+        horseMovePlayer.setStopTime(Duration.millis(GENERAL_DURATION));
 
         rollDicePlayer = getMediaPlayer("rollingDice");
         rollDicePlayer.setStartTime(Duration.millis(0));
-        rollDicePlayer.setStopTime(Duration.millis(1));
+        rollDicePlayer.setStopTime(Duration.millis(SPECIAL_DURATION));
 
         horseKickPlayer = getMediaPlayer("horseKick");
         horseKickPlayer.setStartTime(Duration.millis(0));
-        horseKickPlayer.setStopTime(Duration.millis(1));
+        horseKickPlayer.setStopTime(Duration.millis(GENERAL_DURATION));
     }
 
     private MediaPlayer getMediaPlayer(String fileName){
@@ -54,19 +56,48 @@ public class SoundController {
         setMusic(master, music);
         setEffect(master, effect);
     }
+
     public void setMusic(double master, double music){
-        backgroundPlayer.setVolume(master/100 * music);
+        backgroundPlayer.setVolume(master/100 * music / 100);
     }
+
     public void setEffect(double master, double effect){
-        releaseHorsePlayer.setVolume(master / 100 * effect);
-        horseMovePlayer.setVolume(master / 100 * effect);
-        rollDicePlayer.setVolume(master / 100 * effect);
-        horseMovePlayer.setVolume(master / 100 * effect);
-        horseKickPlayer.setVolume(master / 100 * effect);
+        releaseHorsePlayer.setVolume(master / 100 * effect / 100);
+        rollDicePlayer.setVolume(master / 100 * effect / 100);
+        horseMovePlayer.setVolume(master / 100 * effect / 100);
+        horseKickPlayer.setVolume(master / 100 * effect / 100);
     }
 
 
     public void playMusic(){
         backgroundPlayer.play();
+    }
+
+    public void playHorseMove(){
+        horseMovePlayer.stop();
+        resetPlayer(horseMovePlayer, GENERAL_DURATION);
+        horseMovePlayer.play();
+    }
+
+    public void playHorseKick(){
+        horseKickPlayer.stop();
+        resetPlayer(horseKickPlayer, GENERAL_DURATION);
+        horseKickPlayer.play();
+    }
+
+    public void playHorseRelease(){
+        releaseHorsePlayer.stop();
+        resetPlayer(releaseHorsePlayer, GENERAL_DURATION);
+        releaseHorsePlayer.play();
+    }
+
+    public void playRollDice(){
+        rollDicePlayer.stop();
+        resetPlayer(rollDicePlayer, SPECIAL_DURATION);
+        rollDicePlayer.play();
+    }
+
+    private void resetPlayer(MediaPlayer player, int duration){
+        player.seek(Duration.ZERO);
     }
 }

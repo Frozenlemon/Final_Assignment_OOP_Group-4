@@ -69,14 +69,10 @@ public class Player {
                     choice_index = i;
             }
             else if (bestChoice == choices.get(i)){
-                if (choice_index != -1){
-                    if (horses[choice_index % 4].getPathIndex() < horses[i % 4].getPathIndex())
+                if (horses[choice_index % 4].getPathIndex() < horses[i % 4].getPathIndex()) {
                     bestChoice = choices.get(i);
+                    choice_index = i;
                 }
-                else{
-                    bestChoice = choices.get(i);
-                }
-                choice_index = i;
             }
         }
 

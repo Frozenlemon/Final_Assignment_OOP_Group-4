@@ -1,25 +1,34 @@
 package view;
 
+import controller.SoundController;
 import controller.ViewController;
 import javafx.animation.TranslateTransition;
 import javafx.beans.NamedArg;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.effect.Bloom;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
+import util.FileIO;
+
 
 public class GamePane {
     private static final int NO_OF_HORSES = 16;
     private static final int NO_OF_PATHS = 48;
-    private static final int ANIMATION_DURATION = 100;
+    private static final int ANIMATION_DURATION = 50;
 
     @FXML
     private StackPane gamePane, imagePane, circleBase, cages;
     @FXML
     private Circle i0, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15;
+    @FXML
+    private ImageView playerTurn;
+    @FXML
+    private Label blueScore, yellowScore, greenScore, redScore;
 
     private ImageView[] horses;
     private Circle[] paths;
@@ -38,19 +47,76 @@ public class GamePane {
         }
         setStartingHorse();
         translatePane(gamePane,-100, 0);
-        gamePane.setVisible(false);
     }
 
     public void reset(){
         setStartingHorse();
+        blueScore.setVisible(false);
+        yellowScore.setVisible(false);
+        greenScore.setVisible(false);
+        redScore.setVisible(false);
+
+        blueScore.setText("00");
+        yellowScore.setText("00");
+        greenScore.setText("00");
+        redScore.setText("00");
     }
 
-    public void setDisplay(boolean status){
-        gamePane.setVisible(status);
+    public void initLabel(String... players){
+        for (int index = 0; index < players.length; index++) {
+            if (players[index] != null) {
+                if (index == 0)
+                    blueScore.setVisible(true);
+                else if (index == 1)
+                    yellowScore.setVisible(true);
+                else if (index == 2)
+                    greenScore.setVisible(true);
+                else
+                    redScore.setVisible(true);
+            }
+        }
     }
 
     public StackPane getGamePane(){
         return gamePane;
+    }
+
+    public void setScore(int player, int score){
+        switch (player){
+            case 0:
+                blueScore.setText(score + "");
+                break;
+            case 1:
+                yellowScore.setText(score + "");
+                break;
+            case 2:
+                greenScore.setText(score + "");
+                break;
+            case 3:
+                redScore.setText(score + "");
+                break;
+        }
+    }
+
+    public void setPlayerTurn(int player){
+        String file = "";
+        switch (player){
+            case 0:
+                file = FileIO.getImageFile("Blue");
+                break;
+            case 1:
+                file = FileIO.getImageFile("Yellow");
+                break;
+            case 2:
+                file = FileIO.getImageFile("Green");
+                break;
+            case 3:
+                file = FileIO.getImageFile("Red");
+                break;
+            default:
+                break;
+        }
+        playerTurn.setImage(new Image("file:" + file));
     }
 
     public void translatePane(@NamedArg("Translate the gamePane by x-horizontal and y vertical") StackPane pane, double x, double y){
@@ -71,47 +137,47 @@ public class GamePane {
         if (queueTransition == null)
             transition.setOnFinished(e -> ViewController.getInstance().finishAnimation());
         else
-            transition.setOnFinished(e -> queueTransition.play());
+            transition.setOnFinished(e -> {
+                SoundController.getInstance().playHorseMove();
+                queueTransition.play();
+            });
 
         if (moveCount > 0)
             moveHorse(horseIndex, pathIndex, moveCount, transition);
         else {
             ViewController.getInstance().addAnimation();
             transition.play();
+            SoundController.getInstance().playHorseMove();
         }
     }
 
-    public void moveHorseToHome(int horseIndex, int moveCount, TranslateTransition queueTransition){
-        moveCount--;
+    public void moveHorseToHome(int horseIndex, int homeIndex){
         TranslateTransition transition = new TranslateTransition(Duration.millis(ANIMATION_DURATION), horses[horseIndex]);
-        int id = ((horseIndex/4) * 6) + moveCount;
+        int id = ((horseIndex/4) * 6) + homeIndex;
         double[] coordinate = new double[2];
 
         coordinate[0] =  cages.getChildren().get(id).getTranslateX();
         coordinate[1] =  cages.getChildren().get(id).getTranslateY();
-        transition.setToX(coordinate[0] + 100);
+        transition.setToX(coordinate[0] + 105);
         transition.setToY(coordinate[1]);
-
-        if (queueTransition != null)
-            transition.setOnFinished(e -> queueTransition.play());
-        else
-            transition.setOnFinished(e -> ViewController.getInstance().finishAnimation());
-
-        if (moveCount > 0)
-            moveHorseToHome(horseIndex, moveCount, transition);
-        else {
-            ViewController.getInstance().addAnimation();
-            transition.play();
-        }
+        ViewController.getInstance().addAnimation();
+        transition.play();
+        SoundController.getInstance().playHorseMove();
     }
 
     public TranslateTransition kickHorseAnimation(int horseIndex){
         TranslateTransition translateTransition = new TranslateTransition(Duration.millis(ANIMATION_DURATION), horses[horseIndex]);
+
         double[] coordinate = getInitialCoordinate(horseIndex);
         translateTransition.setToX(coordinate[0]);
         translateTransition.setToY(coordinate[1]);
         translateTransition.setOnFinished(e -> ViewController.getInstance().finishAnimation());
-        return translateTransition;
+        TranslateTransition bufferTransition = new TranslateTransition(Duration.ZERO, horses[horseIndex]);
+        bufferTransition.setOnFinished(e -> {
+            SoundController.getInstance().playHorseKick();
+            translateTransition.play();
+        });
+        return bufferTransition;
     }
 
     public void change_Horse_Highlight(@NamedArg("Horse Index") int horseIndex){

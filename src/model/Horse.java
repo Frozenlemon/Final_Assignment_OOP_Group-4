@@ -196,7 +196,7 @@ public class Horse {
                 if (isCollied == 2)
                     return 4;// release and kick
                 else if(isCollied == 0)
-                    return 3; //release
+                    return 2; //release
                 else
                     return 0; //cannot move
             }
@@ -215,7 +215,7 @@ public class Horse {
                 return 0; // collied but still have move => cannot move
             else {
                 if (isCollied == 2)
-                    return 2; //collied with other's horse and have 0 move left => move kick
+                    return 3; //collied with other's horse and have 0 move left => move kick
                 else
                     return 0; //collied with own horse => cannot move
             }
@@ -234,7 +234,7 @@ public class Horse {
         if (newLocation[1] == 0 && newLocation[0] == getColorCode())
             isLastPoint = true;
 
-        if (moveStatus == 2){
+        if (moveStatus == 3){
             if (isLastPoint)
                 return 6;
         }

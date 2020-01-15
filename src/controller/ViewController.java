@@ -5,7 +5,6 @@ import javafx.beans.NamedArg;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.Horse;
-import model.Human;
 import view.BackGroundPane;
 
 import java.util.Locale;
@@ -19,14 +18,16 @@ public class ViewController {
     private int inAnimation;
 
     private boolean isEndGame;
+    private boolean isPause;
 
     private ViewController(){
         primaryStage = new Stage();
         primaryStage.setTitle("Game");
         backGroundPane = new BackGroundPane();
+        backGroundPane.addPane(backGroundPane.getStartMenu().getStartMenu());
         primaryStage.setScene(new Scene(backGroundPane, 1010, 800));
         inAnimation = 0;
-        isEndGame = false;
+        isEndGame = true;
     }
 
     public static ViewController getInstance(){
@@ -39,22 +40,27 @@ public class ViewController {
         return this.inAnimation;
     }
 
-    public void startGame(Human... humans){
-        ModelController.getInstance().reset();
+    public void startGame(String... humans){
+        reset();
         ModelController.getInstance().initVariable(humans);
+        backGroundPane.getGamePane().initLabel(humans);
+        backGroundPane.addPane(backGroundPane.getGamePane().getGamePane(), backGroundPane.getMenu().getMenuArea());
+    }
+
+    private void reset(){
+        isEndGame = false;
+        isPause = false;
         backGroundPane.getGamePane().reset();
         backGroundPane.getMenu().reset();
-        backGroundPane.getSettingName().setDisplay(false);
-        backGroundPane.setDisplay(true);
+        ModelController.getInstance().reset();
     }
 
     public void clickStart(){
-        backGroundPane.getStartMenu().setDisplay(false);
-        backGroundPane.getSettingName().setDisplay(true);
+        backGroundPane.addPane(backGroundPane.getSettingName().getPlayerSelectPane());
     }
 
     public void clickSetting(){
-        backGroundPane.getSetting().setDisplay(true);
+        backGroundPane.addPane(backGroundPane.getSetting().getSettingPane());
     }
 
     public void clickExit(){
@@ -63,12 +69,14 @@ public class ViewController {
 
     public void clickHome(){
         isEndGame = true;
-        backGroundPane.getGamePane().setDisplay(false);
-        backGroundPane.getStartMenu().setDisplay(true);
+        backGroundPane.addPane(backGroundPane.getStartMenu().getStartMenu());
     }
 
     public void turnOffSetting(){
-        backGroundPane.getSetting().setDisplay(false);
+        if (isEndGame)
+            backGroundPane.addPane(backGroundPane.getStartMenu().getStartMenu());
+        else
+            backGroundPane.addPane(backGroundPane.getGamePane().getGamePane(), backGroundPane.getMenu().getMenuArea());
     }
 
     public void horseMoveAndKick(@NamedArg("Horse to move") Horse moveHorse, @NamedArg("Horse to kick") Horse kickedHorse){
@@ -78,17 +86,19 @@ public class ViewController {
         backGroundPane.getGamePane().moveHorse(moveHorseIndex, moveHorse.getPathIndex(), moveHorse.getMoveCount(), transition);
     }
 
-    public void horseMove(@NamedArg("Horse to move") Horse horse){
+    public void horseMove(@NamedArg("Horse to move") Horse horse, boolean isRelease){
         int horseIndex = horse.getId();
+        if (isRelease)
+            SoundController.getInstance().playHorseRelease();
         backGroundPane.getGamePane().moveHorse(horseIndex, horse.getPathIndex(), horse.getMoveCount(), null);
     }
 
     public void horseMoveToHome(int horseIndex, int home){
-        backGroundPane.getGamePane().moveHorseToHome(horseIndex, home, null);
+        backGroundPane.getGamePane().moveHorseToHome(horseIndex, home);
     }
 
     public void clickOnDice(int diceId){
-        if (!isEndGame && ModelController.getInstance().isPlayer()) {
+        if (!isPause && !isEndGame && ModelController.getInstance().isPlayer()) {
             System.out.println(inAnimation);
             if (inAnimation == 0)
                 ModelController.getInstance().requestFilter("moveHorse", diceId);
@@ -96,7 +106,7 @@ public class ViewController {
     }
 
     public void clickRollDice(){
-        if (!isEndGame && ModelController.getInstance().isPlayer()) {
+        if (!isPause && !isEndGame && ModelController.getInstance().isPlayer()) {
             System.out.println(inAnimation);
             if (inAnimation == 0)
                 ModelController.getInstance().requestFilter("rollDice", -1);
@@ -120,7 +130,7 @@ public class ViewController {
     private int filterButtonType(String id){
         if (id.equals("rollDice"))
             return 0;
-        else if (id.equals("music"))
+        else if (id.equals("setting"))
             return 1;
         else
             return 2;
@@ -136,7 +146,7 @@ public class ViewController {
     }
 
     public void clickOnHorse(int horseIndex){
-        if (!isEndGame) {
+        if (!isEndGame && !isPause) {
             if (ModelController.getInstance().isPlayer()) {
                 Boolean success = ModelController.getInstance().selectHorse(horseIndex);
                 if (success)
@@ -162,7 +172,7 @@ public class ViewController {
     }
 
     private void setMenuText(){
-        ResourceBundle bundle = ResourceBundle.getBundle("messege");
+        ResourceBundle bundle = ResourceBundle.getBundle("messages");
         String rollDice = bundle.getString("rollDice");
         String stopButton = bundle.getString("stopButton");
         String settingButton = bundle.getString("settingButton");
@@ -170,7 +180,7 @@ public class ViewController {
     }
 
     private void setSettingNameText(){
-        ResourceBundle bundle = ResourceBundle.getBundle("messege");
+        ResourceBundle bundle = ResourceBundle.getBundle("messages");
         String backButton = bundle.getString("backButton");
         String continueButton = bundle.getString("continueButton");
         String choosePlayer = bundle.getString("choosePlayer");
@@ -178,7 +188,7 @@ public class ViewController {
     }
 
     private void setSettingText(){
-        ResourceBundle bundle = ResourceBundle.getBundle("messege");
+        ResourceBundle bundle = ResourceBundle.getBundle("messages");
         String btnButton = bundle.getString("btnButton");
         String btnHome =  bundle.getString("btnHome");
         String enCheckBox = bundle.getString("enCheckBox");
@@ -188,11 +198,11 @@ public class ViewController {
         String msVolume = bundle.getString("msVolume");
         String efVolume = bundle.getString("efVolume");
         String bgmVolume = bundle.getString("bgmVolume");
-        backGroundPane.getSetting().setSettingSwitchLanguage(btnButton, btnHome, enCheckBox,vnCheckBox,chooseLanguageLabel,volumeControlLabel,msVolume,efVolume,bgmVolume);
+        backGroundPane.getSetting().setSettingSwitchLanguage(btnButton, btnHome, enCheckBox, vnCheckBox, chooseLanguageLabel, volumeControlLabel, msVolume, efVolume, bgmVolume);
     }
 
     private void setStartMenuText(){
-        ResourceBundle bundle = ResourceBundle.getBundle("messege");
+        ResourceBundle bundle = ResourceBundle.getBundle("messages");
         String startGameButton = bundle.getString("startGameButton");
         String exitGameButton = bundle.getString("exitGameButton");
         String settingButton = bundle.getString("settingButton");
@@ -204,12 +214,15 @@ public class ViewController {
     }
     
     public void showSetting() {
-        backGroundPane.initSetting();
+        backGroundPane.addPane(backGroundPane.getSetting().getSettingPane());
     }
 
     public void finishAnimation(){
         inAnimation--;
-        ModelController.getInstance().endTurn();
+        if (!isPause) {
+            //buffer();
+            ModelController.getInstance().endTurn();
+        }
     }
 
     public void setIsEndGame(boolean status){
@@ -219,4 +232,26 @@ public class ViewController {
     public boolean isEndGame(){
         return isEndGame;
     }
+
+    public void pause(){
+        isPause = !isPause;
+        if (!isPause)
+            ModelController.getInstance().endTurn();
+    }
+
+    public void showPlayerTurn(int player){
+        System.out.println(player);
+        backGroundPane.getGamePane().setPlayerTurn(player);
+    }
+
+    public void upDateScore(int player, int score){
+        backGroundPane.getGamePane().setScore(player, score);
+    }
+
+    private void buffer(){
+        long t= System.currentTimeMillis();
+        long end = t + 500;
+        while(System.currentTimeMillis() < end){}
+    }
+
 }

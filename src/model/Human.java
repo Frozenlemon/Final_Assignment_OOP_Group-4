@@ -3,19 +3,25 @@ package model;
 public class Human extends Player {
 
     private String name;
-    private int score;
+    private int accumulativeScore;
+    private int staticScore;
 
     public Human(int colorCode, String name) {
         super(colorCode);
         this.name = name;
-        this.score = 0;
+        this.accumulativeScore = 0;
     }
 
-    public void changeScore(int value){
-        this.score += value;
+    public void addToAccumulativeScore(int score){
+        accumulativeScore += score;
     }
 
     public int getScore(){
-        return this.score;
+        staticScore = 0;
+        for (int i = 0; i < 4; i++){
+            if (getHorse(i).getHomeOnPath() > 0)
+                staticScore += getHorse(i).getHomeOnPath();
+        }
+        return accumulativeScore + staticScore;
     }
 }

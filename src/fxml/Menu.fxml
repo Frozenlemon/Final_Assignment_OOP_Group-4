@@ -19,7 +19,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button id="stop" fx:id="stopButton" minWidth="150.0" mnemonicParsing="false" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" styleClass="button" stylesheets="@ButtonMenu.css" text="Pause" translateX="25.0" translateY="750.0" wrapText="true">
+      <Button id="stop" fx:id="pauseButton" minWidth="150.0" mnemonicParsing="false" onMouseClicked="#clickOnPause" onMouseEntered="#mouseHover_On" onMouseExited="#mouseHover_Off" styleClass="button" stylesheets="@ButtonMenu.css" text="Pause" translateX="25.0" translateY="750.0" wrapText="true">
          <StackPane.margin>
             <Insets bottom="230.0" />
          </StackPane.margin>
